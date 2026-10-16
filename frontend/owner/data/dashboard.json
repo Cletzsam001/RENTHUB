@@ -1,0 +1,100 @@
+
+{
+  "dashboard": {
+    "owner": {
+      "id": "owner-001",
+      "name": "Tunde",
+      "profileImage": "./img/profile.svg"
+    },
+    "summary": {
+      "bookingsThisMonth": 8,
+      "earningsThisMonth": 250000,
+      "currency": "NGN"
+    },
+    "equipmentStatus": {
+      "available": 1,
+      "rented": 1,
+      "unavailable": 0
+    },
+    "actions": [
+      {
+        "id": "action-001",
+        "type": "booking",
+        "label": "2 Booking requests",
+        "href": "../booking.html?demo=pending"
+      },
+      {
+        "id": "action-002",
+        "type": "inspection",
+        "label": "1 Inspection due",
+        "href": "../booking.html?demo=completed"
+      },
+      {
+        "id": "action-003",
+        "type": "overdue",
+        "label": "1 Return overdue",
+        "href": "../booking.html?demo=overdue"
+      }
+    ],
+    "activeRentals": [
+      {
+        "id": "rental-001",
+        "name": "Canon EOS R6",
+        "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1790967108/Thumb_jx8nxa.png",
+        "period": "Apr 26 – Apr 28, 2025",
+        "price": 45000,
+        "status": "In Use",
+        "href": "../booking.html?demo=active"
+      },
+      {
+        "id": "rental-002",
+        "name": "Godox SL60W Light",
+        "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1790967286/Thumb_fp02cm.png",
+        "period": "May 1 – May 3, 2025",
+        "price": 18000,
+        "status": "Overdue",
+        "href": "../booking.html?demo=overdue"
+      }
+    ],
+    "upcomingBookings": [
+      {
+        "id": "booking-001",
+        "name": "Canon EOS R6",
+        "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1790967108/Thumb_jx8nxa.png",
+        "period": "Apr 26 – Apr 28, 2025",
+        "price": 45000,
+        "status": "Confirmed",
+        "href": "../booking.html?demo=upcoming"
+      },
+      {
+        "id": "booking-002",
+        "name": "Godox SL60W Light",
+        "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1790967286/Thumb_fp02cm.png",
+        "period": "May 1 – May 3, 2025",
+        "price": 18000,
+        "status": "Handover tomorrow",
+        "href": "../booking.html?demo=upcoming"
+      }
+    ],
+    "notifications": [
+      {
+        "id": "notification-001",
+        "type": "pickup",
+        "title": "RentHub",
+        "message": "Godox SL60W has been picked up by the renter.",
+        "time": "15 min ago",
+        "read": false,
+        "href": "../booking.html?demo=active"
+      },
+      {
+        "id": "notification-002",
+        "type": "booking",
+        "title": "RentHub",
+        "message": "Joe Lin requested to rent Canon EOS R6.",
+        "time": "Yesterday",
+        "read": false,
+        "href": "../booking.html?demo=pending"
+      }
+    ]
+  }
+}

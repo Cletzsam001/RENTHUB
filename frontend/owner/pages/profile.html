@@ -1,0 +1,492 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Owner Profile | RentHub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/profile.js" defer></script>
+</head>
+
+<body class="min-h-screen overflow-x-hidden bg-white font-sans text-[#171717] lg:bg-[#F2F7FB]">
+
+  <!-- DESKTOP SIDEBAR -->
+  <aside class="fixed inset-y-0 left-0 z-50 hidden w-[230px] flex-col bg-[#224F78] px-5 py-6 text-white lg:flex">
+
+    <!-- LOGO -->
+    <a href="dashboard.html" class="mb-9 flex shrink-0 items-center gap-3">
+      <span class="flex h-10 w-10 items-center justify-center rounded-full bg-[#102E4B]">
+        <img src="../../assets/icons/logo.svg" alt="RentHub logo" class="h-8 w-8 object-contain">
+      </span>
+      <span class="text-[20px] font-semibold">RentHub</span>
+    </a>
+
+    <!-- SIDEBAR NAVIGATION -->
+    <nav aria-label="Owner navigation" class="min-h-0 flex-1 space-y-1 overflow-y-auto">
+
+      <a href="dashboard.html" class="flex min-h-[43px] items-center gap-3 rounded-xl px-3 py-2 text-[14px] font-medium text-white/90 transition hover:bg-white/10">
+        <img src="../../assets/icons/ehome.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+        <span>Dashboard</span>
+      </a>
+
+      <a href="equipment.html" class="flex min-h-[43px] items-center gap-3 rounded-xl px-3 py-2 text-[14px] font-medium text-white/90 transition hover:bg-white/10">
+        <img src="../../assets/icons/equipments.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+        <span>Equipments</span>
+      </a>
+
+      <a href="../bookings/bookings.html" class="flex min-h-[43px] items-center gap-3 rounded-xl px-3 py-2 text-[14px] font-medium text-white/90 transition hover:bg-white/10">
+        <img src="../../assets/icons/booking.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+        <span>Bookings</span>
+      </a>
+
+      <a href="finance.html" class="flex min-h-[43px] items-center gap-3 rounded-xl px-3 py-2 text-[14px] font-medium text-white/90 transition hover:bg-white/10">
+        <img src="../../assets/icons/finance.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+        <span>Finance</span>
+      </a>
+
+      <a href="../deposit/deposit.html" class="flex min-h-[43px] items-center gap-3 rounded-xl px-3 py-2 text-[14px] font-medium text-white/90 transition hover:bg-white/10">
+        <img src="../../assets/icons/deposite.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+        <span>Deposit</span>
+      </a>
+
+      <a href="../dispute/dispute.html" class="flex min-h-[43px] items-center gap-3 rounded-xl px-3 py-2 text-[14px] font-medium text-white/90 transition hover:bg-white/10">
+        <img src="../../assets/icons/dispute.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+        <span>Dispute</span>
+      </a>
+
+      <a href="../reviews/reviews.html" class="flex min-h-[43px] items-center gap-3 rounded-xl px-3 py-2 text-[14px] font-medium text-white/90 transition hover:bg-white/10">
+        <img src="../../assets/icons/review.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+        <span>Review</span>
+      </a>
+
+      <a href="./profile.html" aria-current="page" class="flex min-h-[43px] items-center gap-3 rounded-xl bg-[#F2F7FB] px-3 py-2 text-[14px] font-semibold text-[#224F78]">
+        <img src="../../assets/icons/dark-user.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+        <span>Profile</span>
+      </a>
+
+    </nav>
+
+    <!-- LOGOUT -->
+    <button id="desktopLogout" type="button" class="mt-4 flex min-h-[43px] shrink-0 items-center gap-3 rounded-xl px-3 py-2 text-left text-[14px] font-medium transition hover:bg-white/10">
+      <img src="../../assets/icons/sign.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+      <span>Log out</span>
+    </button>
+
+  </aside>
+
+  <!-- MAIN WRAPPER -->
+  <div class="min-h-screen lg:ml-[230px]">
+
+    <!-- STICKY DESKTOP HEADER -->
+    <header class="sticky top-0 z-40 hidden h-[78px] items-center justify-between gap-5 border-b border-[#E6EBF0] bg-white px-7 lg:flex">
+
+      <label class="flex w-full max-w-[510px] items-center gap-3 rounded-xl border border-[#E1E6EA] bg-[#F2F7FB] px-4 py-3">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" class="h-5 w-5 shrink-0" aria-hidden="true">
+          <circle cx="10.5" cy="10.5" r="7.5"></circle>
+          <path d="m16 16 5 5"></path>
+        </svg>
+        <input id="desktopSearch" type="search" placeholder="Search for equipment, categories or location..." aria-label="Search equipment" class="w-full bg-transparent text-sm outline-none placeholder:text-[#929292]">
+      </label>
+
+      <img id="topbarAvatar" src="https://res.cloudinary.com/fdch0ihm/image/upload/v1791543469/Frame_61_rfyg4k.png" alt="Owner profile photo" class="h-11 w-11 shrink-0 rounded-full object-cover">
+
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="min-h-screen">
+      <div class="mx-auto w-full max-w-[1440px] px-4 pb-28 pt-6 sm:px-6 lg:px-7 lg:pb-12">
+
+        <!-- DESKTOP PROFILE -->
+        <section class="hidden lg:block" aria-label="Owner profile details">
+
+          <!-- COVER AND PROFILE HEADER -->
+          <div class="relative">
+
+            <img id="coverImage" src="https://res.cloudinary.com/fdch0ihm/image/upload/v1791543200/Frame_1000001133_havmzj.png" alt="Office buildings" class="h-[145px] w-full rounded-xl object-cover">
+
+            <div class="relative -mt-9 flex flex-wrap items-end justify-between gap-4 px-3">
+
+              <div class="flex items-end gap-4">
+
+                <div class="relative shrink-0">
+                  <img id="desktopAvatar" src="https://res.cloudinary.com/fdch0ihm/image/upload/v1791543469/Frame_61_rfyg4k.png" alt="Morgan Palmer" class="h-[100px] w-[100px] rounded-full border-4 border-white object-cover">
+                  <img src="../../assets/icons/p-verified.svg" alt="Verified" class="absolute bottom-2 right-0 h-7 w-7 rounded-full border-2 border-white bg-[#224F78] object-contain">
+                </div>
+
+                <div class="pb-2">
+                  <h1 id="desktopName" class="text-[26px] font-bold leading-tight text-[#2879BE]">Morgan Palmer</h1>
+                  <div class="mt-1 flex flex-wrap items-center gap-3">
+                    <p id="desktopRole" class="text-sm text-[#2879BE]">CEO, MorganRents LTD</p>
+                    <div class="flex items-center gap-1 rounded-full bg-[#D5E8F8] px-3 py-1">
+                      <img src="../../assets/icons/V-owner.svg" alt="" class="h-4 w-4 object-contain">
+                      <span class="text-xs text-[#224F78]">Verified Owner</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <button id="editProfileButton" type="button" class="mb-3 rounded-md border border-[#2879BE] px-4 py-2 text-sm font-medium text-[#2879BE] transition hover:bg-[#E8F2FB]">
+                ✎ Edit Profile
+              </button>
+
+            </div>
+          </div>
+
+          <!-- DESKTOP PROFILE GRID -->
+          <div class="mt-7 grid grid-cols-1 gap-7 xl:grid-cols-[minmax(0,1.6fr)_minmax(290px,1fr)]">
+
+            <!-- LEFT COLUMN -->
+            <div class="min-w-0">
+
+              <!-- TABS -->
+              <div class="mb-4 flex overflow-x-auto border-b border-[#D7DFE6] text-sm">
+                <button type="button" aria-current="page" class="border-b-2 border-[#2879BE] px-2 py-3 font-semibold text-[#2879BE]">
+                  Overview
+                </button>
+              </div>
+
+              <!-- YOUR INFORMATION -->
+              <section class="rounded-xl border border-[#DCE5ED] p-5">
+
+                <div class="mb-5 flex items-center justify-between">
+                  <h2 class="text-base font-semibold">Your Information</h2>
+                  <button type="button" data-edit="personal" class="text-sm hover:text-[#2879BE]">✎ Edit</button>
+                </div>
+
+                <div class="space-y-5">
+
+                  <div class="flex items-start gap-4">
+                    <img src="../../assets/icons/v-user.svg" alt="" class="h-6 w-6 shrink-0 object-contain">
+                    <div>
+                      <p class="text-xs font-semibold">Full Name</p>
+                      <p id="infoName" class="mt-1 text-sm text-[#808080]">Morgan Palmer</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#333333" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 shrink-0" aria-hidden="true">
+                      <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                      <path d="m4 7 8 6 8-6"></path>
+                    </svg>
+                    <div>
+                      <p class="text-xs font-semibold">Email address</p>
+                      <p id="infoEmail" class="mt-1 break-all text-sm text-[#808080]">Morgan.palmer@gmail.com</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4">
+                    <img src="../../assets/icons/call.svg" alt="" class="h-6 w-6 shrink-0 object-contain">
+                    <div>
+                      <p class="text-xs font-semibold">Phone number</p>
+                      <p id="infoPhone" class="mt-1 text-sm text-[#808080]">+234 901 234 5678</p>
+                    </div>
+                  </div>
+
+                </div>
+              </section>
+
+              <!-- BUSINESS INFORMATION -->
+              <section class="mt-3 rounded-xl border border-[#DCE5ED] p-5">
+
+                <div class="mb-5 flex items-center justify-between">
+                  <h2 class="text-base font-semibold">Business Information</h2>
+                  <button type="button" data-edit="business" class="text-sm hover:text-[#2879BE]">✎ Edit</button>
+                </div>
+
+                <div class="space-y-5">
+
+                  <div class="flex items-start gap-4">
+                    <img src="../../assets/icons/bussiness.svg" alt="" class="h-6 w-6 shrink-0 object-contain">
+                    <div>
+                      <p class="text-xs font-semibold">Business name</p>
+                      <p id="businessName" class="mt-1 text-sm text-[#808080]">MorganRents LTD</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4">
+                    <img src="../../assets/icons/BT.svg" alt="" class="h-6 w-6 shrink-0 object-contain">
+                    <div>
+                      <p class="text-xs font-semibold">Business type</p>
+                      <p id="businessType" class="mt-1 text-sm text-[#808080]">Individual owner</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4">
+                    <img src="../../assets/icons/location.svg" alt="" class="h-6 w-6 shrink-0 object-contain">
+                    <div>
+                      <p class="text-xs font-semibold">Business address</p>
+                      <p id="businessAddress" class="mt-1 text-sm text-[#808080]">Lekki Phase 1, Lagos, Nigeria</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4">
+                    <img src="../../assets/icons/BR.svg" alt="" class="h-6 w-6 shrink-0 object-contain">
+                    <div>
+                      <p class="text-xs font-semibold">Registration number</p>
+                      <p id="registrationNumber" class="mt-1 text-sm text-[#808080]">N/A</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4">
+                    <img src="../../assets/icons/YB.svg" alt="" class="h-6 w-6 shrink-0 object-contain">
+                    <div>
+                      <p class="text-xs font-semibold">Years in business</p>
+                      <p id="yearsInBusiness" class="mt-1 text-sm text-[#808080]">2 years</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4">
+                    <img src="../../assets/icons/document.svg" alt="" class="h-6 w-6 shrink-0 object-contain">
+                    <div>
+                      <p class="text-xs font-semibold">Documents</p>
+                      <p id="businessDocuments" class="mt-1 text-sm text-[#808080]">Business license (uploaded)</p>
+                    </div>
+                  </div>
+
+                </div>
+              </section>
+
+              <!-- SECURITY MESSAGE -->
+              <div class="mt-6 rounded-lg bg-[#D3E7F8] px-4 py-3 text-xs text-[#224F78]">
+                <p class="font-semibold">Your account is secure</p>
+                <p class="mt-1">Your identity, contact details and equipments are verified.</p>
+              </div>
+
+              <div id="notice" role="status" aria-live="polite" class="hidden"></div>
+
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="min-w-0">
+
+              <!-- PROFILE STATISTICS -->
+              <div class="grid grid-cols-3 divide-x divide-[#B9C1C9] py-3 text-center">
+                <div>
+                  <p id="desktopEquipmentCount" class="text-2xl font-bold">150</p>
+                  <p class="text-xs">Equipments</p>
+                </div>
+                <div>
+                  <p id="desktopListingCount" class="text-2xl font-bold">430</p>
+                  <p class="text-xs">Listings</p>
+                </div>
+                <div>
+                  <p id="desktopBookingCount" class="text-2xl font-bold">211</p>
+                  <p class="text-xs">Total Bookings</p>
+                </div>
+              </div>
+
+              <!-- VERIFIED OWNER -->
+              <div class="mt-5 rounded-lg bg-[#D3E7F8] px-4 py-3 text-xs text-[#224F78]">
+                <p class="flex items-center gap-2 font-semibold">
+                  <img src="../../assets/icons/V-users.svg" alt="" class="h-4 w-4 object-contain">
+                  Verified Owner
+                </p>
+                <p class="mt-1">Your identity and equipments are verified.</p>
+              </div>
+
+              <!-- EQUIPMENT LIST -->
+              <div class="mb-3 mt-5 flex items-center justify-between">
+                <h2 class="text-sm font-semibold">Your Equipments</h2>
+                <a href="equipment.html" class="text-xs text-[#2879BE] hover:underline">See all</a>
+              </div>
+
+              <div id="equipmentList" class="space-y-3" aria-live="polite"></div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- MOBILE PROFILE -->
+        <section class="lg:hidden" aria-label="Mobile owner profile">
+
+          <!-- MOBILE PAGE HEADER -->
+          <div class="sticky top-0 z-30 -mx-4 -mt-6 flex h-[72px] items-center justify-between border-b border-[#F0F0F0] bg-white px-4 sm:-mx-6 sm:px-6">
+            <a href="dashboard.html" aria-label="Back to dashboard" class="flex h-10 w-10 items-center justify-center">
+              <img src="../../assets/icons/backspace.svg" alt="" class="h-6 w-6 object-contain">
+            </a>
+            <h1 class="text-lg font-semibold text-[#224F78]">Profile</h1>
+            <span class="w-10"></span>
+          </div>
+
+          <!-- PROFILE PHOTO -->
+          <div class="mt-7 flex flex-col items-center text-center">
+
+            <div class="relative">
+              <img id="mobileAvatar" src="https://res.cloudinary.com/fdch0ihm/image/upload/v1791543469/Frame_61_rfyg4k.png" alt="Morgan Palmer" class="h-32 w-32 rounded-full bg-[#C7C1C1] object-cover">
+
+              <button id="changePhotoButton" type="button" aria-label="Change profile picture" class="absolute bottom-0 right-[-10px] flex h-12 w-12 items-center justify-center rounded-full border-4 border-white bg-white shadow-sm">
+                <img src="../../assets/icons/camera.svg" alt="" class="h-6 w-6 object-contain">
+              </button>
+
+              <input id="photoInput" type="file" accept="image/jpeg,image/png,image/webp" class="hidden">
+            </div>
+
+            <h2 id="mobileName" class="mt-5 text-[29px] font-bold leading-tight text-black">Morgan Palmer</h2>
+            <p id="mobileRole" class="mt-1 text-base text-black">CEO, MorganRents LTD</p>
+
+            <div class="mt-3 flex items-center gap-1 rounded-full bg-[#D5E8F8] px-3 py-1">
+              <img src="../../assets/icons/V-owner.svg" alt="" class="h-4 w-4 object-contain">
+              <span class="text-xs text-[#224F78]">Verified Owner</span>
+            </div>
+
+          </div>
+
+          <!-- MOBILE STATISTICS -->
+          <div class="mt-9 grid grid-cols-3 divide-x divide-[#D8D8D8] rounded-[22px] bg-[#FAFAFA] px-2 py-5 text-center">
+
+            <div>
+              <p id="mobileEquipmentCount" class="text-2xl font-bold sm:text-3xl">150</p>
+              <p class="mt-1 text-xs sm:text-sm">Equipments</p>
+            </div>
+
+            <div>
+              <p id="mobileListingCount" class="text-2xl font-bold sm:text-3xl">430</p>
+              <p class="mt-1 text-xs sm:text-sm">Listings</p>
+            </div>
+
+            <div>
+              <p id="mobileBookingCount" class="text-2xl font-bold sm:text-3xl">211</p>
+              <p class="mt-1 text-xs sm:text-sm">Total Bookings</p>
+            </div>
+
+          </div>
+
+          <!-- MOBILE PROFILE ACTIONS -->
+          <nav aria-label="Profile actions" class="mt-6 space-y-3">
+
+            <a href="./account-status.html" class="flex min-h-[80px] items-center gap-4 rounded-xl border border-[#E9E9E9] px-4 py-3 transition hover:bg-[#F7FAFD]">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F2F7FB]">
+                <img src="../../assets/icons/bussiness.svg" alt="" class="h-6 w-6 object-contain">
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block text-base font-semibold">Account Status</span>
+                <span id="mobileBusinessName" class="mt-1 block truncate text-sm text-[#999]">MorganRents LTD</span>
+              </span>
+              <img src="../../assets/icons/m-active.svg" alt="Verified" class="h-6 w-6 shrink-0 object-contain">
+            </a>
+
+            <a href="equipment.html" class="flex min-h-[80px] items-center gap-4 rounded-xl border border-[#E9E9E9] px-4 py-3 transition hover:bg-[#F7FAFD]">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F2F7FB]">
+                <img src="../../assets/icons/m-equipment.svg" alt="" class="h-6 w-6 object-contain">
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block text-base font-semibold">My Equipments</span>
+                <span class="mt-1 block text-sm text-[#999]">Manage your equipments</span>
+              </span>
+              <img src="../../assets/icons/chevron-right.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+            </a>
+
+            <a href="../bookings/bookings.html" class="flex min-h-[80px] items-center gap-4 rounded-xl border border-[#E9E9E9] px-4 py-3 transition hover:bg-[#F7FAFD]">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F2F7FB]">
+                <img src="../../assets/icons/bookings.svg" alt="" class="h-6 w-6 object-contain">
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block text-base font-semibold">Bookings</span>
+                <span class="mt-1 block text-sm text-[#999]">View and manage requests</span>
+              </span>
+              <img src="../../assets/icons/chevron-right.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+            </a>
+
+            <a href="finance.html" class="flex min-h-[80px] items-center gap-4 rounded-xl border border-[#E9E9E9] px-4 py-3 transition hover:bg-[#F7FAFD]">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F2F7FB]">
+                <img src="../../assets/icons/finances.svg" alt="" class="h-6 w-6 object-contain">
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block text-base font-semibold">Payments</span>
+                <span class="mt-1 block text-sm text-[#999]">Track your earnings and payouts</span>
+              </span>
+              <img src="../../assets/icons/chevron-right.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+            </a>
+
+            <a href="../reviews/reviews.html" class="flex min-h-[80px] items-center gap-4 rounded-xl border border-[#E9E9E9] px-4 py-3 transition hover:bg-[#F7FAFD]">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F2F7FB]">
+                <img src="../../assets/icons/m-star.svg" alt="" class="h-6 w-6 object-contain">
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block text-base font-semibold">Reviews</span>
+                <span class="mt-1 block text-sm text-[#999]">See feedback from clients</span>
+              </span>
+              <img src="../../assets/icons/chevron-right.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+            </a>
+
+            <a href="./support.html" class="flex min-h-[80px] items-center gap-4 rounded-xl border border-[#E9E9E9] px-4 py-3 transition hover:bg-[#F7FAFD]">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F2F7FB]">
+                <img src="../../assets/icons/m-support.svg" alt="" class="h-6 w-6 object-contain">
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block text-base font-semibold">Help &amp; Support</span>
+                <span class="mt-1 block text-sm text-[#999]">Get help or contact us</span>
+              </span>
+              <img src="../../assets/icons/chevron-right.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+            </a>
+
+          </nav>
+
+          <div id="mobileNotice" role="status" aria-live="polite" class="hidden"></div>
+
+          <button id="mobileLogout" type="button" class="mt-5 w-full rounded-full bg-[#224F78] py-4 text-base font-semibold text-white transition hover:bg-[#173D60]">
+            Logout
+          </button>
+
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- MOBILE BOTTOM NAVIGATION -->
+  <nav aria-label="Mobile main navigation" class="fixed inset-x-0 bottom-0 z-40 grid h-[70px] grid-cols-5 border-t border-[#D5D5D5] bg-white px-2 pb-2 pt-2 lg:hidden">
+
+    <a href="dashboard.html" class="flex flex-col items-center justify-center gap-1 text-[11px] text-[#929292]">
+      <img src="../../assets/icons/ehome.svg" alt="" class="h-5 w-5 object-contain">
+      <span>Home</span>
+    </a>
+
+    <a href="equipment.html" class="flex flex-col items-center justify-center gap-1 text-[11px] text-[#929292]">
+      <img src="../../assets/icons/equipments.svg" alt="" class="h-5 w-5 object-contain">
+      <span>Equipment</span>
+    </a>
+
+    <a href="../bookings/bookings.html" class="flex flex-col items-center justify-center gap-1 text-[11px] text-[#929292]">
+      <img src="../../assets/icons/booking.svg" alt="" class="h-5 w-5 object-contain">
+      <span>Bookings</span>
+    </a>
+
+    <a href="finance.html" class="flex flex-col items-center justify-center gap-1 text-[11px] text-[#929292]">
+      <img src="../../assets/icons/finance.svg" alt="" class="h-5 w-5 object-contain">
+      <span>Finance</span>
+    </a>
+
+    <a href="../dispute/dispute.html" class="flex flex-col items-center justify-center gap-1 text-[11px] text-[#929292]">
+      <img src="../../assets/icons/dispute.svg" alt="" class="h-5 w-5 object-contain">
+      <span>Dispute</span>
+    </a>
+
+  </nav>
+
+  <!-- EDIT PROFILE MODAL -->
+  <div id="editModal" role="dialog" aria-modal="true" aria-labelledby="editModalTitle" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/50 p-4">
+
+    <div class="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl bg-white p-6 shadow-xl">
+
+      <div class="mb-5 flex items-center justify-between">
+        <h2 id="editModalTitle" class="text-xl font-semibold">Edit Your Information</h2>
+        <button id="closeEditModal" type="button" aria-label="Close dialog" class="text-2xl">×</button>
+      </div>
+
+      <form id="editForm">
+        <div id="editFields" class="space-y-4"></div>
+        <button id="saveEditButton" type="submit" class="mt-6 w-full rounded-xl bg-[#224F78] px-4 py-3 font-semibold text-white transition hover:bg-[#173D60]">
+          Save Changes
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+</body>
+</html>

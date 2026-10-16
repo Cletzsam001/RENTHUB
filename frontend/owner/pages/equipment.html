@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipment | RentHub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/equipment.js" defer></script>
+</head>
+
+<body class="min-h-screen overflow-x-hidden bg-white font-sans text-[#303030] lg:bg-[#F2F7FB]">
+
+  <!-- DESKTOP SIDEBAR -->
+  <aside class="fixed inset-y-0 left-0 z-50 hidden w-[230px] flex-col bg-[#224F78] px-5 py-6 text-white lg:flex">
+
+    <!-- LOGO -->
+    <a href="dashboard.html" class="mb-9 flex shrink-0 items-center gap-3 text-white">
+      <span class="flex h-10 w-10 items-center justify-center rounded-full bg-[#102E4B]">
+        <img src="../../assets/icons/logo.svg" alt="RentHub logo" class="h-8 w-8 object-contain">
+      </span>
+      <span class="text-[20px] font-semibold">RentHub</span>
+    </a>
+
+    <!-- OWNER NAVIGATION -->
+    <nav aria-label="Owner navigation" class="min-h-0 flex-1 space-y-1 overflow-y-auto">
+
+      <a href="dashboard.html" class="flex min-h-[43px] items-center gap-3 rounded-xl px-3 py-2 text-[14px] font-medium text-white/90 transition hover:bg-white/10">
+        <img src="../../assets/icons/ehome.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+        <span>Dashboard</span>
+      </a>
+
+      <a href="./equipment.html" aria-current="page" class="flex min-h-[43px] items-center gap-3 rounded-xl bg-[#F2F7FB] px-3 py-2 text-[14px] font-semibold text-[#224F78]">
+        <img src="../../assets/icons/equipment2.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+        <span>Equipments</span>
+      </a>
+
+      <a href="booking.html" class="flex min-h-[43px] items-center gap-3 rounded-xl px-3 py-2 text-[14px] font-medium text-white/90 transition hover:bg-white/10">
+        <img src="../../assets/icons/booking.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+        <span>Bookings</span>
+      </a>
+
+      <a href="finance.html" class="flex min-h-[43px] items-center gap-3 rounded-xl px-3 py-2 text-[14px] font-medium text-white/90 transition hover:bg-white/10">
+        <img src="../../assets/icons/finance.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+        <span>Finance</span>
+      </a>
+
+      <a href="#" data-unavailable="Deposit" class="flex min-h-[43px] items-center gap-3 rounded-xl px-3 py-2 text-[14px] font-medium text-white/90 transition hover:bg-white/10">
+        <img src="../../assets/icons/deposite.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+        <span>Deposit</span>
+      </a>
+
+      <a href="#" data-unavailable="Dispute" class="flex min-h-[43px] items-center gap-3 rounded-xl px-3 py-2 text-[14px] font-medium text-white/90 transition hover:bg-white/10">
+        <img src="../../assets/icons/dispute.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+        <span>Dispute</span>
+      </a>
+
+      <a href="#" data-unavailable="Review" class="flex min-h-[43px] items-center gap-3 rounded-xl px-3 py-2 text-[14px] font-medium text-white/90 transition hover:bg-white/10">
+        <img src="../../assets/icons/review.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+        <span>Review</span>
+      </a>
+
+      <a href="profile.html" class="flex min-h-[43px] items-center gap-3 rounded-xl px-3 py-2 text-[14px] font-medium text-white/90 transition hover:bg-white/10">
+        <img src="../../assets/icons/user.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+        <span>Profile</span>
+      </a>
+
+    </nav>
+
+    <!-- LOGOUT -->
+    <button id="logoutButton" type="button" class="mt-4 flex min-h-[43px] shrink-0 items-center gap-3 rounded-xl px-3 py-2 text-left text-[14px] font-medium transition hover:bg-white/10">
+      <img src="../../assets/icons/sign.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+      <span>Log out</span>
+    </button>
+
+  </aside>
+
+  <!-- MAIN PAGE -->
+  <div class="min-h-screen lg:ml-[230px]">
+
+    <!-- STICKY DESKTOP HEADER -->
+    <header class="sticky top-0 z-40 hidden h-[78px] items-center justify-between gap-5 border-b border-[#E6EBF0] bg-white px-7 lg:flex">
+
+      <div class="relative w-full max-w-[510px]">
+        <img src="../../assets/icons/search.svg" alt="" class="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 object-contain">
+
+        <input id="desktopSearch" type="search" aria-label="Search equipment" placeholder="Search for equipment, categories or location..." class="h-[46px] w-full rounded-xl border border-[#E2E5E8] bg-[#F2F7FB] pl-12 pr-4 text-sm outline-none focus:border-[#224F78]">
+      </div>
+
+      <a href="profile.html" aria-label="Open owner profile" class="shrink-0">
+        <img src="../../assets/icons/profile.svg" alt="Owner avatar" class="h-11 w-11 rounded-full object-cover">
+      </a>
+
+    </header>
+
+    <!-- EQUIPMENT CONTENT -->
+    <main class="mx-auto w-full max-w-[1440px] px-4 pb-28 pt-6 sm:px-6 lg:px-8 lg:pb-10 lg:pt-6">
+
+      <!-- MOBILE HEADER -->
+      <div class="mb-7 flex items-center justify-between lg:hidden">
+
+        <a href="dashboard.html" aria-label="Back to dashboard" class="flex h-10 w-10 items-center justify-center">
+          <img src="../../assets/icons/backspace.svg" alt="" class="h-7 w-7 object-contain">
+        </a>
+
+        <h1 class="text-[23px] font-semibold text-[#224F78]">Equipment</h1>
+
+        <a href="./add-equipment.html" aria-label="Add equipment" class="flex h-10 w-10 items-center justify-center">
+          <img src="../../assets/icons/m-add.svg" alt="" class="h-7 w-7 object-contain">
+        </a>
+
+      </div>
+
+      <!-- DESKTOP TITLE -->
+      <div class="mb-5 hidden items-center justify-between lg:flex">
+
+        <h1 class="text-[30px] font-semibold">My Equipments</h1>
+
+        <a href="./add-equipment.html" class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#224F78] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#173D60]">
+          <img src="../../assets/icons/add.svg" alt="" class="h-4 w-4 object-contain">
+          <span>Add Equipment</span>
+        </a>
+
+      </div>
+
+      <!-- MOBILE SEARCH -->
+      <div class="relative mb-5 lg:hidden">
+        <img src="../../assets/icons/search.svg" alt="" class="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 object-contain">
+
+        <input id="mobileSearch" type="search" aria-label="Search your equipment" placeholder="Search your equipment" class="h-[54px] w-full rounded-2xl border border-[#CBC5D8] bg-white pl-12 pr-4 text-sm outline-none focus:border-[#224F78]">
+      </div>
+
+      <!-- STATUS FILTERS -->
+      <div id="statusFilters" class="mb-5 flex gap-3 overflow-x-auto pb-1 lg:grid lg:grid-cols-6 lg:gap-4"></div>
+
+      <!-- EQUIPMENT LIST -->
+      <section aria-label="Equipment listings" class="rounded-[22px] bg-white lg:p-5">
+
+        <div id="equipmentList" class="space-y-3" aria-live="polite"></div>
+
+        <p id="equipmentMessage" class="hidden py-8 text-center text-sm" role="status"></p>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- MOBILE BOTTOM NAVIGATION -->
+  <nav aria-label="Mobile main navigation" class="fixed inset-x-0 bottom-0 z-40 grid h-[70px] grid-cols-5 border-t border-[#D5D5D5] bg-white px-2 pb-2 pt-2 lg:hidden">
+
+    <a href="dashboard.html" class="flex flex-col items-center justify-center gap-1 text-[11px] text-[#929292]">
+      <img src="../../assets/icons/ehome.svg" alt="" class="h-5 w-5 object-contain">
+      <span>Home</span>
+    </a>
+
+    <a href="./equipment.html" aria-current="page" class="flex flex-col items-center justify-center gap-1 text-[11px] font-semibold text-[#224F78]">
+      <img src="../../assets/icons/equipment2.svg" alt="" class="h-5 w-5 object-contain">
+      <span>Equipment</span>
+    </a>
+
+    <a href="booking.html" class="flex flex-col items-center justify-center gap-1 text-[11px] text-[#929292]">
+      <img src="../../assets/icons/booking.svg" alt="" class="h-5 w-5 object-contain">
+      <span>Bookings</span>
+    </a>
+
+    <a href="finance.html" class="flex flex-col items-center justify-center gap-1 text-[11px] text-[#929292]">
+      <img src="../../assets/icons/finance.svg" alt="" class="h-5 w-5 object-contain">
+      <span>Finance</span>
+    </a>
+
+    <a href="#" data-unavailable="Dispute" class="flex flex-col items-center justify-center gap-1 text-[11px] text-[#929292]">
+      <img src="../../assets/icons/dispute.svg" alt="" class="h-5 w-5 object-contain">
+      <span>Dispute</span>
+    </a>
+
+  </nav>
+
+  <!-- ADD EQUIPMENT MODAL -->
+  <div id="equipmentModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/50 p-4">
+
+    <div class="w-full max-w-lg rounded-2xl bg-white p-5 shadow-xl">
+
+      <div class="mb-5 flex items-center justify-between">
+        <h2 id="modalTitle" class="text-xl font-semibold text-[#224F78]">Add Equipment</h2>
+
+        <button id="closeModal" type="button" aria-label="Close form" class="flex h-9 w-9 items-center justify-center rounded-lg text-2xl hover:bg-gray-100">
+          &times;
+        </button>
+      </div>
+
+      <form id="equipmentForm" class="space-y-4">
+
+        <div>
+          <label for="equipmentName" class="mb-1 block text-sm font-medium">Equipment name</label>
+          <input id="equipmentName" name="equipmentName" type="text" required maxlength="100" placeholder="Equipment name" class="w-full rounded-xl border border-gray-300 p-3 outline-none focus:border-[#224F78]">
+        </div>
+
+        <div>
+          <label for="equipmentPrice" class="mb-1 block text-sm font-medium">Rental price (₦)</label>
+          <input id="equipmentPrice" name="equipmentPrice" type="number" min="1" step="1" required class="w-full rounded-xl border border-gray-300 p-3 outline-none focus:border-[#224F78]">
+        </div>
+
+        <div>
+          <label for="equipmentDate" class="mb-1 block text-sm font-medium">Availability date</label>
+          <input id="equipmentDate" name="equipmentDate" type="date" required class="w-full rounded-xl border border-gray-300 p-3 outline-none focus:border-[#224F78]">
+        </div>
+
+        <div>
+          <label for="equipmentStatus" class="mb-1 block text-sm font-medium">Status</label>
+          <select id="equipmentStatus" name="equipmentStatus" class="w-full rounded-xl border border-gray-300 p-3 outline-none focus:border-[#224F78]">
+            <option value="Drafts">Draft</option>
+            <option value="Submitted">Submit for review</option>
+          </select>
+        </div>
+
+        <p id="formMessage" class="hidden text-sm text-red-600" role="alert"></p>
+
+        <button id="saveEquipment" type="submit" class="w-full rounded-xl bg-[#224F78] py-3 font-semibold text-white transition hover:bg-[#173D60] disabled:opacity-50">
+          Save Equipment
+        </button>
+
+      </form>
+    </div>
+
+  </div>
+
+  <!-- NAVIGATION FEEDBACK -->
+  <p id="navigationNotice" role="status" aria-live="polite" class="fixed bottom-20 left-1/2 z-[70] hidden w-[calc(100%-32px)] max-w-sm -translate-x-1/2 rounded-xl bg-[#224F78] px-4 py-3 text-center text-sm text-white shadow-lg lg:bottom-6"></p>
+
+  <script>
+    document.querySelectorAll("[data-unavailable]").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        const notice = document.getElementById("navigationNotice");
+        notice.textContent = `${link.dataset.unavailable} page is not connected yet.`;
+        notice.classList.remove("hidden");
+
+        clearTimeout(window.navigationNoticeTimer);
+
+        window.navigationNoticeTimer = setTimeout(() => {
+          notice.classList.add("hidden");
+        }, 3000);
+      });
+    });
+  </script>
+
+</body>
+</html>

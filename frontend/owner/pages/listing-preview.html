@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Listing Preview | RentHub</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="../js/listing-preview.js" defer></script>
+</head>
+<body class="m-0 min-h-screen bg-white font-sans text-[#303030] lg:bg-[#F2F7FB]">
+
+<!-- DESKTOP SIDEBAR -->
+<aside class="fixed inset-y-0 left-0 z-30 hidden w-[230px] flex-col bg-[#214F79] px-6 py-8 text-white lg:flex">
+<a href="dashboard.html" class="mb-10 flex shrink-0 items-center gap-3">
+<img src="../../assets/icons/logo.svg" alt="RentHub" class="h-10 w-10 object-contain">
+<span class="text-[20px] font-semibold">RentHub</span>
+</a>
+
+<nav aria-label="Owner navigation" class="min-h-0 flex-1 space-y-1 overflow-y-auto">
+<a href="dashboard.html" class="flex items-center gap-4 rounded-xl px-3 py-2.5 text-white hover:bg-white/10">
+<img src="../../assets/icons/ehome.svg" alt="" class="h-5 w-5 shrink-0"><span>Dashboard</span>
+</a>
+<a href="./equipment.html" aria-current="page" class="flex items-center gap-4 rounded-xl bg-[#F2F8FC] px-3 py-2.5 font-semibold text-[#214F79]">
+<img src="../../assets/icons/equipment2.svg" alt="" class="h-5 w-5 shrink-0"><span>Equipments</span>
+</a>
+<a href="#" class="flex items-center gap-4 rounded-xl px-3 py-2.5 text-white hover:bg-white/10">
+<img src="../../assets/icons/booking.svg" alt="" class="h-5 w-5 shrink-0"><span>Bookings</span>
+</a>
+<a href="finance.html" class="flex items-center gap-4 rounded-xl px-3 py-2.5 text-white hover:bg-white/10">
+<img src="../../assets/icons/finance.svg" alt="" class="h-5 w-5 shrink-0"><span>Finance</span>
+</a>
+<a href="#" class="flex items-center gap-4 rounded-xl px-3 py-2.5 text-white hover:bg-white/10">
+<img src="../../assets/icons/deposite.svg" alt="" class="h-5 w-5 shrink-0"><span>Deposit</span>
+</a>
+<a href="#" class="flex items-center gap-4 rounded-xl px-3 py-2.5 text-white hover:bg-white/10">
+<img src="../../assets/icons/dispute.svg" alt="" class="h-5 w-5 shrink-0"><span>Dispute</span>
+</a>
+<a href="#" class="flex items-center gap-4 rounded-xl px-3 py-2.5 text-white hover:bg-white/10">
+<img src="../../assets/icons/review.svg" alt="" class="h-5 w-5 shrink-0"><span>Review</span>
+</a>
+<a href="#" class="flex items-center gap-4 rounded-xl px-3 py-2.5 text-white hover:bg-white/10">
+<img src="../../assets/icons/user.svg" alt="" class="h-5 w-5 shrink-0"><span>Profile</span>
+</a>
+</nav>
+
+<button id="logoutButton" type="button" class="mt-5 flex items-center gap-4 px-3 py-3 text-white">
+<img src="../../assets/icons/sign.svg" alt="" class="h-5 w-5"><span>Log out</span>
+</button>
+</aside>
+
+<!-- MAIN -->
+<div class="min-h-screen lg:ml-[230px]">
+
+<header class="hidden h-[107px] items-center justify-between bg-white px-8 lg:flex">
+<div class="relative w-full max-w-[528px]">
+<img src="../../assets/icons/search.svg" alt="" class="absolute left-4 top-1/2 h-6 w-6 -translate-y-1/2">
+<input id="headerSearch" type="search" placeholder="Search for equipment, categories or location..." class="h-[49px] w-full rounded-xl border border-[#E2E5E8] bg-[#F2F7FB] pl-12 pr-4 text-sm outline-none focus:border-[#214F79]">
+</div>
+<img src="../../assets/icons/profile.svg" alt="Owner profile" class="h-12 w-12 rounded-full object-cover">
+</header>
+
+<main class="mx-auto max-w-[1500px] px-4 pb-12 pt-6 sm:px-8 lg:px-8 lg:pt-5">
+
+<!-- MOBILE TITLE -->
+<div class="relative mb-7 flex h-12 items-center justify-center lg:hidden">
+<a href="./add-equipment2.html" aria-label="Go back" class="absolute left-0 flex h-10 w-10 items-center justify-center">
+<img src="../../assets/icons/backspace.svg" alt="" class="h-7 w-7">
+</a>
+<h1 class="text-[23px] font-semibold text-[#214F79]">Listing Preview</h1>
+</div>
+
+<!-- DESKTOP TITLE -->
+<div class="mb-7 hidden items-center gap-4 lg:flex">
+<a href="./add-equipment2.html" aria-label="Go back">
+<img src="../../assets/icons/backspace.svg" alt="" class="h-8 w-8">
+</a>
+<h1 class="text-[25px] font-semibold text-black">Listing Preview</h1>
+</div>
+
+<div class="grid grid-cols-1 items-start gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.07fr)]">
+
+<!-- GALLERY -->
+<section aria-label="Equipment photo gallery" class="min-w-0">
+<div class="relative overflow-hidden rounded-[24px] bg-[#F1F1F1] lg:rounded-[20px]">
+<img id="mainEquipmentImage" src="./img/camera.png" alt="Equipment" class="aspect-[1.68/1] w-full object-cover lg:aspect-[1.2/1]">
+<div id="imageCounter" class="absolute bottom-4 right-4 rounded-2xl bg-black/40 px-3 py-2 text-base font-semibold text-white lg:hidden">1 / 1</div>
+<button id="previousImage" type="button" aria-label="Previous image" class="absolute left-2 top-1/2 hidden -translate-y-1/2 items-center justify-center rounded-full bg-white/90 p-2">
+<img src="./img/chevron-left.svg" alt="" class="h-5 w-5">
+</button>
+<button id="nextImage" type="button" aria-label="Next image" class="absolute right-2 top-1/2 hidden -translate-y-1/2 items-center justify-center rounded-full bg-white/90 p-2">
+<img src="../../assets/icons/chevron-right.svg" alt="" class="h-5 w-5">
+</button>
+</div>
+<div id="thumbnailList" class="mt-3 hidden grid-cols-4 gap-3 lg:grid"></div>
+</section>
+
+<!-- DETAILS -->
+<section class="min-w-0 lg:rounded-[22px] lg:bg-white lg:p-5">
+<div class="flex items-start justify-between gap-3">
+<h2 id="equipmentName" class="min-w-0 text-[27px] font-semibold leading-tight lg:text-[25px]">Loading...</h2>
+<p id="desktopPrice" class="hidden shrink-0 text-lg font-semibold lg:block">₦0/day</p>
+<p id="mobilePrice" class="shrink-0 whitespace-nowrap text-[19px] font-semibold lg:hidden">₦0/day</p>
+</div>
+
+<div class="mt-4 flex items-center gap-2 text-[16px] lg:mt-3 lg:text-[15px]">
+<img src="../../assets/icons/location.svg" alt="" class="h-5 w-5 shrink-0">
+<span id="equipmentLocation">Loading...</span>
+</div>
+
+<div class="mt-3 flex flex-wrap items-center justify-between gap-2 border-b border-[#D2D2D2] pb-5 text-[15px]">
+<div class="flex items-center gap-2">
+<img src="./img/calendar.svg" alt="" class="h-5 w-5 shrink-0">
+<span id="availabilityText">Loading...</span>
+</div>
+<button id="viewDatesButton" type="button" class="text-sm italic text-[#3990E2] hover:underline">see all dates</button>
+</div>
+
+<!-- OWNER CARD -->
+<div class="mt-5 flex items-center gap-3 rounded-xl border border-[#9696A0] px-3 py-3">
+<img id="ownerImage" src="../../assets/icons/profile.svg" alt="Equipment owner" class="h-[54px] w-[54px] shrink-0 rounded-full object-cover">
+<div class="min-w-0 flex-1">
+<p id="ownerName" class="text-[17px] font-medium">Equipment Owner</p>
+<p class="text-sm text-gray-500">Equipment Owner</p>
+<p class="hidden text-xs lg:block"><span class="text-orange-500">★</span> <span id="ownerRating">0.0</span> <span id="ownerReviews" class="text-gray-500">(0)</span></p>
+</div>
+<img src="../../assets/icons/arrow.svg" alt="" class="h-5 w-5 shrink-0">
+</div>
+
+<!-- DESCRIPTION -->
+<div class="border-b border-[#D2D2D2] py-6">
+<h3 class="mb-3 text-[21px] font-semibold lg:text-[17px]">Description</h3>
+<p id="equipmentDescription" class="text-[16px] leading-relaxed lg:text-[15px]">Loading...</p>
+</div>
+
+<!-- EQUIPMENT DETAILS -->
+<div class="pt-6">
+<h3 class="mb-3 text-[21px] font-semibold lg:text-[17px]">Details</h3>
+<div id="equipmentDetails" class="divide-y divide-[#D8D8D8]"></div>
+</div>
+
+<button id="submitListingButton" type="button" class="mt-9 flex h-[60px] w-full items-center justify-center rounded-full bg-[#214F79] text-[18px] font-semibold text-white transition hover:bg-[#183D60] disabled:cursor-not-allowed disabled:opacity-50 lg:mt-6 lg:rounded-[18px] lg:text-[16px]">Submit Listing</button>
+<p id="actionMessage" role="status" aria-live="polite" class="mt-3 hidden text-sm"></p>
+</section>
+</div>
+</main>
+</div>
+
+<!-- AVAILABILITY DIALOG -->
+<div id="datesDialog" class="fixed inset-0 z-40 hidden items-center justify-center bg-black/50 p-4">
+<section role="dialog" aria-modal="true" aria-labelledby="datesDialogTitle" class="w-full max-w-md rounded-2xl bg-white p-6">
+<div class="mb-4 flex items-center justify-between">
+<h2 id="datesDialogTitle" class="text-lg font-semibold">Availability</h2>
+<button id="closeDatesDialog" type="button" aria-label="Close availability">
+<img src="./img/close.svg" alt="" class="h-6 w-6">
+</button>
+</div>
+<div id="datesContent" class="space-y-3 text-sm"></div>
+</section>
+</div>
+
+<!-- SUCCESS MODAL -->
+<div id="successModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/30 lg:p-5">
+<section role="dialog" aria-modal="true" aria-labelledby="successTitle" aria-describedby="successDescription" class="relative flex h-full w-full flex-col bg-white px-5 pb-12 pt-16 lg:h-[630px] lg:max-w-[670px] lg:rounded-[36px] lg:px-8 lg:pb-12 lg:pt-16">
+
+<button id="closeSuccessModal" type="button" aria-label="Close success message" class="absolute right-6 top-10 flex h-10 w-10 items-center justify-center lg:right-5 lg:top-4">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" class="h-7 w-7 lg:h-5 lg:w-5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+</button>
+
+<div class="flex flex-1 flex-col items-center justify-center text-center lg:justify-start lg:pt-3">
+<div class="flex h-[145px] w-[145px] shrink-0 items-center justify-center rounded-full bg-[#10B96F]">
+<svg viewBox="0 0 100 100" fill="none" class="h-[90px] w-[90px]" aria-hidden="true"><path d="M18 52L41 74L84 28" stroke="white" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
+<h2 id="successTitle" class="mt-8 text-[29px] font-bold leading-tight text-black lg:mt-7 lg:text-[25px]">Equipment Submitted!</h2>
+<p id="successDescription" class="mt-4 max-w-[520px] text-[17px] leading-relaxed text-[#303030] lg:mt-2 lg:text-[16px]">Your equipment has been submitted and will be reviewed by the RentHub team.</p>
+</div>
+
+<div class="mt-auto flex w-full flex-col gap-4">
+<a id="viewEquipmentButton" href="./equipment-details.html" class="flex h-[62px] w-full items-center justify-center rounded-full bg-[#214F79] text-[18px] font-semibold text-white hover:bg-[#183D60] lg:rounded-[20px]">View Equipment</a>
+<a id="addAnotherButton" href="./add-equipment.html" class="flex h-[62px] w-full items-center justify-center rounded-full border border-[#214F79] bg-white text-[18px] font-semibold text-[#214F79] hover:bg-[#F2F7FB] lg:rounded-[20px]">Add Another Equipment</a>
+</div>
+</section>
+</div>
+
+<!-- FAILURE MODAL -->
+<div id="failureModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/30 lg:p-5">
+<section role="dialog" aria-modal="true" aria-labelledby="failureTitle" aria-describedby="failureDescription" class="relative flex h-full w-full flex-col bg-white px-5 pb-12 pt-16 lg:h-[630px] lg:max-w-[670px] lg:rounded-[36px] lg:px-8 lg:pb-12 lg:pt-16">
+
+<button id="closeFailureModal" type="button" aria-label="Close failure message" class="absolute right-6 top-10 flex h-10 w-10 items-center justify-center lg:right-5 lg:top-4">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" class="h-7 w-7 lg:h-5 lg:w-5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+</button>
+
+<div class="flex flex-1 flex-col items-center justify-center text-center lg:justify-start lg:pt-3">
+<div class="flex h-[145px] w-[145px] shrink-0 items-center justify-center rounded-full bg-[#F44336]">
+<svg viewBox="0 0 100 100" fill="none" class="h-[90px] w-[90px]" aria-hidden="true"><path d="M28 28L72 72M72 28L28 72" stroke="white" stroke-width="10" stroke-linecap="round"/></svg>
+</div>
+<h2 id="failureTitle" class="mt-8 text-[29px] font-bold leading-tight text-black lg:mt-7 lg:text-[25px]">Submission Failed!</h2>
+<p id="failureDescription" class="mt-4 max-w-[520px] text-[17px] leading-relaxed text-[#303030] lg:mt-2 lg:text-[16px]">Your equipment submission failed. Check your network connection and try again.</p>
+</div>
+
+<div class="mt-auto flex w-full flex-col gap-4">
+<button id="retrySubmissionButton" type="button" class="flex h-[62px] w-full items-center justify-center rounded-full bg-[#214F79] text-[18px] font-semibold text-white hover:bg-[#183D60] lg:rounded-[20px]">Try Again</button>
+<button id="backFromFailureButton" type="button" class="flex h-[62px] w-full items-center justify-center rounded-full border border-[#214F79] bg-white text-[18px] font-semibold text-[#214F79] hover:bg-[#F2F7FB] lg:rounded-[20px]">Back</button>
+</div>
+</section>
+</div>
+
+</body>
+</html>

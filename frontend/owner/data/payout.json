@@ -1,0 +1,85 @@
+
+{
+  "payouts": {
+    "summary": {
+      "totalPayouts": 1240000,
+      "pendingPayouts": 45000,
+      "nextPayoutDate": "2025-05-15"
+    },
+    "schedule": {
+      "frequency": "Monthly",
+      "threshold": 50000,
+      "feePercentage": 1.5
+    },
+    "transactions": [
+      {
+        "id": "TXN001",
+        "title": "Payout for Apr 2025",
+        "date": "2025-04-30",
+        "amount": 120000,
+        "status": "Completed"
+      },
+      {
+        "id": "TXN002",
+        "title": "Payout for Mar 2025",
+        "date": "2025-03-30",
+        "amount": 110000,
+        "status": "Completed"
+      },
+      {
+        "id": "TXN003",
+        "title": "Payout for Feb 2025",
+        "date": "2025-02-28",
+        "amount": 95000,
+        "status": "Completed"
+      },
+      {
+        "id": "TXN004",
+        "title": "Payout for Jan 2025",
+        "date": "2025-01-30",
+        "amount": 105000,
+        "status": "Completed"
+      }
+    ],
+    "recentPayouts": [
+      {
+        "id": "REC001",
+        "title": "Payout for Apr 2025",
+        "date": "2025-04-30",
+        "amount": 120000,
+        "status": "Completed",
+        "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1790967108/Thumb_jx8nxa.png",
+        "imageAlt": "Camera"
+      },
+      {
+        "id": "REC002",
+        "title": "Payout for Mar 2025",
+        "date": "2025-03-30",
+        "amount": 110000,
+        "status": "Cancelled",
+        "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1790967286/Thumb_fp02cm.png",
+        "imageAlt": "Studio light"
+      }
+    ],
+    "upcomingPayouts": [
+      {
+        "id": "UP001",
+        "title": "Payout for May 2025",
+        "date": "2025-05-15",
+        "amount": 45000,
+        "status": "Confirmed",
+        "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1790967108/Thumb_jx8nxa.png",
+        "imageAlt": "Camera"
+      },
+      {
+        "id": "UP002",
+        "title": "Payout for Jun 2025",
+        "date": "2025-06-15",
+        "amount": 0,
+        "status": "Pending",
+        "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1790967286/Thumb_fp02cm.png",
+        "imageAlt": "Studio light"
+      }
+    ]
+  }
+}

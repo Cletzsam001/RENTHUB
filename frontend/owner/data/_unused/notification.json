@@ -1,0 +1,20 @@
+{
+  "notifications": [
+    {
+      "id": 1,
+      "type": "rental",
+      "title": "RentHub",
+      "message": "Godox SL60W has been picked up by the renter.",
+      "time": "15 min ago",
+      "isRead": false
+    },
+    {
+      "id": 2,
+      "type": "request",
+      "title": "RentHub",
+      "message": "Joe Lin requested to rent Canon EOS R6.",
+      "time": "Yesterday",
+      "isRead": true
+    }
+  ]
+}

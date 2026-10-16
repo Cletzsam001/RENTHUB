@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RentHUB</title>
+  <!-- Tailwind CSS (all styling in this file uses Tailwind classes) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="css/onboarding.css" rel="stylesheet">
+</head>
+
+<body class="bg-slate-50 text-slate-900 font-sans">
+
+<!-- The logo is defined ONCE here, then reused everywhere with <use href="#rhLogo"> -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="rhLogo" viewBox="0 0 40 40">
+<rect width="40" height="40" rx="20" fill="#18161D"/>
+<path d="m26.324 24.406c0.1478 0.2847 0.4617 0.505 0.6882 0.7238 0.2587 0.2501 0.498 0.5248 0.7562 0.7773 0.4206 0.4122 0.7973 0.8773 1.2117 1.2976 0.6694 0.6791 1.3609 1.3583 1.9892 2.0773 0.1671 0.1914 0.3582 0.354 0.5315 0.5377 0.143 0.1515 0.2681 0.3198 0.4106 0.4723 0.1043 0.1126 0.3078 0.2549 0.3564 0.3968-0.2171 0.1049-0.5896 0.0308-0.8284 0.0313-0.6368 0.0019-1.274 9e-4 -1.9108 9e-4 -0.8595 5e-4 -1.7186-9e-4 -2.5777-0.0019-0.2153-5e-4 -0.9653 0.0443-1.1268-0.0149-0.1189-0.0438-0.2426-0.2511-0.3318-0.3439-0.3007-0.3117-0.5919-0.6315-0.8912-0.9451-0.8539-0.897-1.6813-1.8199-2.5319-2.7203-0.2559-0.2713-0.5051-0.5488-0.7624-0.8186-0.1246-0.1303-0.3181-0.2689-0.3894-0.4382 0.3729-0.2722 0.7992-0.4578 1.1598-0.7555 0.961-0.7936 1.535-1.8344 1.8584-3.0316 0.2039-0.0933 0.5178-0.1029 0.7528-0.1971 0.6075-0.2444 1.1527-0.6849 1.536-1.2246 1.3439-1.8921 0.7024-5.0674-1.6917-5.6811-0.7463-0.1914-1.5379-0.1212-2.3007-0.1246-1.0587-0.0048-2.1175-0.0033-3.1763-0.0043-0.4659-5e-4 -0.9393 0.0289-1.4042 0.0039-0.3569-0.0193-0.4202-0.6373-0.8473-0.7316-0.2568-0.0572-0.5702-0.0058-0.8332-0.0091-0.6438-0.0082-1.2891-0.0015-1.9334 0.0019-1.4269 0.0082-2.8543-0.0168-4.2813 5e-4 -0.253 0.0029-0.5957 0.0553-0.83832-0.0221-0.24687-0.0789-0.33325-0.3829-0.19731-0.5969 0.10668-0.1679 0.24451-0.3151 0.3663-0.4709 0.36016-0.4607 0.71276-0.9297 1.0767-1.3885 0.1506-0.189 0.337-0.5632 0.5758-0.6339 0.1506-0.0448 0.3564-0.0087 0.5131-0.0072 0.3682 0.0028 0.7369 0.012 1.1046 0.0101 1.2584-0.0068 2.5168 0.0048 3.7753-0.0087 1.94-0.0207 3.8833-0.0188 5.8234-1e-3 1.122 0.0101 2.3464-0.1034 3.4519 0.0905 2.3743 0.4165 4.2157 1.8026 5.2702 4.0088 0.3474 0.7272 0.5627 1.5655 0.6075 2.3764 0.0538 0.9754-0.0156 1.9301-0.3502 2.855-0.5462 1.5097-1.6658 2.7545-2.9833 3.6178-0.3275 0.215-0.6816 0.429-1.0398 0.5839-0.1851 0.0798-0.4452 0.1611-0.5882 0.3078zm-7.7474-7.529c0.5353-0.0139 1.0564 0.0722 1.5521 0.2799 0.3856 0.1612 0.7203 0.404 1.029 0.6854 0.2856 0.2607 0.5145 0.5666 0.6948 0.9105 1.2395 2.3673-0.4343 5.1819-3.0271 5.2728-0.5107 0.0178-1.0309-0.076-1.4978-0.2862-2.2832-1.0288-2.8954-4.0555-1.0686-5.8538 0.3087-0.304 0.6703-0.5493 1.0658-0.7195 0.3993-0.1717 0.8161-0.2775 1.2518-0.2891zm0.9054 0.9619c-0.0666-0.0836-0.2087-0.0885-0.3111-0.1067-0.3026-0.0539-0.6231-0.0433-0.9228 0.0187-1.1536 0.2376-2.1468 1.2472-2.2138 2.4803-0.0198 0.3661 0.0212 0.7306 0.1336 1.0793 0.0236 0.0746 0.0774 0.3074 0.1487 0.328 0.1047-0.1337 0.16-0.3891 0.3002-0.5733 0.2582-0.3381 0.6495-0.5473 1.0512-0.6435 0.1118-0.0269 0.2289-0.0163 0.3384-0.0495 0.0392-0.278-0.0406-0.5584 0.0222-0.8446 0.1784-0.8143 0.6953-1.3977 1.4534-1.6887z" clip-rule="evenodd" fill="#265E93" fill-rule="evenodd" stroke="#265E93" stroke-linejoin="round" stroke-width=".012024"/>
+<path d="m13.417 17.171c-0.3601 0.1361-0.97-0.1534-1.2424 0.2352-0.1203 0.1717-0.1043 0.3977-0.1043 0.5973v1.0317 3.4009c0 0.5642-0.0736 1.2159 0.2653 1.6997 0.3753 0.5353 0.7968 0.7671 1.4274 0.8677 0.2488 0.0399 0.6169-0.0707 0.8464 0.0053 0.1406 0.0466 0.2369 0.2327 0.3497 0.3236 0.1733 0.1405 0.3677 0.3165 0.5754 0.3988 0.0774 0.3679 0.0345 0.7815 0.0345 1.161v2.0643c0 0.2333 0.0694 0.9542-0.0576 1.1139h-2.7623c-1.0838 0-1.9075 0.0553-2.819-0.6224-0.18031-0.1342-0.34411-0.3463-0.47297-0.5261-0.79206-1.1058-0.63252-2.1658-0.63252-3.4601v-7.388-2.3688c0-0.3766-0.06042-0.8171 0.0118-1.1846 0.24735-0.1202 1.0871-0.0466 1.4038-0.0466h3.3608c0.4546 0 1.2013-0.1626 1.342 0.4381 0.034 0.1438 0.0042 0.3699-0.0878 0.4882-0.0576 0.0736-0.1345 0.1116-0.2063 0.165-0.2091 0.1553-0.4347 0.3573-0.5872 0.5747-0.1685 0.241-0.3729 0.4853-0.506 0.7503-0.0463 0.0919-0.0765 0.1991-0.1388 0.2809zm4.9988-1.7315c0.4602-0.0899 1.1168 0.064 1.5652 0.1554 1.4831 0.3025 2.8265 1.5165 3.3637 2.9521 0.3696 0.9874 0.3772 2.0658 0.1841 3.0873-0.177 0.9369-1.0097 2.1831-1.7687 2.7478-0.4277 0.3179-0.8954 0.5526-1.3878 0.744-0.0632 0.0245-0.1269 0.0683-0.1925 0.0851-0.3994 0.1001-0.7897 0.1501-1.1933 0.2145-0.3465 0.0554-1.1032-0.0351-1.4454-0.1207-0.0731-0.0187-0.1421-0.0668-0.2157-0.0851-1.6398-0.4122-2.9695-1.844-3.3722-3.5062-0.1302-0.5392-0.2209-1.1072-0.1345-1.6704 0.0132-0.0837-0.0113-0.1727 0.0014-0.2568 0.2025-1.3169 0.8936-2.5424 1.9552-3.3317 0.3087-0.2294 0.6174-0.4742 0.9832-0.6165 0.3502-0.1357 0.7326-0.2732 1.1012-0.3319 0.1846-0.0294 0.3739-0.0308 0.5561-0.0669zm0.1614 1.4376c-0.4357 0.0116-0.8525 0.1174-1.2518 0.2891-0.3956 0.1702-0.7571 0.4155-1.0658 0.7195-1.8268 1.7983-1.2146 4.825 1.0686 5.8538 0.4669 0.2102 0.987 0.304 1.4978 0.2862 2.5928-0.0909 4.2666-2.9055 3.0271-5.2728-0.1803-0.3439-0.4093-0.6498-0.6948-0.9105-0.3087-0.2813-0.6434-0.5242-1.029-0.6854-0.4957-0.2077-1.0168-0.2938-1.5521-0.2799zm0.9054 0.962c-0.7581 0.2909-1.275 0.8743-1.4534 1.6886-0.0628 0.2862 0.017 0.5666-0.0222 0.8446-0.1095 0.0332-0.2266 0.0226-0.3384 0.0495-0.4017 0.0962-0.793 0.3054-1.0512 0.6435-0.1402 0.1843-0.1955 0.4396-0.3002 0.5734-0.0713-0.0207-0.1251-0.2535-0.1487-0.3281-0.1124-0.3487-0.1534-0.7132-0.1336-1.0792 0.067-1.2332 1.0602-2.2428 2.2138-2.4804 0.2997-0.062 0.6202-0.0726 0.9228-0.0187 0.1024 0.0183 0.2445 0.0231 0.3111 0.1068z" clip-rule="evenodd" fill="#fff" fill-rule="evenodd" stroke="#fff" stroke-linejoin="round" stroke-width=".012024"/>
+  </symbol>
+</svg>
+
+<div class="max-w-md mx-auto px-5 py-8">
+
+  <!-- =====================================================
+       WELCOME
+       ===================================================== -->
+  <section class="screen" id="welcomeScreen">
+    <div class="flex items-center gap-2 mb-6">
+      <svg class="w-11 h-11"><use href="#rhLogo"/></svg>
+      <span class="text-2xl font-bold">RentHUB</span>
+    </div>
+
+    <h1 class="text-3xl font-extrabold mb-3">Rent what you need, when you need it.</h1>
+    <p class="text-sm text-slate-500 mb-6">
+      Find and rent equipment, properties, electronics, event items and more
+      from trusted people and businesses around you.
+    </p>
+
+    <div class="text-4xl text-center py-6">
+      <img src="../assets/images/rental-marketplace-illustration.png" alt="RentHUB illustration">
+    </div>
+
+    <button class="w-full h-12 bg-[#1F4E79] hover:bg-blue-700 text-white font-bold rounded-xl" data-goto="signupScreen">
+      I want to rent
+    </button>
+    <button class="w-full h-12 mt-3 bg-white border border-slate-300 font-bold rounded-xl hover:bg-slate-50" data-goto="ownerSignupScreen">
+      I want to list my equipment
+    </button>
+
+    <p class="text-center text-sm text-slate-500 mt-5">
+      Already have an account?
+      <button class="font-bold text-blue-600 hover:underline" data-goto="loginScreen">Log in</button>
+    </p>
+  </section>
+
+
+  <!-- =====================================================
+       RENTER: CREATE ACCOUNT
+       ===================================================== -->
+  <section class="screen hidden" id="signupScreen">
+    <button class="text-sm text-slate-500 mb-2" data-goto="welcomeScreen">← Back</button>
+
+    <div class="flex items-center justify-center gap-2 mb-6">
+      <svg class="w-11 h-11"><use href="#rhLogo"/></svg>
+      <span class="text-2xl font-bold">RentHUB</span>
+    </div>
+
+    <div class="flex justify-between mb-6 text-xs font-bold text-center">
+      <div class="flex-1"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-[#1F4E79] ring-4 ring-blue-100"></span>Account</div>
+      <div class="flex-1 text-slate-400"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-slate-300"></span>Identity</div>
+      <div class="flex-1 text-slate-400"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-slate-300"></span>Categories</div>
+      <div class="flex-1 text-slate-400"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-slate-300"></span>Complete</div>
+    </div>
+
+    <h2 class="text-2xl font-bold text-center mb-2">Create your account</h2>
+    <p class="text-sm text-slate-500 text-center mb-6">
+      Get started with RentHUB to save your preferences, manage your rentals and more
+    </p>
+
+    <form id="signupForm" novalidate>
+
+      <div class="grid grid-cols-2 gap-3 mb-4">
+        <div>
+          <label class="block text-sm font-bold mb-1" for="firstName">First Name</label>
+          <input type="text" id="firstName" placeholder="First Name"
+                 class="w-full h-12 px-4 border border-slate-300 rounded-xl">
+          <p id="firstNameError" class="text-red-600 text-sm mt-1 empty:hidden"></p>
+        </div>
+        <div>
+          <label class="block text-sm font-bold mb-1" for="lastName">Last Name</label>
+          <input type="text" id="lastName" placeholder="Last Name"
+                 class="w-full h-12 px-4 border border-slate-300 rounded-xl">
+          <p id="lastNameError" class="text-red-600 text-sm mt-1 empty:hidden"></p>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-1" for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email address"
+               class="w-full h-12 px-4 border border-slate-300 rounded-xl">
+        <p id="emailError" class="text-red-600 text-sm mt-1 empty:hidden"></p>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-1" for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="+234 901 2345678"
+               class="w-full h-12 px-4 border border-slate-300 rounded-xl">
+        <p id="phoneError" class="text-red-600 text-sm mt-1 empty:hidden"></p>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-1" for="accountType">I want to</label>
+        <select id="accountType" class="w-full h-12 px-4 border border-slate-300 rounded-xl bg-white">
+          <option value="">Select account type</option>
+          <option value="Rent items">Rent items</option>
+          <option value="List items for rent">List items for rent</option>
+        </select>
+        <p id="accountTypeError" class="text-red-600 text-sm mt-1 empty:hidden"></p>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-1" for="password">Password</label>
+        <div class="relative">
+          <input type="password" id="password" placeholder="Create a strong password"
+                 class="w-full h-12 pl-4 pr-16 border border-slate-300 rounded-xl">
+          <button type="button" data-target="password"
+                  class="show-hide absolute right-3 top-3 text-xs font-bold text-slate-500">Show</button>
+        </div>
+        <p class="text-xs text-slate-500 mt-1">At least 8 characters, with a capital letter, a small letter and a number.</p>
+        <p id="passwordError" class="text-red-600 text-sm mt-1 empty:hidden"></p>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-1" for="confirmPassword">Confirm Password</label>
+        <div class="relative">
+          <input type="password" id="confirmPassword" placeholder="Re-enter your password"
+                 class="w-full h-12 pl-4 pr-16 border border-slate-300 rounded-xl">
+          <button type="button" data-target="confirmPassword"
+                  class="show-hide absolute right-3 top-3 text-xs font-bold text-slate-500">Show</button>
+        </div>
+        <p id="confirmPasswordError" class="text-red-600 text-sm mt-1 empty:hidden"></p>
+      </div>
+
+      <p id="signupFormError" class="text-red-600 text-sm text-center mb-3 empty:hidden"></p>
+
+      <button type="submit" class="w-full h-12 bg-[#1F4E79] hover:bg-blue-700 text-white font-bold rounded-xl">
+        Create Account
+      </button>
+    </form>
+
+    <p class="text-center text-xs text-slate-400 my-5">OR</p>
+    <div class="grid grid-cols-2 gap-3">
+      <!-- Every id must be unique, so the signup buttons are googleSignup / appleSignup -->
+      <button id="googleSignup" type="button" aria-label="Continue with Google"
+              class="coming-soon flex items-center justify-center gap-2 border border-gray-300 rounded-lg py-3 hover:bg-gray-50 w-full">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.55-.2-2.27H12v4.3h6.45a5.52 5.52 0 0 1-2.39 3.62v3.01h3.87c2.27-2.09 3.56-5.17 3.56-8.66z"/>
+          <path fill="#34A853" d="M12 24c3.24 0 5.95-1.07 7.93-2.91l-3.87-3.01c-1.07.72-2.44 1.15-4.06 1.15-3.13 0-5.78-2.11-6.73-4.95H1.27v3.1A12 12 0 0 0 12 24z"/>
+          <path fill="#FBBC05" d="M5.27 14.28A7.23 7.23 0 0 1 4.89 12c0-.79.14-1.56.38-2.28V6.62H1.27A12 12 0 0 0 0 12c0 1.94.46 3.77 1.27 5.38l4-3.1z"/>
+          <path fill="#EA4335" d="M12 4.77c1.76 0 3.34.61 4.59 1.8l3.44-3.44C17.94 1.12 15.24 0 12 0A12 12 0 0 0 1.27 6.62l4 3.1C6.22 6.88 8.87 4.77 12 4.77z"/>
+        </svg>
+      </button>
+
+      <button id="appleSignup" type="button" aria-label="Continue with Apple"
+              class="coming-soon flex items-center justify-center gap-2 border border-gray-300 rounded-lg py-3 hover:bg-gray-50 w-full">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.97.48 7.12-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25C11.88 5.02 13.69 3.18 15.77 3c.29 2.58-2.32 4.5-3.74 4.25z"/>
+        </svg>
+      </button>
+    </div>
+
+    <p class="text-center text-sm text-slate-500 mt-5">
+      Already have an account?
+      <button class="font-bold text-blue-600 hover:underline" data-goto="loginScreen">Log in</button>
+    </p>
+  </section>
+
+
+  <!-- =====================================================
+       LOGIN (renters, equipment owners and admin all use this)
+       ===================================================== -->
+  <section class="screen hidden" id="loginScreen">
+    <button class="text-sm text-slate-500 mb-2" data-goto="welcomeScreen">← Back</button>
+
+    <div class="flex items-center justify-center gap-2 mb-6">
+      <svg class="w-11 h-11"><use href="#rhLogo"/></svg>
+      <span class="text-2xl font-bold">RentHUB</span>
+    </div>
+
+    <h2 class="text-2xl font-bold text-center mb-2">Welcome Back</h2>
+    <p class="text-sm text-slate-500 text-center mb-6">Login to your RentHUB account.</p>
+
+    <form id="loginForm" novalidate>
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-1" for="loginEmail">Email Address</label>
+        <input type="email" id="loginEmail" placeholder="Enter your email address"
+               class="w-full h-12 px-4 border border-slate-300 rounded-xl">
+        <p id="loginEmailError" class="text-red-600 text-sm mt-1 empty:hidden"></p>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-1" for="loginPassword">Password</label>
+        <div class="relative">
+          <input type="password" id="loginPassword" placeholder="Enter your password"
+                 class="w-full h-12 pl-4 pr-16 border border-slate-300 rounded-xl">
+          <button type="button" data-target="loginPassword"
+                  class="show-hide absolute right-3 top-3 text-xs font-bold text-slate-500">Show</button>
+        </div>
+        <p id="loginPasswordError" class="text-red-600 text-sm mt-1 empty:hidden"></p>
+      </div>
+
+      <p id="loginFormError" class="text-red-600 text-sm text-center mb-3 empty:hidden"></p>
+
+      <button type="submit" class="w-full h-12 bg-[#1F4E79] hover:bg-blue-700 text-white font-bold rounded-xl">
+        Log In
+      </button>
+    </form>
+
+    <p class="text-center text-xs text-slate-400 my-5">OR</p>
+    <div class="grid grid-cols-2 gap-3">
+      <button id="googleLogin" type="button" aria-label="Log in with Google"
+              class="coming-soon flex items-center justify-center gap-2 border border-gray-300 rounded-lg py-3 hover:bg-gray-50 w-full">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.55-.2-2.27H12v4.3h6.45a5.52 5.52 0 0 1-2.39 3.62v3.01h3.87c2.27-2.09 3.56-5.17 3.56-8.66z"/>
+          <path fill="#34A853" d="M12 24c3.24 0 5.95-1.07 7.93-2.91l-3.87-3.01c-1.07.72-2.44 1.15-4.06 1.15-3.13 0-5.78-2.11-6.73-4.95H1.27v3.1A12 12 0 0 0 12 24z"/>
+          <path fill="#FBBC05" d="M5.27 14.28A7.23 7.23 0 0 1 4.89 12c0-.79.14-1.56.38-2.28V6.62H1.27A12 12 0 0 0 0 12c0 1.94.46 3.77 1.27 5.38l4-3.1z"/>
+          <path fill="#EA4335" d="M12 4.77c1.76 0 3.34.61 4.59 1.8l3.44-3.44C17.94 1.12 15.24 0 12 0A12 12 0 0 0 1.27 6.62l4 3.1C6.22 6.88 8.87 4.77 12 4.77z"/>
+        </svg>
+      </button>
+
+      <button id="appleLogin" type="button" aria-label="Log in with Apple"
+              class="coming-soon flex items-center justify-center gap-2 border border-gray-300 rounded-lg py-3 hover:bg-gray-50 w-full">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.97.48 7.12-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25C11.88 5.02 13.69 3.18 15.77 3c.29 2.58-2.32 4.5-3.74 4.25z"/>
+        </svg>
+      </button>
+    </div>
+
+    <p class="text-center text-sm text-slate-500 mt-5">
+      Don't have an account?
+      <button class="font-bold text-blue-600 hover:underline" data-goto="signupScreen">Sign up to rent</button>
+      or
+      <button class="font-bold text-blue-600 hover:underline" data-goto="ownerSignupScreen">list equipment</button>
+    </p>
+  </section>
+
+
+  <!-- =====================================================
+       RENTER: VERIFY IDENTITY
+       ===================================================== -->
+  <section class="screen hidden" id="identityScreen">
+    <div class="flex items-center justify-center gap-2 mb-6">
+      <svg class="w-11 h-11"><use href="#rhLogo"/></svg>
+      <span class="text-2xl font-bold">RentHUB</span>
+    </div>
+
+    <!-- Progress bar for RENTERS (onboarding.js shows only one of the two bars) -->
+    <div id="identityStepperRenter" class="flex justify-between mb-6 text-xs font-bold text-center">
+      <div class="flex-1"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-[#1F4E79]"></span>Account</div>
+      <div class="flex-1"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-[#1F4E79] ring-4 ring-blue-100"></span>Identity</div>
+      <div class="flex-1 text-slate-400"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-slate-300"></span>Categories</div>
+      <div class="flex-1 text-slate-400"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-slate-300"></span>Complete</div>
+    </div>
+
+    <!-- Progress bar for EQUIPMENT OWNERS -->
+    <div id="identityStepperOwner" class="hidden flex justify-between mb-6 text-xs font-bold text-center">
+      <div class="flex-1"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-[#1F4E79]"></span>Account</div>
+      <div class="flex-1"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-[#1F4E79] ring-4 ring-blue-100"></span>Identity</div>
+      <div class="flex-1 text-slate-400"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-slate-300"></span>Equipment</div>
+      <div class="flex-1 text-slate-400"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-slate-300"></span>Dashboard</div>
+    </div>
+
+    <h2 class="text-2xl font-bold text-center mb-2">Verify your Identity</h2>
+    <p class="text-sm text-slate-500 text-center mb-6">
+      A valid government ID and a selfie are both required. Your selfie must match the photo on your ID.
+    </p>
+    
+<div class="mb-4">
+  <label class="block text-sm font-bold mb-1" for="documentType">
+    Document type
+  </label>
+  <select id="documentType"
+          class="w-full h-12 px-4 border border-slate-300 rounded-xl bg-white">
+    <option value="national_id">NIN (National ID)</option>
+    <option value="voters_card">Voter's card</option>
+    <option value="drivers_license">Driver's licence</option>
+    <option value="passport">International passport</option>
+  </select>
+</div>
+
+<div class="mb-4">
+  <label class="block text-sm font-bold mb-1" for="documentNumber">
+    Document number
+  </label>
+  <input type="text" id="documentNumber"
+         placeholder="Enter document number"
+         autocomplete="off"
+         class="w-full h-12 px-4 border border-slate-300 rounded-xl">
+</div>
+
+
+    <button type="button" id="idButton"
+            class="w-full flex items-center gap-3 p-3 mb-3 text-left bg-white border border-slate-300 rounded-2xl hover:border-blue-600">
+      <span class="w-10 h-10 shrink-0 flex items-center justify-center text-xl bg-blue-50 rounded-xl">🪪</span>
+      <span>
+        <strong class="block text-sm">Government ID <span class="text-red-600">*</span></strong>
+        <small class="text-slate-500">Only these are accepted: NIN (National ID), voter's card, driver's licence or valid international passport. Expired IDs are rejected.</small>
+      </span>
+      <span id="idStatus" class="ml-auto text-xs font-bold text-slate-400">Upload</span>
+    </button>
+    <input type="file" id="idFile" accept="image/*" class="hidden">
+    <p id="idFileError" class="text-red-600 text-sm -mt-2 mb-3 empty:hidden"></p>
+
+    <button type="button" id="selfieButton"
+            class="w-full flex items-center gap-3 p-3 mb-3 text-left bg-white border border-slate-300 rounded-2xl hover:border-blue-600">
+      <span class="w-10 h-10 shrink-0 flex items-center justify-center text-xl bg-blue-50 rounded-xl">🤳</span>
+      <span>
+        <strong class="block text-sm">Selfie Verification <span class="text-red-600">*</span></strong>
+        <small class="text-slate-500">Take a clear selfie of your face. Only you, no hat or sunglasses.</small>
+      </span>
+      <span id="selfieStatus" class="ml-auto text-xs font-bold text-slate-400">Upload</span>
+    </button>
+    <!-- capture="user" opens the front camera on phones -->
+    <input type="file" id="selfieFile" accept="image/*" capture="user" class="hidden">
+    <p id="selfieFileError" class="text-red-600 text-sm -mt-2 mb-3 empty:hidden"></p>
+
+    <button type="button" id="addressButton"
+            class="w-full flex items-center gap-3 p-3 mb-3 text-left bg-white border border-slate-300 rounded-2xl hover:border-blue-600">
+      <span class="w-10 h-10 shrink-0 flex items-center justify-center text-xl bg-blue-50 rounded-xl">📍</span>
+      <span>
+        <strong class="block text-sm">Address Verification <span class="font-normal text-slate-400">(optional)</span></strong>
+        <small class="text-slate-500">Provide your residential address</small>
+      </span>
+      <span id="addressStatus" class="ml-auto text-xs font-bold text-slate-400">Add</span>
+    </button>
+    <div id="addressBox" class="hidden mb-3">
+      <label class="block text-sm font-bold mb-1" for="address">Residential address</label>
+      <input type="text" id="address" placeholder="House number, street, city"
+             class="w-full h-12 px-4 border border-slate-300 rounded-xl">
+      <p id="addressError" class="text-red-600 text-sm mt-1 empty:hidden"></p>
+    </div>
+
+    <ul class="list-disc pl-5 text-xs text-slate-500 mb-2">
+      <li>Photograph the whole ID in good light, with no glare, flat on a table.</li>
+      <li>The picture, the ID name and the expiry date (passport and driver's licence) must be easy to read.</li>
+      <li>Student cards, work IDs, bank cards and ordinary pictures are not accepted.</li>
+      <li>Use your own ID. The selfie is compared with the photo on it.</li>
+    </ul>
+
+    <!-- What the check is doing right now -->
+    <p id="kycStatus" class="text-sm text-center text-slate-600 mt-3 empty:hidden"></p>
+    <!-- Why the check failed -->
+    <p id="identityError" class="text-red-600 text-sm text-center mt-2 empty:hidden"></p>
+
+    <button type="button" id="identityContinue"
+            class="w-full h-12 mt-6 bg-[#1F4E79] hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60 text-white font-bold rounded-xl">
+      Verify and continue
+    </button>
+  </section>
+
+
+  <!-- =====================================================
+       RENTER: CATEGORIES
+       ===================================================== -->
+  <section class="screen hidden" id="categoriesScreen">
+    <div class="flex items-center justify-center gap-2 mb-6">
+      <svg class="w-11 h-11"><use href="#rhLogo"/></svg>
+      <span class="text-2xl font-bold">RentHUB</span>
+    </div>
+
+    <div id="categoriesStepper">
+      <div class="flex justify-between mb-6 text-xs font-bold text-center">
+        <div class="flex-1"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-[#1F4E79]"></span>Account</div>
+        <div class="flex-1"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-[#1F4E79]"></span>Identity</div>
+        <div class="flex-1"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-[#1F4E79] ring-4 ring-blue-100"></span>Categories</div>
+        <div class="flex-1 text-slate-400"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-slate-300"></span>Complete</div>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold text-center mb-2">What are you looking to rent?</h2>
+    <p class="text-sm text-slate-500 text-center mb-6">Select one or two categories that interest you.</p>
+
+    <div class="grid grid-cols-2 gap-3">
+      <button type="button" data-name="Equipments"
+              class="category h-28 flex flex-col items-center justify-center gap-2 text-sm font-bold bg-white border-2 border-slate-200 rounded-2xl hover:border-blue-600">
+        <span class="text-3xl">🔦</span>Equipments</button>
+      <button type="button" data-name="Power Tools"
+              class="category h-28 flex flex-col items-center justify-center gap-2 text-sm font-bold bg-white border-2 border-slate-200 rounded-2xl hover:border-blue-600">
+        <span class="text-3xl">🔌</span>Power Tools</button>
+      <button type="button" data-name="Properties"
+              class="category h-28 flex flex-col items-center justify-center gap-2 text-sm font-bold bg-white border-2 border-slate-200 rounded-2xl hover:border-blue-600">
+        <span class="text-3xl">🏠</span>Properties</button>
+      <button type="button" data-name="Camera &amp; Photography"
+              class="category h-28 flex flex-col items-center justify-center gap-2 text-sm font-bold bg-white border-2 border-slate-200 rounded-2xl hover:border-blue-600">
+        <span class="text-3xl">📷</span>Camera &amp; Photography</button>
+      <button type="button" data-name="Event &amp; Party Items"
+              class="category h-28 flex flex-col items-center justify-center gap-2 text-sm font-bold bg-white border-2 border-slate-200 rounded-2xl hover:border-blue-600">
+        <span class="text-3xl">🎉</span>Event &amp; Party Items</button>
+      <button type="button" data-name="Electronics"
+              class="category h-28 flex flex-col items-center justify-center gap-2 text-sm font-bold bg-white border-2 border-slate-200 rounded-2xl hover:border-blue-600">
+        <span class="text-3xl">💻</span>Electronics</button>
+      <button type="button" data-name="Furnitures"
+              class="category h-28 flex flex-col items-center justify-center gap-2 text-sm font-bold bg-white border-2 border-slate-200 rounded-2xl hover:border-blue-600">
+        <span class="text-3xl">🛋️</span>Furnitures</button>
+      <button type="button" data-name="More"
+              class="category h-28 flex flex-col items-center justify-center gap-2 text-sm font-bold bg-white border-2 border-slate-200 rounded-2xl hover:border-blue-600">
+        <span class="text-3xl">⋯</span>More</button>
+    </div>
+
+    <p id="categoryError" class="text-red-600 text-sm text-center mt-3 empty:hidden"></p>
+
+    <div class="grid grid-cols-2 gap-3 mt-6">
+      <button type="button" id="categorySkip" class="h-12 bg-white border border-slate-300 font-bold rounded-xl hover:bg-slate-50">Skip for now</button>
+      <button type="button" id="categoryContinue" class="h-12 bg-[#1F4E79] hover:bg-blue-700 text-white font-bold rounded-xl">Continue</button>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       RENTER: ALMOST THERE
+       ===================================================== -->
+  <section class="screen hidden" id="reviewScreen">
+    <div class="flex items-center justify-center gap-2 mb-6">
+      <svg class="w-11 h-11"><use href="#rhLogo"/></svg>
+      <span class="text-2xl font-bold">RentHUB</span>
+    </div>
+
+    <div class="flex justify-between mb-6 text-xs font-bold text-center">
+      <div class="flex-1"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-[#1F4E79]"></span>Account</div>
+      <div class="flex-1"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-[#1F4E79]"></span>Identity</div>
+      <div class="flex-1"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-[#1F4E79]"></span>Categories</div>
+      <div class="flex-1"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-[#1F4E79] ring-4 ring-blue-100"></span>Complete</div>
+    </div>
+
+    <h2 class="text-2xl font-bold text-center mb-2">Almost there!</h2>
+    <p class="text-sm text-slate-500 text-center mb-6">Review your details and complete your setup</p>
+
+    <div id="reviewBox" class="bg-white border border-slate-200 rounded-2xl px-4"></div>
+
+    <div class="grid grid-cols-2 gap-3 mt-6">
+      <button type="button" id="reviewSkip" class="h-12 bg-white border border-slate-300 font-bold rounded-xl hover:bg-slate-50">Finish setup</button>
+      <button type="button" id="reviewComplete" class="h-12 bg-[#1F4E79] hover:bg-blue-700 text-white font-bold rounded-xl">Complete</button>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       RENTER: YOU'RE ALL SET
+       ===================================================== -->
+  <section class="screen hidden" id="doneScreen">
+    <div class="text-center">
+      <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-green-600 text-white text-3xl flex items-center justify-center">✓</div>
+      <img src="../assets/images/identity-verification-complete-illustration.jpg" alt="Identity verification complete" class="w-48 mx-auto mb-3">
+      <h2 class="text-3xl font-bold mb-2">You're all set!</h2>
+      <p id="welcomeMessage" class="text-sm text-slate-500 mb-1">Welcome to RentHUB</p>
+      <p class="text-sm text-slate-500 mb-6">Your preferences have been saved. Let's find exactly what you need.</p>
+    </div>
+
+    <button class="w-full h-12 bg-[#1F4E79] hover:bg-blue-700 text-white font-bold rounded-xl mb-3" data-goto="homeScreen">Explore RentHUB</button>
+    <button class="w-full h-12 bg-white border border-slate-300 font-bold rounded-xl hover:bg-slate-50" data-goto="homeScreen">Go to Home</button>
+  </section>
+
+
+
+
+  <!-- =====================================================
+       OWNER: CREATE ACCOUNT
+       ===================================================== -->
+  <section class="screen hidden" id="ownerSignupScreen">
+    <button class="text-sm text-slate-500 mb-2" data-goto="welcomeScreen">← Back</button>
+
+    <div class="flex items-center justify-center gap-2 mb-6">
+      <svg class="w-11 h-11"><use href="#rhLogo"/></svg>
+      <span class="text-2xl font-bold">RentHUB</span>
+    </div>
+
+    <div class="flex justify-between mb-6 text-xs font-bold text-center">
+      <div class="flex-1"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-[#1F4E79] ring-4 ring-blue-100"></span>Account</div>
+      <div class="flex-1 text-slate-400"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-slate-300"></span>Identity</div>
+      <div class="flex-1 text-slate-400"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-slate-300"></span>Equipment</div>
+      <div class="flex-1 text-slate-400"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-slate-300"></span>Dashboard</div>
+    </div>
+
+    <h2 class="text-2xl font-bold text-center mb-2">Create your owner account</h2>
+    <p class="text-sm text-slate-500 text-center mb-6">
+      List your equipment and start earning from people who need it
+    </p>
+
+    <form id="ownerSignupForm" novalidate>
+      <div class="grid grid-cols-2 gap-3 mb-4">
+        <div>
+          <label class="block text-sm font-bold mb-1" for="oFirstName">First Name</label>
+          <input type="text" id="oFirstName" placeholder="First Name"
+                 class="w-full h-12 px-4 border border-slate-300 rounded-xl">
+          <p id="oFirstNameError" class="text-red-600 text-sm mt-1 empty:hidden"></p>
+        </div>
+        <div>
+          <label class="block text-sm font-bold mb-1" for="oLastName">Last Name</label>
+          <input type="text" id="oLastName" placeholder="Last Name"
+                 class="w-full h-12 px-4 border border-slate-300 rounded-xl">
+          <p id="oLastNameError" class="text-red-600 text-sm mt-1 empty:hidden"></p>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-1" for="oBusiness">Business name <span class="font-normal text-slate-400">(optional)</span></label>
+        <input type="text" id="oBusiness" placeholder="Your business or shop name"
+               class="w-full h-12 px-4 border border-slate-300 rounded-xl">
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-1" for="oEmail">Email Address</label>
+        <input type="email" id="oEmail" placeholder="Enter your email address"
+               class="w-full h-12 px-4 border border-slate-300 rounded-xl">
+        <p id="oEmailError" class="text-red-600 text-sm mt-1 empty:hidden"></p>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-1" for="oPhone">Phone Number</label>
+        <input type="tel" id="oPhone" placeholder="+234 901 2345678"
+               class="w-full h-12 px-4 border border-slate-300 rounded-xl">
+        <p id="oPhoneError" class="text-red-600 text-sm mt-1 empty:hidden"></p>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-1" for="oPassword">Password</label>
+        <div class="relative">
+          <input type="password" id="oPassword" placeholder="Create a strong password"
+                 class="w-full h-12 pl-4 pr-16 border border-slate-300 rounded-xl">
+          <button type="button" data-target="oPassword"
+                  class="show-hide absolute right-3 top-3 text-xs font-bold text-slate-500">Show</button>
+        </div>
+        <p class="text-xs text-slate-500 mt-1">At least 8 characters, with a capital letter, a small letter and a number.</p>
+        <p id="oPasswordError" class="text-red-600 text-sm mt-1 empty:hidden"></p>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-1" for="oConfirmPassword">Confirm Password</label>
+        <div class="relative">
+          <input type="password" id="oConfirmPassword" placeholder="Re-enter your password"
+                 class="w-full h-12 pl-4 pr-16 border border-slate-300 rounded-xl">
+          <button type="button" data-target="oConfirmPassword"
+                  class="show-hide absolute right-3 top-3 text-xs font-bold text-slate-500">Show</button>
+        </div>
+        <p id="oConfirmPasswordError" class="text-red-600 text-sm mt-1 empty:hidden"></p>
+      </div>
+
+      <p id="ownerSignupFormError" class="text-red-600 text-sm text-center mb-3 empty:hidden"></p>
+
+      <button type="submit" class="w-full h-12 bg-[#1F4E79] hover:bg-blue-700 text-white font-bold rounded-xl">
+        Create Owner Account
+      </button>
+    </form>
+
+    <p class="text-center text-sm text-slate-500 mt-5">
+      Already have an account?
+      <button class="font-bold text-blue-600 hover:underline" data-goto="loginScreen">Log in</button>
+    </p>
+  </section>
+
+
+  <!-- =====================================================
+       OWNER: ADD EQUIPMENT (first-time setup and "Add equipment" later)
+       ===================================================== -->
+  <section class="screen hidden" id="equipmentScreen">
+    <div class="flex items-center justify-center gap-2 mb-6">
+      <svg class="w-11 h-11"><use href="#rhLogo"/></svg>
+      <span class="text-2xl font-bold">RentHUB</span>
+    </div>
+
+   <!-- Equipment Owner Onboarding Stepper -->
+<div id="equipmentStepper" class="flex justify-between mb-6 text-xs font-bold text-center">
+    <div class="flex-1"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-[#1F4E79]"></span>Account</div>
+    <div class="flex-1"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-[#1F4E79]"></span>Identity</div>
+    <div class="flex-1"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-[#1F4E79] ring-4 ring-blue-100"></span>Equipment</div>
+    <div class="flex-1 text-slate-400"><span class="block w-3.5 h-3.5 mx-auto mb-2 rounded-full bg-slate-300"></span>Dashboard</div>
+</div>
+
+    <h2 class="text-2xl font-bold text-center mb-2">Add your equipment</h2>
+    <p class="text-sm text-slate-500 text-center mb-6">Tell renters what you are offering. You can add more later from your dashboard.</p>
+
+    <form id="equipmentForm" novalidate>
+
+      <!-- PHOTO OF THE ITEM -->
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-1">Photo of the item</label>
+        <button type="button" id="eqImageButton"
+                class="w-full h-44 flex items-center justify-center bg-white border-2 border-dashed border-slate-300 rounded-xl overflow-hidden hover:border-blue-600">
+          <span id="eqImagePlaceholder" class="text-sm text-slate-500">📷 Tap to add a photo</span>
+          <img id="eqImagePreview" alt="Preview of the item" class="hidden w-full h-full object-cover">
+        </button>
+        <input type="file" id="eqImageFile" accept="image/*" class="hidden">
+        <p id="eqImageError" class="text-red-600 text-sm mt-1 empty:hidden"></p>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-1" for="eqName">Equipment name</label>
+        <input type="text" id="eqName" placeholder="e.g. Honda 5kVA generator"
+               class="w-full h-12 px-4 border border-slate-300 rounded-xl">
+        <p id="eqNameError" class="text-red-600 text-sm mt-1 empty:hidden"></p>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-1" for="eqCategory">Category</label>
+        <select id="eqCategory" class="w-full h-12 px-4 border border-slate-300 rounded-xl bg-white">
+          <option value="">Select a category</option>
+          <option>Equipments</option>
+          <option>Power Tools</option>
+          <option>Properties</option>
+          <option>Camera &amp; Photography</option>
+          <option>Event &amp; Party Items</option>
+          <option>Electronics</option>
+          <option>Furnitures</option>
+          <option>More</option>
+        </select>
+        <p id="eqCategoryError" class="text-red-600 text-sm mt-1 empty:hidden"></p>
+      </div>
+
+      <!-- CONDITION -->
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-1" for="eqCondition">Condition</label>
+        <select id="eqCondition" class="w-full h-12 px-4 border border-slate-300 rounded-xl bg-white">
+          <option value="">Select condition</option>
+          <option>Brand new</option>
+          <option>Fairly used</option>
+        </select>
+        <p id="eqConditionError" class="text-red-600 text-sm mt-1 empty:hidden"></p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 mb-4">
+        <div>
+          <label class="block text-sm font-bold mb-1" for="eqPrice">Price per day (₦)</label>
+          <input type="number" id="eqPrice" placeholder="15000" min="1"
+                 class="w-full h-12 px-4 border border-slate-300 rounded-xl">
+          <p id="eqPriceError" class="text-red-600 text-sm mt-1 empty:hidden"></p>
+        </div>
+        <div>
+          <label class="block text-sm font-bold mb-1" for="eqLocation">Location</label>
+          <input type="text" id="eqLocation" placeholder="City or area"
+                 class="w-full h-12 px-4 border border-slate-300 rounded-xl">
+          <p id="eqLocationError" class="text-red-600 text-sm mt-1 empty:hidden"></p>
+        </div>
+      </div>
+
+      <!-- SPECIFICATIONS -->
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-1" for="eqSpecs">Specifications</label>
+        <textarea id="eqSpecs" rows="4" placeholder="One per line, e.g.&#10;Power: 5kVA&#10;Fuel: Petrol&#10;Weight: 45kg"
+                  class="w-full px-4 py-3 border border-slate-300 rounded-xl"></textarea>
+        <p class="text-xs text-slate-500 mt-1">Put each specification on its own line.</p>
+        <p id="eqSpecsError" class="text-red-600 text-sm mt-1 empty:hidden"></p>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-bold mb-1" for="eqDescription">Description <span class="font-normal text-slate-400">(optional)</span></label>
+        <textarea id="eqDescription" rows="3" placeholder="What is included, pickup rules, anything else renters should know"
+                  class="w-full px-4 py-3 border border-slate-300 rounded-xl"></textarea>
+      </div>
+
+      <p id="eqFormError" class="text-red-600 text-sm text-center mt-3 empty:hidden"></p>
+
+      <div class="grid grid-cols-2 gap-3 mt-6">
+        <button type="button" id="equipmentSkip" class="h-12 bg-white border border-slate-300 font-bold rounded-xl hover:bg-slate-50">Skip for now</button>
+        <button type="submit" class="h-12 bg-[#1F4E79] hover:bg-blue-700 text-white font-bold rounded-xl">Save equipment</button>
+      </div>
+    </form>
+  </section>
+
+
+  <!-- =====================================================
+       OWNER DASHBOARD
+       ===================================================== -->
+  <section class="screen hidden" id="ownerDashboardScreen">
+    <div class="flex items-center justify-between mb-6">
+      <div class="flex items-center gap-2">
+        <svg class="w-11 h-11"><use href="#rhLogo"/></svg>
+        <span class="text-2xl font-bold">RentHUB</span>
+      </div>
+      <button class="logout text-sm font-bold text-slate-500 hover:text-slate-900">Log out</button>
+    </div>
+
+    <h1 id="ownerGreeting" class="text-3xl font-extrabold mb-1">Hi</h1>
+    <p class="text-sm text-slate-500 mb-6">Owner dashboard</p>
+
+    <div class="grid grid-cols-2 gap-3 mb-6">
+      <div class="bg-white border border-slate-200 rounded-2xl p-4">
+        <small class="text-xs text-slate-500">Your listings</small>
+        <strong id="ownerListingCount" class="block text-2xl">0</strong>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-2xl p-4">
+        <small class="text-xs text-slate-500">Total daily value</small>
+        <strong id="ownerDailyValue" class="block text-2xl">₦0</strong>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-between mb-3">
+      <h2 class="text-lg font-bold">Your equipment</h2>
+      <button id="ownerAddButton" class="h-10 px-4 bg-[#1F4E79] hover:bg-blue-700 text-white text-sm font-bold rounded-xl">Add equipment</button>
+    </div>
+    <div id="ownerListings"></div>
+  </section>
+
+
+  <!-- =====================================================
+       ADMIN DASHBOARD
+       ===================================================== -->
+  <section class="screen hidden" id="adminDashboardScreen">
+    <div class="flex items-center justify-between mb-6">
+      <div class="flex items-center gap-2">
+        <svg class="w-11 h-11"><use href="#rhLogo"/></svg>
+        <span class="text-2xl font-bold">RentHUB</span>
+      </div>
+      <button class="logout text-sm font-bold text-slate-500 hover:text-slate-900">Log out</button>
+    </div>
+
+    <h1 class="text-3xl font-extrabold mb-1">Admin dashboard</h1>
+    <p id="adminGreeting" class="text-sm text-slate-500 mb-6"></p>
+
+    <div class="grid grid-cols-3 gap-3 mb-6">
+      <div class="bg-white border border-slate-200 rounded-2xl p-3">
+        <small class="text-xs text-slate-500">Renters</small>
+        <strong id="adminRenterCount" class="block text-2xl">0</strong>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-2xl p-3">
+        <small class="text-xs text-slate-500">Owners</small>
+        <strong id="adminOwnerCount" class="block text-2xl">0</strong>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-2xl p-3">
+        <small class="text-xs text-slate-500">Listings</small>
+        <strong id="adminListingCount" class="block text-2xl">0</strong>
+      </div>
+    </div>
+
+    <h2 class="text-lg font-bold mb-3">Users</h2>
+    <div id="adminUsers" class="mb-6"></div>
+
+    <h2 class="text-lg font-bold mb-3">All listings</h2>
+    <div id="adminListings"></div>
+  </section>
+
+</div>
+
+<!-- =====================================================
+     RENTER DASHBOARD (home)
+     Full-width layout, so it sits OUTSIDE the narrow form container.
+     Styled only with Tailwind classes (no styledash.css needed).
+     ===================================================== -->
+<section class="screen hidden min-h-screen bg-[#f3f8fc] font-['Inter',sans-serif] text-[#303030]" id="homeScreen">
+
+  <!-- Dark overlay behind the sidebar on phones -->
+  <div id="sidebarOverlay" class="fixed inset-0 z-40 hidden bg-black/40 lg:hidden"></div>
+
+  <!-- Sidebar: slides in on phones, always visible on big screens -->
+  <aside id="sidebar" class="fixed left-0 top-0 z-50 flex h-screen w-[266px] -translate-x-full flex-col justify-between overflow-y-auto bg-[#1f4e79] px-4 pb-10 pt-8 text-white transition-transform duration-300 lg:translate-x-0">
+    <div>
+      <div class="flex items-center gap-2">
+        <svg class="h-10 w-10"><use href="#rhLogo"/></svg>
+        <span class="text-xl font-semibold">RentHub</span>
+      </div>
+
+      <nav class="mt-7 flex flex-col gap-2">
+        <button class="flex w-full items-center gap-3 rounded-xl bg-[#f3f8fc] px-4 py-3 text-left text-[15px] font-semibold text-[#1f4e79]" data-section="Dashboard">
+          <span class="flex h-6 w-6 shrink-0 items-center justify-center">
+            <svg width="24" height="24" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <path d="M27.7285 14.7951L15.6611 2.73655C15.5742 2.64949 15.471 2.58042 15.3574 2.5333C15.2438 2.48617 15.122 2.46191 14.999 2.46191C14.876 2.46191 14.7542 2.48617 14.6406 2.5333C14.527 2.58042 14.4238 2.64949 14.3369 2.73655L2.26953 14.7951C1.91797 15.1467 1.71875 15.6242 1.71875 16.1223C1.71875 17.1565 2.55957 17.9973 3.59375 17.9973H4.86523V26.6018C4.86523 27.1203 5.28418 27.5393 5.80273 27.5393H13.124V20.9768H16.4053V27.5393H24.1953C24.7139 27.5393 25.1328 27.1203 25.1328 26.6018V17.9973H26.4043C26.9023 17.9973 27.3799 17.801 27.7314 17.4465C28.4609 16.7141 28.4609 15.5276 27.7285 14.7951Z" fill="#1F4E79" />
+            </svg>
+          </span><span>Dashboard</span>
+        </button>
+
+        <button class="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-[15px] font-medium text-[#f3f8fc] hover:bg-white/10" data-section="Explore">
+          <span class="flex h-6 w-6 shrink-0 items-center justify-center">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <path d="M10.5 18.9998C12.48 18.9998 14.31 18.3098 15.75 17.1698L20 21.4198L21.41 20.0098L17.16 15.7598C18.3433 14.2655 18.9881 12.4158 18.99 10.5098C18.99 5.81977 15.18 2.00977 10.49 2.00977C5.8 2.00977 2 5.80977 2 10.4998C2 15.1898 5.81 18.9998 10.5 18.9998ZM10.5 3.99977C14.08 3.99977 17 6.91977 17 10.4998C17 14.0798 14.08 16.9998 10.5 16.9998C6.92 16.9998 4 14.0798 4 10.4998C4 6.91977 6.92 3.99977 10.5 3.99977Z" fill="#F3F8FC" />
+            </svg>
+          </span><span>Explore</span>
+        </button>
+
+        <button class="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-[15px] font-medium text-[#f3f8fc] hover:bg-white/10" data-section="My Rentals">
+          <span class="flex h-6 w-6 shrink-0 items-center justify-center">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <path d="M18.5625 1.5C18.8826 1.5 19.1996 1.56305 19.4953 1.68554C19.791 1.80804 20.0597 1.98758 20.2861 2.21393C20.5124 2.44027 20.692 2.70898 20.8145 3.00471C20.937 3.30044 21 3.6174 21 3.9375V20.0625C21 20.3826 20.937 20.6996 20.8145 20.9953C20.692 21.291 20.5124 21.5597 20.2861 21.7861C20.0597 22.0124 19.791 22.192 19.4953 22.3145C19.1996 22.437 18.8826 22.5 18.5625 22.5H5.4375C4.81268 22.5001 4.2117 22.2602 3.75865 21.8299C3.30561 21.3996 3.03511 20.8117 3.003 20.1877L3 20.0625V3.9375C3 3.29103 3.25681 2.67105 3.71393 2.21393C4.17105 1.75681 4.79103 1.5 5.4375 1.5H18.5625ZM5.4375 3C4.92 3 4.5 3.42 4.5 3.9375V20.0625L4.50525 20.1585C4.529 20.3892 4.63746 20.603 4.80965 20.7584C4.98184 20.9138 5.20554 20.9999 5.4375 21H18.5625C19.08 21 19.5 20.58 19.5 20.0625V3.9375C19.5 3.42 19.08 3 18.5625 3H5.4375ZM16.5 16.5C16.6989 16.5 16.8897 16.579 17.0303 16.7197C17.171 16.8603 17.25 17.0511 17.25 17.25C17.25 17.4489 17.171 17.6397 17.0303 17.7803C16.8897 17.921 16.6989 18 16.5 18H7.5C7.30109 18 7.11032 17.921 6.96967 17.7803C6.82902 17.6397 6.75 17.4489 6.75 17.25C6.75 17.0511 6.82902 16.8603 6.96967 16.7197C7.11032 16.579 7.30109 16.5 7.5 16.5H16.5ZM16.5 11.25C16.6989 11.25 16.8897 11.329 17.0303 11.4697C17.171 11.6103 17.25 11.8011 17.25 12C17.25 12.1989 17.171 12.3897 17.0303 12.5303C16.8897 12.671 16.6989 12.75 16.5 12.75H7.5C7.30109 12.75 7.11032 12.671 6.96967 12.5303C6.82902 12.3897 6.75 12.1989 6.75 12C6.75 11.8011 6.82902 11.6103 6.96967 11.4697C7.11032 11.329 7.30109 11.25 7.5 11.25H16.5ZM16.5 6C16.6989 6 16.8897 6.07902 17.0303 6.21967C17.171 6.36032 17.25 6.55109 17.25 6.75C17.25 6.94891 17.171 7.13968 17.0303 7.28033C16.8897 7.42098 16.6989 7.5 16.5 7.5H7.5C7.30109 7.5 7.11032 7.42098 6.96967 7.28033C6.82902 7.13968 6.75 6.94891 6.75 6.75C6.75 6.55109 6.82902 6.36032 6.96967 6.21967C7.11032 6.07902 7.30109 6 7.5 6H16.5Z" fill="#F3F8FC" />
+            </svg>
+          </span><span>My Rentals</span>
+        </button>
+
+        <button class="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-[15px] font-medium text-[#f3f8fc] hover:bg-white/10" data-section="Finance">
+          <span class="flex h-6 w-6 shrink-0 items-center justify-center">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <path d="M16 12H18V16H16V12Z" fill="#F3F8FC" />
+              <path d="M21 7H20V4C20 3.45 19.55 3 19 3H5C3.35 3 2 4.35 2 6V18C2 20.2 3.79 21 5 21H21C21.55 21 22 20.55 22 20V8C22 7.45 21.55 7 21 7ZM5 5H18V7H5C4.45 7 4 6.55 4 6C4 5.45 4.45 5 5 5ZM20 19H5.01C4.55 18.99 4 18.81 4 18V8.82C4.31 8.93 4.65 9 5 9H20V19Z" fill="#F3F8FC" />
+            </svg>
+          </span><span>Finance</span>
+        </button>
+
+        <button class="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-[15px] font-medium text-[#f3f8fc] hover:bg-white/10" data-section="Security Fee">
+          <span class="flex h-6 w-6 shrink-0 items-center justify-center">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <path d="M12 9C10.895 9 10 9.672 10 10.5C10 11.328 10.895 12 12 12C13.105 12 14 12.672 14 13.5C14 14.328 13.105 15 12 15M12 9C12.87 9 13.612 9.417 13.886 10M12 9V8M12 15C11.13 15 10.388 14.583 10.114 14M12 15V16" stroke="#F3F8FC" stroke-width="1.5" stroke-linecap="round" />
+              <path d="M21 11.183V8.28C21 6.64 21 5.82 20.596 5.285C20.192 4.75 19.278 4.491 17.451 3.971C16.349 3.6545 15.2702 3.26258 14.222 2.798C13.023 2.266 12.424 2 12 2C11.576 2 10.977 2.266 9.778 2.798C8.898 3.188 7.798 3.616 6.549 3.971C4.722 4.491 3.809 4.751 3.404 5.285C3 5.82 3 6.64 3 8.28V11.183C3 16.808 8.063 20.183 10.594 21.519C11.201 21.839 11.504 22 12 22C12.496 22 12.799 21.84 13.406 21.52C15.937 20.182 21 16.808 21 11.183Z" stroke="#F3F8FC" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </span><span>Security Fee</span>
+        </button>
+
+        <button class="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-[15px] font-medium text-[#f3f8fc] hover:bg-white/10" data-section="Dispute">
+          <span class="flex h-6 w-6 shrink-0 items-center justify-center">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="8" r="4" stroke="#F3F8FC" stroke-width="2" />
+              <path d="M4 21V19C4 15.6863 6.68629 13 10 13H14C17.3137 13 20 15.6863 20 19V21H4Z" stroke="#F3F8FC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span><span>Dispute</span>
+        </button>
+
+        <button class="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-[15px] font-medium text-[#f3f8fc] hover:bg-white/10" data-section="Review">
+          <span class="flex h-6 w-6 shrink-0 items-center justify-center">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <path d="M13.5 19.5H19.5V21H13.5V19.5ZM13.5 16.5H22.5V18H13.5V16.5ZM13.5 13.5H22.5V15H13.5V13.5Z" fill="#F3F8FC" />
+              <path d="M15.4127 8.41275L12.0009 1.5L8.58919 8.41275L0.960938 9.52125L6.48094 14.9025L5.17744 22.5L10.5009 19.7017V18.0068L7.17019 19.758L7.95919 15.156L8.09269 14.3783L7.52794 13.8285L4.18444 10.5682L8.80519 9.897L9.58519 9.78375L9.93469 9.0765L12.0009 4.88925L14.0672 9.0765L14.4167 9.78375L15.1967 9.897L20.7872 10.7108L21.0009 9.225L15.4127 8.41275Z" fill="#F3F8FC" />
+            </svg>
+          </span><span>Review</span>
+        </button>
+
+        <button class="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-[15px] font-medium text-[#f3f8fc] hover:bg-white/10" data-section="Profile">
+          <span class="flex h-6 w-6 shrink-0 items-center justify-center">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <path d="M12 12C14.76 12 17 9.76 17 7C17 4.24 14.76 2 12 2C9.24 2 7 4.24 7 7C7 9.76 9.24 12 12 12ZM12 4C13.65 4 15 5.35 15 7C15 8.65 13.65 10 12 10C10.35 10 9 8.65 9 7C9 5.35 10.35 4 12 4ZM4 22H20C20.55 22 21 21.55 21 21V20C21 16.14 17.86 13 14 13H10C6.14 13 3 16.14 3 20V21C3 21.55 3.45 22 4 22ZM10 15H14C16.76 15 19 17.24 19 20H5C5 17.24 7.24 15 10 15Z" fill="#F3F8FC" />
+            </svg>
+          </span><span>Profile</span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- class "logout" is what onboarding.js uses to log the person out -->
+    <button class="logout mt-8 flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-[15px] font-medium text-[#f3f8fc] hover:bg-white/10">
+      <span class="flex h-6 w-6 shrink-0 items-center justify-center">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <path d="M16 13V11H7V8L2 12L7 16V13H16Z" fill="#F3F8FC" />
+          <path d="M20 3H11C9.897 3 9 3.897 9 5V9H11V5H20V19H11V15H9V19C9 20.103 9.897 21 11 21H20C21.103 21 22 20.103 22 19V5C22 3.897 21.103 3 20 3Z" fill="#F3F8FC" />
+        </svg>
+      </span><span>Log out</span>
+    </button>
+  </aside>
+
+  <!-- Main area -->
+  <main class="min-h-screen lg:pl-[266px]">
+
+    <!-- Top bar -->
+    <header class="sticky top-0 z-30 flex min-h-[84px] items-center justify-between gap-4 bg-white px-4 sm:px-8">
+      <button id="menuBtn" type="button" aria-label="Open menu" class="text-2xl lg:hidden">☰</button>
+
+      <label class="flex min-w-0 flex-1 items-center gap-2.5 rounded-[14px] border border-[#e8e8e8] bg-[#f3f8fc] px-4 py-2.5">
+        <span class="text-lg text-[#8c8c8c]">⌕</span>
+        <input id="searchInput" type="search" placeholder="Search for equipment, categories or location..."
+               class="w-full bg-transparent text-base font-medium text-[#303030] outline-none placeholder:text-[#8c8c8c]">
+      </label>
+
+      <button id="profileButton" type="button" aria-label="Open profile" class="shrink-0">
+        <span id="dashAvatar" class="flex h-10 w-10 items-center justify-center rounded-full bg-[#1f4e79] font-semibold text-white">T</span>
+      </button>
+    </header>
+
+    <div class="px-4 pb-16 pt-3 sm:px-8">
+
+      <!-- Greeting -->
+      <div class="mb-5">
+        <h1 id="homeGreeting" class="text-2xl font-semibold leading-10 sm:text-[32px]">Good morning 👋</h1>
+        <p id="homeInterests" class="mt-1.5 text-base font-medium text-[#8c8c8c]">Here's your rental activity at a glance.</p>
+      </div>
+
+      <!-- Stats (sample numbers until bookings are built) -->
+      <div class="mb-5 grid grid-cols-1 gap-2.5 sm:grid-cols-2 xl:grid-cols-4">
+
+        <article class="flex items-center gap-3 rounded-2xl bg-white p-4 shadow-sm">
+          <svg class="shrink-0" width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <rect width="43" height="43" rx="21.5" fill="#CFE2F3" />
+            <path d="M27.981 12.8574H15.0182C12.6318 12.8574 10.6973 14.792 10.6973 17.1784V27.9807C10.6973 30.3671 12.6318 32.3016 15.0182 32.3016H27.981C30.3674 32.3016 32.3019 30.3671 32.3019 27.9807V17.1784C32.3019 14.792 30.3674 12.8574 27.981 12.8574Z" stroke="#13314C" stroke-width="2.16047" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M17.1787 10.6982V15.0192M25.8205 10.6982V15.0192M10.6973 19.3401H32.3019" stroke="#13314C" stroke-width="2.16047" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <div class="min-w-0">
+            <p class="text-sm font-medium text-[#8c8c8c]">Upcoming Rentals</p>
+            <p class="text-3xl font-semibold">2</p>
+            <p class="text-xs text-[#8c8c8c]">Next rental: Apr 26, 2025</p>
+          </div>
+          <span class="ml-auto text-2xl text-[#8c8c8c]">›</span>
+        </article>
+
+        <article class="flex items-center gap-3 rounded-2xl bg-white p-4 shadow-sm">
+          <svg class="shrink-0" width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <rect width="43" height="43" rx="21.5" fill="#FFFAEB" />
+            <path d="M21.5017 10.2734C15.3115 10.2734 10.2754 15.3095 10.2754 21.4997C10.2754 27.6899 15.3115 32.726 21.5017 32.726C27.6918 32.726 32.7279 27.6899 32.7279 21.4997C32.7279 15.3095 27.6918 10.2734 21.5017 10.2734ZM21.5017 30.4807C16.5498 30.4807 12.5206 26.4516 12.5206 21.4997C12.5206 16.5478 16.5498 12.5187 21.5017 12.5187C26.4536 12.5187 30.4827 16.5478 30.4827 21.4997C30.4827 26.4516 26.4536 30.4807 21.5017 30.4807Z" fill="#F79009" />
+            <path d="M22.6242 15.8867H20.3789V21.9646L24.0757 25.6614L25.6631 24.074L22.6242 21.0351V15.8867Z" fill="#F79009" />
+          </svg>
+          <div class="min-w-0">
+            <p class="text-sm font-medium text-[#8c8c8c]">Active Rentals</p>
+            <p class="text-3xl font-semibold">1</p>
+            <p class="text-xs text-[#8c8c8c]">Ends: Apr 29, 2025</p>
+          </div>
+          <span class="ml-auto text-2xl text-[#8c8c8c]">›</span>
+        </article>
+
+        <article class="flex items-center gap-3 rounded-2xl bg-white p-4 shadow-sm">
+          <svg class="shrink-0" width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <rect width="43" height="43" rx="21.5" fill="#ECFDF3" />
+            <path d="M17.4355 22.0612L20.8034 25.4291L26.4166 18.6934" stroke="#12B76A" stroke-width="2.24525" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M21.9255 32.726C28.1256 32.726 33.1518 27.6998 33.1518 21.4997C33.1518 15.2996 28.1256 10.2734 21.9255 10.2734C15.7254 10.2734 10.6992 15.2996 10.6992 21.4997C10.6992 27.6998 15.7254 32.726 21.9255 32.726Z" stroke="#12B76A" stroke-width="2.24525" />
+          </svg>
+          <div class="min-w-0">
+            <p class="text-sm font-medium text-[#8c8c8c]">Completed Rentals</p>
+            <p class="text-3xl font-semibold">4</p>
+            <p class="text-xs text-[#8c8c8c]">Last rental: Apr 26, 2025</p>
+          </div>
+          <span class="ml-auto text-2xl text-[#8c8c8c]">›</span>
+        </article>
+
+        <article class="flex items-center gap-3 rounded-2xl bg-white p-4 shadow-sm">
+          <svg class="shrink-0" width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <rect width="43" height="43" rx="21.5" fill="#FBF9F3" />
+            <path d="M30.9065 12.5186H12.9445C11.7045 12.5186 10.6992 13.5238 10.6992 14.7638V28.2353C10.6992 29.4754 11.7045 30.4806 12.9445 30.4806H30.9065C32.1465 30.4806 33.1518 29.4754 33.1518 28.2353V14.7638C33.1518 13.5238 32.1465 12.5186 30.9065 12.5186Z" stroke="#C9A55A" stroke-width="2.24525" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M15.1895 17.0088H17.4347V19.254H15.1895V17.0088Z" stroke="#C9A55A" stroke-width="2.24525" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <div class="min-w-0">
+            <p class="text-sm font-medium text-[#8c8c8c]">Total Spent</p>
+            <p class="text-[27px] font-semibold leading-9">₦320,000</p>
+            <p class="text-xs text-[#8c8c8c]">All time</p>
+          </div>
+          <span class="ml-auto text-2xl text-[#8c8c8c]">›</span>
+        </article>
+      </div>
+
+      <!-- Content: left column + right column -->
+      <div class="grid grid-cols-1 gap-5 xl:grid-cols-[minmax(0,1fr)_minmax(0,460px)]">
+
+        <!-- LEFT COLUMN -->
+        <div class="flex min-w-0 flex-col gap-5">
+
+          <!-- Recommended: filled by onboarding.js from the real listings -->
+          <section class="rounded-2xl bg-white p-5 shadow-sm">
+            <div class="mb-4 flex items-center justify-between">
+              <h2 class="text-lg font-semibold">Recommended for you</h2>
+              <button type="button" class="view-all text-sm font-semibold text-[#1f4e79] hover:underline">View all</button>
+            </div>
+            <div id="homeListings" class="space-y-2.5"></div>
+          </section>
+
+          <!-- Upcoming rentals (sample) -->
+          <section class="rounded-2xl bg-white p-5 shadow-sm">
+            <div class="mb-4 flex items-center justify-between">
+              <h2 class="text-lg font-semibold">Upcoming Rentals</h2>
+              <button type="button" class="view-all text-sm font-semibold text-[#1f4e79] hover:underline">View all</button>
+            </div>
+            <div class="space-y-2.5">
+              <article class="flex items-center gap-3 rounded-xl border border-slate-200 p-3">
+                <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-2xl">📷</div>
+                <div class="min-w-0 flex-1">
+                  <h3 class="truncate text-sm font-semibold">Canon EOS R6</h3>
+                  <p class="text-xs text-[#8c8c8c]">Apr 26 – Apr 28, 2025</p>
+                </div>
+                <span class="rounded-full bg-[#ecfdf3] px-3 py-1 text-xs font-semibold text-[#12b76a]">Confirmed</span>
+                <strong class="hidden text-sm sm:block">₦45,000</strong>
+              </article>
+              <article class="flex items-center gap-3 rounded-xl border border-slate-200 p-3">
+                <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-2xl">💡</div>
+                <div class="min-w-0 flex-1">
+                  <h3 class="truncate text-sm font-semibold">Godox SL60W Light</h3>
+                  <p class="text-xs text-[#8c8c8c]">May 1 – May 3, 2025</p>
+                </div>
+                <span class="rounded-full bg-[#fffaeb] px-3 py-1 text-xs font-semibold text-[#f79009]">Pending</span>
+                <strong class="hidden text-sm sm:block">₦18,000</strong>
+              </article>
+            </div>
+          </section>
+
+          <!-- Recent rentals (sample) -->
+          <section class="rounded-2xl bg-white p-5 shadow-sm">
+            <div class="mb-4 flex items-center justify-between">
+              <h2 class="text-lg font-semibold">Recent Rentals</h2>
+              <button type="button" class="view-all text-sm font-semibold text-[#1f4e79] hover:underline">View all</button>
+            </div>
+            <div class="space-y-2.5">
+              <article class="flex items-center gap-3 rounded-xl border border-slate-200 p-3">
+                <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-2xl">📷</div>
+                <div class="min-w-0 flex-1">
+                  <h3 class="truncate text-sm font-semibold">Canon EOS R8</h3>
+                  <p class="text-xs text-[#8c8c8c]">Apr 26 – Apr 28, 2025</p>
+                </div>
+                <span class="rounded-full bg-[#ecfdf3] px-3 py-1 text-xs font-semibold text-[#12b76a]">Completed</span>
+                <strong class="hidden text-sm sm:block">₦45,000</strong>
+              </article>
+              <article class="flex items-center gap-3 rounded-xl border border-slate-200 p-3">
+                <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-2xl">💡</div>
+                <div class="min-w-0 flex-1">
+                  <h3 class="truncate text-sm font-semibold">Godox SL60W Light</h3>
+                  <p class="text-xs text-[#8c8c8c]">May 1 – May 3, 2025</p>
+                </div>
+                <span class="rounded-full bg-red-50 px-3 py-1 text-xs font-semibold text-red-600">Cancelled</span>
+                <strong class="hidden text-sm sm:block">₦18,000</strong>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="flex min-w-0 flex-col gap-5">
+
+          <!-- Notifications (sample). Items with class "unread" get cleared by "Mark all as read" -->
+          <section class="rounded-2xl bg-white p-5 shadow-sm">
+            <div class="mb-4 flex items-center justify-between">
+              <h2 class="text-lg font-semibold">Notification</h2>
+              <button id="markRead" type="button" class="text-sm font-semibold text-[#1f4e79] hover:underline">Mark all as read</button>
+            </div>
+
+            <div class="space-y-2.5">
+              <article class="unread flex gap-3 rounded-xl bg-[#eef5fb] p-3">
+                <svg class="shrink-0" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <rect width="48" height="48" rx="24" fill="#1F4E79" />
+                  <path d="M24 34.0012V24.0006M24 24.0006L15.29 19.0003M24 24.0006L32.71 19.0003M19.5 16.2697L28.5 21.42M23 33.731C23.304 33.9066 23.6489 33.999 24 33.999C24.3511 33.999 24.696 33.9066 25 33.731L32 29.7308C32.3037 29.5554 32.556 29.3033 32.7315 28.9996C32.9071 28.6959 32.9996 28.3515 33 28.0007V20.0002C32.9996 19.6495 32.9071 19.305 32.7315 19.0014C32.556 18.6977 32.3037 18.4455 32 18.2701L25 14.2699C24.696 14.0944 24.3511 14.002 24 14.002C23.6489 14.002 23.304 14.0944 23 14.2699L16 18.2701C15.6963 18.4455 15.444 18.6977 15.2685 19.0014C15.0929 19.305 15.0004 19.6495 15 20.0002V28.0007C15.0004 28.3515 15.0929 28.6959 15.2685 28.9996C15.444 29.3033 15.6963 29.5554 16 29.7308L23 33.731Z" stroke="white" stroke-width="2" stroke-linecap="round" />
+                </svg>
+                <div class="min-w-0">
+                  <div class="flex items-center gap-2">
+                    <strong class="text-sm">RentHub</strong>
+                    <span class="new-badge rounded-full bg-[#1f4e79] px-2 py-0.5 text-[10px] font-semibold text-white">NEW</span>
+                  </div>
+                  <p class="text-sm text-slate-600">You have Rented an equipment. The owner will be notified.</p>
+                  <small class="text-xs text-[#8c8c8c]">15 min ago</small>
+                </div>
+              </article>
+
+              <article class="unread flex gap-3 rounded-xl bg-[#eef5fb] p-3">
+                <svg class="shrink-0" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <rect width="48" height="48" rx="24" fill="#1F4E79" />
+                  <path d="M24 34.0012V24.0006M24 24.0006L15.29 19.0003M24 24.0006L32.71 19.0003M19.5 16.2697L28.5 21.42M23 33.731C23.304 33.9066 23.6489 33.999 24 33.999C24.3511 33.999 24.696 33.9066 25 33.731L32 29.7308C32.3037 29.5554 32.556 29.3033 32.7315 28.9996C32.9071 28.6959 32.9996 28.3515 33 28.0007V20.0002C32.9996 19.6495 32.9071 19.305 32.7315 19.0014C32.556 18.6977 32.3037 18.4455 32 18.2701L25 14.2699C24.696 14.0944 24.3511 14.002 24 14.002C23.6489 14.002 23.304 14.0944 23 14.2699L16 18.2701C15.6963 18.4455 15.444 18.6977 15.2685 19.0014C15.0929 19.305 15.0004 19.6495 15 20.0002V28.0007C15.0004 28.3515 15.0929 28.6959 15.2685 28.9996C15.444 29.3033 15.6963 29.5554 16 29.7308L23 33.731Z" stroke="white" stroke-width="2" stroke-linecap="round" />
+                </svg>
+                <div class="min-w-0">
+                  <div class="flex items-center gap-2">
+                    <strong class="text-sm">RentHub</strong>
+                    <span class="new-badge rounded-full bg-[#1f4e79] px-2 py-0.5 text-[10px] font-semibold text-white">NEW</span>
+                  </div>
+                  <p class="text-sm text-slate-600">You have Rented an equipment. The owner will be notified.</p>
+                  <small class="text-xs text-[#8c8c8c]">15 min ago</small>
+                </div>
+              </article>
+
+              <article class="flex gap-3 rounded-xl p-3">
+                <svg class="shrink-0" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <rect width="48" height="48" rx="24" fill="#F79009" />
+                  <path d="M23.1728 13.999C23.7032 13.9991 24.2119 14.2099 24.5869 14.5851L33.2916 23.2898C33.7433 23.7443 33.9968 24.3591 33.9968 24.9999C33.9968 25.6407 33.7433 26.2555 33.2916 26.7101L26.7111 33.2906C26.2565 33.7423 25.6417 33.9958 25.0009 33.9958C24.3601 33.9958 23.7453 33.7423 23.2908 33.2906L14.586 24.5859C14.2109 24.2109 14.0001 23.7022 14 23.1718V15.9992C14 15.4687 14.2107 14.96 14.5858 14.5849C14.9609 14.2098 15.4697 13.999 16.0002 13.999H23.1728Z" stroke="white" stroke-width="2" stroke-linecap="round" />
+                </svg>
+                <div class="min-w-0">
+                  <strong class="text-sm">RentHub</strong>
+                  <p class="text-sm text-slate-600">Secure your Choiced equipment with just a few steps.</p>
+                  <small class="text-xs text-[#8c8c8c]">1 hour ago</small>
+                </div>
+              </article>
+
+              <article class="flex gap-3 rounded-xl p-3">
+                <svg class="shrink-0" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <rect width="48" height="48" rx="24" fill="#428CCF" />
+                  <path d="M22.2668 33.0006C22.4423 33.3047 22.6948 33.5571 22.9988 33.7327C23.3028 33.9082 23.6477 34.0006 23.9988 34.0006C24.3499 34.0006 24.6947 33.9082 24.9988 33.7327C25.3028 33.5571 25.5553 33.3047 25.7308 33.0006M15.2613 27.3261C15.1306 27.4693 15.0444 27.6474 15.0131 27.8387C14.9818 28.03 15.0068 28.2263 15.085 28.4036C15.1632 28.581 15.2912 28.7318 15.4535 28.8378C15.6159 28.9437 15.8055 29.0001 15.9993 29.0003H31.9996C32.1934 29.0004 32.3831 28.9441 32.5455 28.8384C32.7079 28.7327 32.8361 28.582 32.9145 28.4048C32.9929 28.2275 33.0181 28.0313 32.9871 27.84C32.956 27.6487 32.8701 27.4705 32.7396 27.3271C31.4096 25.956 29.9996 24.4989 29.9996 19.9995C29.9996 18.4081 29.3674 16.8818 28.2422 15.7565C27.1169 14.6312 25.5908 13.999 23.9995 13.999C22.4081 13.999 20.882 14.6312 19.7567 15.7565C18.6315 16.8818 17.9993 18.4081 17.9993 19.9995C17.9993 24.4989 16.5883 25.956 15.2613 27.3261Z" stroke="white" stroke-width="2" stroke-linecap="round" />
+                </svg>
+                <div class="min-w-0">
+                  <strong class="text-sm">RentHub</strong>
+                  <p class="text-sm text-slate-600">Don't forget to Rent an equipment today!</p>
+                  <small class="text-xs text-[#8c8c8c]">Yesterday</small>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- Rent with confidence -->
+          <section class="flex flex-col items-start gap-4 rounded-2xl bg-[#1f4e79] p-5 text-white sm:flex-row sm:items-center">
+            <svg class="shrink-0" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <rect width="44" height="44" rx="22" fill="#13314C" />
+              <path d="M22 12C24.5 12 26.817 12.554 28.709 13.495C29.637 13.957 30.1 14.188 30.55 14.914C31 15.64 31 16.342 31 17.748V21.237C31 26.92 26.457 30.08 23.827 31.434L23.8211 31.4371C23.091 31.812 22.725 32 22 32C21.275 32 20.909 31.812 20.1789 31.4371L20.173 31.434C17.542 30.08 13 26.921 13 21.238V17.748C13 16.342 13.001 15.64 13.45 14.914C13.899 14.188 14.363 13.957 15.291 13.495C17.184 12.554 19.5 12 22 12Z" stroke="#F3F8FC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M19 21.5C19 21.5 20.408 21.752 21 23.5C21 23.5 22.5 20.5 25 19.5" stroke="#F3F8FC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div>
+              <h2 class="text-lg font-semibold">Rent with confidence</h2>
+              <p class="text-sm text-[#cfe2f3]">All rentals are protected with verified owners, secure payments, and deposit safety.</p>
+            </div>
+            <button id="learnMore" type="button" class="shrink-0 rounded-xl bg-white px-4 py-2 text-sm font-semibold text-[#1f4e79] hover:bg-[#f3f8fc]">Learn more</button>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Small message that pops up at the bottom (hidden until showToast runs) -->
+  <div id="toast" role="status" aria-live="polite"
+       class="pointer-events-none fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-xl bg-slate-900 px-4 py-2 text-sm font-medium text-white opacity-0 transition-opacity duration-300"></div>
+</section>
+
+<!-- Keep these scripts alongside index.html. -->
+<script src="js/identity-document-checks.js"></script>
+<script src="js/onboarding.js"></script>
+</body>
+</html>

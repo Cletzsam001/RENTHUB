@@ -1,0 +1,36 @@
+
+{
+  "equipment": {
+    "id": 1,
+    "name": "Canon EOS R6",
+    "category": "Creative Equipment",
+    "brand": "Canon",
+    "model": "EOS R6",
+    "description": "Professional full-frame mirrorless camera suitable for photography and video production",
+    "location": "Lagos, Mainland",
+    "availableStart": "2026-10-03",
+    "availableEnd": "2026-10-10",
+    "unavailableStart": "",
+    "unavailableEnd": "",
+    "price": 45000,
+    "deposit": 20000,
+    "handoverMethod": "Delivery",
+    "condition": "Brand New",
+    "status": "Published",
+    "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1791470637/Thumbnail_t7uqsf.png",
+    "images": [
+      "https://res.cloudinary.com/fdch0ihm/image/upload/v1791470637/Thumbnail_t7uqsf.png",
+      "https://res.cloudinary.com/fdch0ihm/image/upload/v1791470637/Thumbnail_t7uqsf.png",
+      "https://res.cloudinary.com/fdch0ihm/image/upload/v1791470637/Thumbnail_t7uqsf.png",
+      "https://res.cloudinary.com/fdch0ihm/image/upload/v1791470637/Thumbnail_t7uqsf.png",
+      "https://res.cloudinary.com/fdch0ihm/image/upload/v1791470637/Thumbnail_t7uqsf.png"
+    ],
+    "owner": {
+      "id": 1,
+      "name": "Kehinde Ayo",
+      "rating": 4.7,
+      "reviews": 14,
+      "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1791470961/avatar_oewxw8.png"
+    }
+  }
+}

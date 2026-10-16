@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Equipment -Step 2 | RentHub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/add-equipment2.js" defer></script>
+</head>
+
+<body class="m-0 min-h-screen overflow-x-hidden bg-white font-sans text-[#111111] lg:bg-[#F2F7FB]">
+
+  <!-- DESKTOP SIDEBAR -->
+  <aside class="fixed inset-y-0 left-0 z-50 hidden w-[230px] flex-col bg-[#224F78] px-5 py-6 text-white lg:flex">
+
+    <!-- LOGO -->
+    <a href="dashboard.html" class="mb-9 flex shrink-0 items-center gap-3 text-white">
+      <span class="flex h-10 w-10 items-center justify-center rounded-full bg-[#102E4B]">
+        <img src="../../assets/icons/logo.svg" alt="RentHub logo" class="h-8 w-8 object-contain">
+      </span>
+      <span class="text-[20px] font-semibold">RentHub</span>
+    </a>
+
+    <!-- NAVIGATION -->
+    <nav aria-label="Owner navigation" class="min-h-0 flex-1 space-y-1 overflow-y-auto">
+
+      <a href="dashboard.html" class="flex min-h-[43px] items-center gap-3 rounded-xl px-3 py-2 text-[14px] font-medium text-white/90 transition hover:bg-white/10">
+        <img src="../../assets/icons/ehome.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+        <span>Dashboard</span>
+      </a>
+
+      <a href="./equipment.html" aria-current="page" class="flex min-h-[43px] items-center gap-3 rounded-xl bg-[#F2F7FB] px-3 py-2 text-[14px] font-semibold text-[#224F78]">
+        <img src="../../assets/icons/equipment2.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+        <span>Equipments</span>
+      </a>
+
+      <a href="booking.html" class="flex min-h-[43px] items-center gap-3 rounded-xl px-3 py-2 text-[14px] font-medium text-white/90 transition hover:bg-white/10">
+        <img src="../../assets/icons/booking.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+        <span>Bookings</span>
+      </a>
+
+      <a href="finance.html" class="flex min-h-[43px] items-center gap-3 rounded-xl px-3 py-2 text-[14px] font-medium text-white/90 transition hover:bg-white/10">
+        <img src="../../assets/icons/finance.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+        <span>Finance</span>
+      </a>
+
+      <a href="../deposit.html" class="flex min-h-[43px] items-center gap-3 rounded-xl px-3 py-2 text-[14px] font-medium text-white/90 transition hover:bg-white/10">
+        <img src="../../assets/icons/deposite.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+        <span>Deposit</span>
+      </a>
+
+      <a href="../dispute.html" class="flex min-h-[43px] items-center gap-3 rounded-xl px-3 py-2 text-[14px] font-medium text-white/90 transition hover:bg-white/10">
+        <img src="../../assets/icons/dispute.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+        <span>Dispute</span>
+      </a>
+
+      <a href="../reviews.html" class="flex min-h-[43px] items-center gap-3 rounded-xl px-3 py-2 text-[14px] font-medium text-white/90 transition hover:bg-white/10">
+        <img src="../../assets/icons/review.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+        <span>Review</span>
+      </a>
+
+      <a href="profile.html" class="flex min-h-[43px] items-center gap-3 rounded-xl px-3 py-2 text-[14px] font-medium text-white/90 transition hover:bg-white/10">
+        <img src="../../assets/icons/user.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+        <span>Profile</span>
+      </a>
+
+    </nav>
+
+    <!-- LOGOUT -->
+    <button id="logoutButton" type="button" class="mt-4 flex min-h-[43px] shrink-0 items-center gap-3 rounded-xl px-3 py-2 text-left text-[14px] font-medium transition hover:bg-white/10">
+      <img src="../../assets/icons/sign.svg" alt="" class="h-5 w-5 shrink-0 object-contain">
+      <span>Log out</span>
+    </button>
+
+  </aside>
+
+  <!-- MAIN PAGE -->
+  <div class="min-h-screen lg:ml-[230px]">
+
+    <!-- STICKY DESKTOP HEADER -->
+    <header class="sticky top-0 z-40 hidden h-[78px] items-center justify-between gap-5 border-b border-[#E6EBF0] bg-white px-7 lg:flex">
+
+      <div class="relative w-full max-w-[510px]">
+        <img src="../../assets/icons/search.svg" alt="" class="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 object-contain">
+
+        <input id="headerSearch" type="search" placeholder="Search for equipment, categories or location..." aria-label="Search equipment" class="h-[46px] w-full rounded-xl border border-[#E2E5E8] bg-[#F2F7FB] pl-12 pr-4 text-sm outline-none focus:border-[#224F78]">
+      </div>
+
+      <a href="profile.html" aria-label="Open owner profile" class="shrink-0">
+        <img src="../../assets/icons/profile.svg" alt="Owner profile" class="h-11 w-11 rounded-full object-cover">
+      </a>
+
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="mx-auto w-full max-w-[1250px] px-4 pb-28 pt-6 sm:px-8 lg:px-[33px] lg:pb-10 lg:pt-5">
+
+      <!-- PAGE TITLE -->
+      <div class="relative mb-8 flex min-h-10 items-center justify-center lg:mb-5 lg:justify-start lg:gap-4">
+
+        <a href="./add-equipment.html" aria-label="Back to step one" class="absolute left-0 flex h-10 w-10 items-center justify-center lg:static">
+          <img src="../../assets/icons/backspace.svg" alt="" class="h-7 w-7 object-contain">
+        </a>
+
+        <h1 class="text-[22px] font-semibold text-[#224F78] sm:text-[25px] lg:text-[23px] lg:text-black">
+          Add Equipment
+        </h1>
+
+      </div>
+
+      <!-- FORM CARD -->
+      <section class="bg-white lg:rounded-[20px] lg:px-[28px] lg:py-[27px]">
+
+        <form id="stepTwoForm" class="space-y-[23px] lg:space-y-5" novalidate>
+
+          <!-- LOCATION -->
+          <div>
+            <label for="equipmentLocation" class="mb-2 block text-[17px] font-semibold lg:text-[16px]">Location</label>
+
+            <div class="relative">
+              <img src="../../assets/icons/location.svg" alt="" class="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 object-contain">
+
+              <select id="equipmentLocation" name="location" required class="h-[48px] w-full appearance-none rounded-[12px] border border-[#BDBDBD] bg-white pl-[48px] pr-10 text-sm text-[#333333] outline-none focus:border-[#224F78] lg:h-[45px]">
+                <option value="">Enter your address</option>
+              </select>
+
+              <img src="../../assets/icons/chevron.svg" alt="" class="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 object-contain">
+            </div>
+          </div>
+
+          <!-- AVAILABLE DATES -->
+          <div>
+            <label class="mb-2 block text-[17px] font-semibold lg:text-[16px]">Available Dates</label>
+
+            <div class="grid grid-cols-2 gap-3">
+
+              <div class="relative min-w-0">
+                <input id="availableStart" name="availableStart" type="date" required aria-label="Available from" class="h-[48px] w-full min-w-0 rounded-[12px] border border-[#BDBDBD] bg-white px-3 text-sm outline-none focus:border-[#224F78] lg:h-[45px]">
+                <span class="pointer-events-none absolute -top-2 left-3 bg-white px-1 text-[10px] text-gray-500">From</span>
+              </div>
+
+              <div class="relative min-w-0">
+                <input id="availableEnd" name="availableEnd" type="date" required aria-label="Available until" class="h-[48px] w-full min-w-0 rounded-[12px] border border-[#BDBDBD] bg-white px-3 text-sm outline-none focus:border-[#224F78] lg:h-[45px]">
+                <span class="pointer-events-none absolute -top-2 left-3 bg-white px-1 text-[10px] text-gray-500">To</span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- UNAVAILABLE DATES -->
+          <div>
+            <label class="mb-2 block text-[17px] font-semibold lg:text-[16px]">
+              Unavailable Dates <span class="text-sm font-normal italic">(optional)</span>
+            </label>
+
+            <div class="grid grid-cols-2 gap-3">
+
+              <div class="relative min-w-0">
+                <input id="unavailableStart" name="unavailableStart" type="date" aria-label="Unavailable from" class="h-[48px] w-full min-w-0 rounded-[12px] border border-[#BDBDBD] bg-white px-3 text-sm outline-none focus:border-[#224F78] lg:h-[45px]">
+                <span class="pointer-events-none absolute -top-2 left-3 bg-white px-1 text-[10px] text-gray-500">From</span>
+              </div>
+
+              <div class="relative min-w-0">
+                <input id="unavailableEnd" name="unavailableEnd" type="date" aria-label="Unavailable until" class="h-[48px] w-full min-w-0 rounded-[12px] border border-[#BDBDBD] bg-white px-3 text-sm outline-none focus:border-[#224F78] lg:h-[45px]">
+                <span class="pointer-events-none absolute -top-2 left-3 bg-white px-1 text-[10px] text-gray-500">To</span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- PRICING -->
+          <div>
+            <label for="rentalPrice" class="mb-2 block text-[17px] font-semibold lg:text-[16px]">Pricing</label>
+
+            <div class="relative">
+              <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[23px] font-semibold text-[#272334]">₦</span>
+
+              <input id="rentalPrice" name="rentalPrice" type="number" min="1" step="0.01" required placeholder="Enter rental price" class="h-[48px] w-full rounded-[12px] border border-[#BDBDBD] bg-white pl-[48px] pr-4 text-sm outline-none focus:border-[#224F78] lg:h-[45px]">
+            </div>
+          </div>
+
+          <!-- RENTAL DEPOSIT -->
+          <div>
+            <label for="rentalDeposit" class="mb-2 block text-[17px] font-semibold lg:text-[16px]">Rental Deposit</label>
+
+            <div class="relative">
+              <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[23px] font-semibold text-[#272334]">₦</span>
+
+              <input id="rentalDeposit" name="rentalDeposit" type="number" min="0" step="0.01" required placeholder="Enter rental deposit price" class="h-[48px] w-full rounded-[12px] border border-[#BDBDBD] bg-white pl-[48px] pr-4 text-sm outline-none focus:border-[#224F78] lg:h-[45px]">
+            </div>
+          </div>
+
+          <!-- RENTAL RULES -->
+          <div>
+            <label for="rentalRules" class="mb-2 block text-[17px] font-semibold lg:text-[16px]">Rental Rules</label>
+
+            <textarea id="rentalRules" name="rentalRules" rows="2" maxlength="2000" required placeholder="Enter rental rules" class="min-h-[48px] w-full resize-y rounded-[12px] border border-[#BDBDBD] bg-white px-3 py-3 text-sm outline-none focus:border-[#224F78] lg:min-h-[45px]"></textarea>
+          </div>
+
+          <!-- HANDOVER METHOD -->
+          <fieldset>
+            <legend class="mb-2 text-[17px] font-semibold lg:text-[16px]">Handover Method</legend>
+
+            <div class="grid grid-cols-2 gap-3 sm:gap-4">
+
+              <label class="flex min-h-[48px] cursor-pointer items-center gap-3 rounded-[12px] border border-[#BDBDBD] px-3 lg:min-h-[45px]">
+                <input type="radio" name="handoverMethod" value="Pickup" required class="h-4 w-4 shrink-0 accent-[#224F78]">
+                <span class="text-sm">Pickup</span>
+              </label>
+
+              <label class="flex min-h-[48px] cursor-pointer items-center gap-3 rounded-[12px] border border-[#BDBDBD] px-3 lg:min-h-[45px]">
+                <input type="radio" name="handoverMethod" value="Delivery" required class="h-4 w-4 shrink-0 accent-[#224F78]">
+                <span class="text-sm">Delivery</span>
+              </label>
+
+            </div>
+          </fieldset>
+
+          <!-- FEEDBACK MESSAGE -->
+          <p id="formMessage" class="hidden text-sm" role="status" aria-live="polite"></p>
+
+          <!-- PREVIEW BUTTON -->
+          <button id="previewButton" type="submit" class="mt-8 flex h-[56px] w-full items-center justify-center rounded-full bg-[#224F78] text-lg font-semibold text-white transition hover:bg-[#173D60] disabled:cursor-not-allowed disabled:opacity-60 lg:mt-2 lg:h-[58px] lg:rounded-[18px]">
+            Preview
+          </button>
+
+        </form>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- MOBILE BOTTOM NAVIGATION -->
+  <nav aria-label="Mobile main navigation" class="fixed inset-x-0 bottom-0 z-40 grid h-[70px] grid-cols-5 border-t border-[#D5D5D5] bg-white px-2 pb-2 pt-2 lg:hidden">
+
+    <a href="dashboard.html" class="flex flex-col items-center justify-center gap-1 text-[11px] text-[#929292]">
+      <img src="../../assets/icons/ehome.svg" alt="" class="h-5 w-5 object-contain">
+      <span>Home</span>
+    </a>
+
+    <a href="./equipment.html" aria-current="page" class="flex flex-col items-center justify-center gap-1 text-[11px] font-semibold text-[#224F78]">
+      <img src="../../assets/icons/equipment2.svg" alt="" class="h-5 w-5 object-contain">
+      <span>Equipment</span>
+    </a>
+
+    <a href="booking.html" class="flex flex-col items-center justify-center gap-1 text-[11px] text-[#929292]">
+      <img src="../../assets/icons/booking.svg" alt="" class="h-5 w-5 object-contain">
+      <span>Bookings</span>
+    </a>
+
+    <a href="finance.html" class="flex flex-col items-center justify-center gap-1 text-[11px] text-[#929292]">
+      <img src="../../assets/icons/finance.svg" alt="" class="h-5 w-5 object-contain">
+      <span>Finance</span>
+    </a>
+
+    <a href="../dispute.html" class="flex flex-col items-center justify-center gap-1 text-[11px] text-[#929292]">
+      <img src="../../assets/icons/dispute.svg" alt="" class="h-5 w-5 object-contain">
+      <span>Dispute</span>
+    </a>
+
+  </nav>
+
+</body>
+</html>

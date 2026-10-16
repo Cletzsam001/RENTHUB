@@ -1,0 +1,160 @@
+{
+  "user": {
+    "firstName": "Tunde",
+    "notifications": 2
+  },
+  "desktopSummary": {
+    "upcomingRentals": 2,
+    "nextRental": "Apr 26, 2025",
+    "activeRentals": 1,
+    "activeRentalEnds": "Apr 29, 2025",
+    "completedRentals": 4,
+    "lastRental": "Apr 26, 2025",
+    "totalSpent": 320000
+  },
+  "mobileSummary": {
+    "bookings": 8,
+    "earnings": 250000
+  },
+  "equipmentStatus": {
+    "available": 1,
+    "rented": 1,
+    "unavailable": 0
+  },
+  "actions": [
+    {
+      "id": 1,
+      "type": "booking",
+      "count": 2,
+      "label": "Booking requests"
+    },
+    {
+      "id": 2,
+      "type": "inspection",
+      "count": 1,
+      "label": "Inspection due"
+    },
+    {
+      "id": 3,
+      "type": "return",
+      "count": 1,
+      "label": "Return overdue"
+    }
+  ],
+  "recommended": [
+    {
+      "id": 1,
+      "name": "Canon EOS R6",
+      "category": "Camera",
+      "location": "Lagos, Mainland",
+      "rating": 4.8,
+      "reviews": 21,
+      "pricePerDay": 45000,
+      "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1790967108/Thumb_jx8nxa.png"
+    },
+    {
+      "id": 2,
+      "name": "Godox SL60W Light",
+      "category": "Lighting",
+      "location": "Lagos, Island",
+      "rating": 4.7,
+      "reviews": 14,
+      "pricePerDay": 45000,
+      "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1790967286/Thumb_fp02cm.png"
+    }
+  ],
+  "activeRentals": [
+    {
+      "id": 101,
+      "name": "Canon EOS R6",
+      "startDate": "Apr 26",
+      "endDate": "Apr 28, 2025",
+      "status": "In Use",
+      "price": 45000,
+      "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1790967108/Thumb_jx8nxa.png"
+    },
+    {
+      "id": 102,
+      "name": "Godox SL60W Light",
+      "startDate": "May 1",
+      "endDate": "May 3, 2025",
+      "status": "Overdue",
+      "price": 18000,
+      "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1790967286/Thumb_fp02cm.png"
+    }
+  ],
+  "upcomingRentals": [
+    {
+      "id": 201,
+      "name": "Canon EOS R6",
+      "startDate": "Apr 26",
+      "endDate": "Apr 28, 2025",
+      "status": "Confirmed",
+      "price": 45000,
+      "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1790967108/Thumb_jx8nxa.png"
+    },
+    {
+      "id": 202,
+      "name": "Godox SL60W Light",
+      "startDate": "May 1",
+      "endDate": "May 3, 2025",
+      "status": "Pending",
+      "price": 18000,
+      "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1790967286/Thumb_fp02cm.png"
+    }
+  ],
+  "recentRentals": [
+    {
+      "id": 301,
+      "name": "Canon EOS R8",
+      "startDate": "Apr 26",
+      "endDate": "Apr 28, 2025",
+      "status": "Completed",
+      "price": 45000,
+      "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1790967108/Thumb_jx8nxa.png"
+    },
+    {
+      "id": 302,
+      "name": "Godox SL60W Light",
+      "startDate": "May 1",
+      "endDate": "May 3, 2025",
+      "status": "Cancelled",
+      "price": 18000,
+      "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1790967286/Thumb_fp02cm.png"
+    }
+  ],
+  "notifications": [
+    {
+      "id": 1,
+      "type": "rental",
+      "title": "RentHub",
+      "message": "You have rented an equipment. The owner will be notified.",
+      "time": "15 min ago",
+      "isRead": false
+    },
+    {
+      "id": 2,
+      "type": "rental",
+      "title": "RentHub",
+      "message": "You have rented an equipment. The owner will be notified.",
+      "time": "15 min ago",
+      "isRead": false
+    },
+    {
+      "id": 3,
+      "type": "offer",
+      "title": "RentHub",
+      "message": "Secure your chosen equipment with just a few steps.",
+      "time": "1 hour ago",
+      "isRead": true
+    },
+    {
+      "id": 4,
+      "type": "reminder",
+      "title": "RentHub",
+      "message": "Don't forget to rent equipment today!",
+      "time": "Yesterday",
+      "isRead": true
+    }
+  ]
+}

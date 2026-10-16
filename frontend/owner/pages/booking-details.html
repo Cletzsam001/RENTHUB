@@ -1,0 +1,455 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#24527D">
+  <title>Booking Details | RentHub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-white font-sans text-[#292929] lg:bg-[#F2F7FB]">
+
+  <div class="min-h-screen lg:flex">
+
+    <!-- DESKTOP SIDEBAR -->
+    <aside class="fixed inset-y-0 left-0 z-20 hidden w-[272px] flex-col bg-[#24527D] px-8 py-8 text-white lg:flex">
+
+      <a href="dashboard.html" class="mb-10 flex items-center gap-3">
+        <img src="../../assets/icons/logo.svg" alt="RentHub" class="h-11 w-11 rounded-full object-contain">
+        <span class="text-[22px] font-semibold">RentHub</span>
+      </a>
+
+      <nav class="space-y-2" aria-label="Owner navigation">
+
+        <a href="dashboard.html" class="flex items-center gap-4 rounded-2xl px-3 py-3 text-[16px] font-medium hover:bg-white/10">
+          <svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M3 11 12 3l9 8M5 10v11h14V10M10 21v-7h4v7"/>
+          </svg>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="equipment.html" class="flex items-center gap-4 rounded-2xl px-3 py-3 text-[16px] font-medium hover:bg-white/10">
+          <svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="5" y="2" width="14" height="20" rx="2"/>
+            <path d="M8 7h8M8 12h8M8 17h6"/>
+          </svg>
+          <span>Equipments</span>
+        </a>
+
+        <a href="./booking-details.html" aria-current="page" class="flex items-center gap-4 rounded-2xl bg-[#F2F7FB] px-3 py-3 text-[16px] font-semibold text-[#24527D]">
+          <svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="3" y="5" width="18" height="16" rx="2"/>
+            <path d="M7 2v6M17 2v6M3 10h18m-12 5 2 2 4-4"/>
+          </svg>
+          <span>Bookings</span>
+        </a>
+
+        <a href="finance.html" class="flex items-center gap-4 rounded-2xl px-3 py-3 text-[16px] font-medium hover:bg-white/10">
+          <svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="3" y="5" width="18" height="15" rx="2"/>
+            <path d="M3 9h18M16 13h3"/>
+          </svg>
+          <span>Finance</span>
+        </a>
+
+        <a href="../deposit/deposit.html" class="flex items-center gap-4 rounded-2xl px-3 py-3 text-[16px] font-medium hover:bg-white/10">
+          <svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <ellipse cx="10" cy="5" rx="6" ry="3"/>
+            <path d="M4 5v12c0 2 12 2 12 0V5M4 9c0 2 12 2 12 0M4 13c0 2 12 2 12 0"/>
+          </svg>
+          <span>Deposit</span>
+        </a>
+
+        <a href="../dispute/dispute.html" class="flex items-center gap-4 rounded-2xl px-3 py-3 text-[16px] font-medium hover:bg-white/10">
+          <svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="9" cy="8" r="3"/>
+            <path d="M3 21v-2a6 6 0 0 1 12 0v2M17 5a4 4 0 0 1 0 7M19 16a5 5 0 0 1 2 4"/>
+          </svg>
+          <span>Dispute</span>
+        </a>
+
+        <a href="../review/review.html" class="flex items-center gap-4 rounded-2xl px-3 py-3 text-[16px] font-medium hover:bg-white/10">
+          <svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.3-6.2 3.3L7 14.2 2 9.3l6.9-1z"/>
+          </svg>
+          <span>Review</span>
+        </a>
+
+        <a href="profile.html" class="flex items-center gap-4 rounded-2xl px-3 py-3 text-[16px] font-medium hover:bg-white/10">
+          <svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="7" r="4"/>
+            <path d="M4 22v-2a8 8 0 0 1 16 0v2z"/>
+          </svg>
+          <span>Profile</span>
+        </a>
+
+      </nav>
+
+      <button id="logoutButton" type="button" class="mt-auto flex items-center gap-4 rounded-xl px-3 py-3 text-left text-[16px] hover:bg-white/10">
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M10 4H4v16h6M14 8l4 4-4 4M8 12h10"/>
+        </svg>
+        <span>Log out</span>
+      </button>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="min-w-0 flex-1 lg:ml-[272px]">
+
+      <!-- DESKTOP HEADER -->
+      <header class="hidden h-[120px] items-center justify-between bg-white px-8 lg:flex xl:px-10">
+
+        <label class="flex h-[54px] w-full max-w-[585px] items-center gap-3 rounded-[15px] border border-[#E0E5EA] bg-[#F2F7FB] px-5">
+          <svg class="h-6 w-6 shrink-0 text-[#999999]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="10.5" cy="10.5" r="7.5"/>
+            <path d="m16 16 5 5"/>
+          </svg>
+          <input id="desktopSearch" type="search" placeholder="Search for equipment, categories or location..." aria-label="Search equipment" class="w-full min-w-0 bg-transparent text-[15px] outline-none placeholder:text-[#8D8D8D]">
+        </label>
+
+        <img id="ownerAvatar" src="./img/owner-avatar.jpg" alt="Owner profile" class="ml-6 h-12 w-12 rounded-full bg-gray-200 object-cover">
+
+      </header>
+
+      <main class="mx-auto w-full max-w-[1500px] px-5 pb-16 pt-6 sm:px-8 lg:px-10 lg:pt-5">
+
+        <!-- MOBILE HEADER -->
+        <div class="mb-8 flex items-center justify-between lg:hidden">
+          <a href="equipment.html" aria-label="Back to equipment" class="flex h-10 w-10 items-center">
+            <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 12H5m7 7-7-7 7-7"/>
+            </svg>
+          </a>
+
+          <h1 class="text-[22px] font-semibold text-[#24527D] sm:text-[25px]">Booking Details</h1>
+          <span class="w-10"></span>
+        </div>
+
+        <!-- DESKTOP PAGE TITLE -->
+        <div class="mb-8 hidden items-center gap-4 lg:flex">
+          <a href="equipment.html" aria-label="Back to equipment">
+            <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 12H5m7 7-7-7 7-7"/>
+            </svg>
+          </a>
+          <h1 class="text-[24px] font-semibold text-black">Booking Details</h1>
+        </div>
+
+        <p id="pageMessage" role="status" aria-live="polite" class="hidden"></p>
+        <p id="loadingMessage" role="status" class="py-5 text-sm text-gray-500">Loading booking details...</p>
+
+        <div id="bookingContent" class="hidden">
+
+          <!-- STATUS MESSAGE -->
+          <div class="mb-6 flex items-start justify-between gap-4 lg:mb-5">
+            <p id="requestMessage" class="flex-1 text-[16px] leading-7 text-[#555555] lg:text-[15px]"></p>
+            <span id="bookingStatus" class="shrink-0 rounded-xl px-3 py-1.5 text-[15px] font-medium"></span>
+          </div>
+
+          <!-- EQUIPMENT SUMMARY -->
+          <section class="mb-6 flex items-center gap-4 rounded-[20px] border border-[#D6D6D6] bg-white px-4 py-5 sm:gap-5 lg:mb-5 lg:rounded-[16px] lg:px-5 lg:py-4">
+
+            <img id="equipmentImage" src="./img/canon-eos-r6.png" alt="Canon EOS R6" class="h-[82px] w-[82px] shrink-0 rounded-xl bg-[#F8F9FA] object-contain sm:h-[100px] sm:w-[100px] lg:h-[64px] lg:w-[70px]">
+
+            <div class="min-w-0 flex-1">
+              <h2 id="equipmentName" class="text-[18px] font-medium text-[#444444] sm:text-[22px] lg:text-[18px]"></h2>
+              <p id="equipmentDates" class="mt-1 text-[14px] text-[#555555] sm:text-[16px] lg:text-[14px]"></p>
+            </div>
+
+            <p id="equipmentPrice" class="shrink-0 text-[17px] font-medium text-[#444444] sm:text-[22px] lg:text-[17px]"></p>
+
+          </section>
+
+          <!-- TWO-COLUMN DESKTOP LAYOUT -->
+          <div class="grid grid-cols-1 gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-start">
+
+            <!-- LEFT COLUMN -->
+            <div class="min-w-0">
+
+              <!-- RENTER -->
+              <section class="border-b border-[#DADADA] pb-7 lg:mb-5 lg:rounded-[20px] lg:border-0 lg:bg-white lg:p-5">
+
+                <h2 class="mb-5 text-[20px] font-semibold text-black lg:mb-3 lg:text-[17px]">Renter</h2>
+
+                <div class="flex items-center gap-4">
+
+                  <img id="renterAvatar" src="./img/kehinde-ayo.jpg" alt="Renter" class="h-[68px] w-[68px] shrink-0 rounded-full bg-gray-200 object-cover lg:h-12 lg:w-12">
+
+                  <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-2">
+                      <h3 id="renterName" class="truncate text-[18px] font-semibold text-[#333333] lg:text-[15px]"></h3>
+
+                      <svg id="renterVerified" class="h-5 w-5 shrink-0 text-[#13B978]" viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="Verified renter">
+                        <path d="m12 2 2.5 2 3.2-.1.9 3 2.7 1.7-1 3.1 1 3.1-2.7 1.7-.9 3-3.2-.1-2.5 2-2.5-2-3.2.1-.9-3-2.7-1.7 1-3.1-1-3.1 2.7-1.7.9-3 3.2.1z"/>
+                        <path d="m8 12 2.5 2.5L16 9" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+
+                    <p id="renterPhone" class="mt-1 text-[15px] text-[#777777] lg:text-[14px]"></p>
+                  </div>
+
+                  <svg class="h-7 w-7 shrink-0 text-[#30303C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 12h16m-7-7 7 7-7 7"/>
+                  </svg>
+
+                </div>
+              </section>
+
+              <!-- RENTAL PERIOD -->
+              <section class="border-b border-[#DADADA] py-7 lg:rounded-[20px] lg:border-0 lg:bg-white lg:p-5">
+
+                <h2 class="mb-5 text-[20px] font-semibold text-black lg:mb-4 lg:text-[17px]">Rental Period</h2>
+
+                <div class="space-y-4">
+
+                  <div class="flex items-center justify-between gap-3">
+                    <span class="flex items-center gap-3 text-[16px] text-[#555555]">
+                      <svg class="h-6 w-6 shrink-0 text-[#30303C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <rect x="3" y="5" width="18" height="16" rx="2"/>
+                        <path d="M7 2v6M17 2v6M3 10h18M8 14h3M8 17h3"/>
+                      </svg>
+                      Pickup
+                    </span>
+                    <span id="pickupDate" class="text-right text-[15px] lg:text-[14px]"></span>
+                  </div>
+
+                  <div class="flex items-center justify-between gap-3">
+                    <span class="flex items-center gap-3 text-[16px] text-[#555555]">
+                      <svg class="h-6 w-6 shrink-0 text-[#30303C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <circle cx="12" cy="12" r="9"/>
+                        <path d="M12 7v5l3 2"/>
+                      </svg>
+                      Return
+                    </span>
+                    <span id="returnDate" class="text-right text-[15px] lg:text-[14px]"></span>
+                  </div>
+
+                  <div class="flex items-center justify-between gap-3">
+                    <span class="flex items-center gap-3 text-[16px] text-[#555555]">
+                      <svg class="h-6 w-6 shrink-0 text-[#30303C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <rect x="3" y="5" width="16" height="16" rx="2"/>
+                        <path d="M7 2v6M15 2v6M3 10h16"/>
+                        <circle cx="18" cy="17" r="5"/>
+                        <path d="M18 14v3l2 1"/>
+                      </svg>
+                      Total Duration
+                    </span>
+                    <span id="rentalDuration" class="text-right text-[15px] lg:text-[14px]"></span>
+                  </div>
+
+                </div>
+
+                <div class="my-6 border-t border-[#DADADA]"></div>
+
+                <h2 class="mb-4 text-[20px] font-semibold text-black lg:text-[17px]">Location</h2>
+
+                <p class="flex items-center gap-3 text-[16px] text-[#555555]">
+                  <svg class="h-6 w-6 shrink-0 text-[#30303C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/>
+                    <circle cx="12" cy="10" r="2.5"/>
+                  </svg>
+                  <span id="rentalLocation"></span>
+                </p>
+
+              </section>
+
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="min-w-0">
+
+              <!-- BOOKING STATUS PANEL -->
+              <section id="bookingStatusPanel" class="mb-5 hidden rounded-xl bg-[#D0E3F5] px-5 py-4">
+                <h2 class="mb-4 text-[18px] font-semibold text-[#1E2C38]">Booking Status</h2>
+                <div id="bookingStatusSteps" class="space-y-3"></div>
+              </section>
+
+              <!-- PAYMENT SUMMARY -->
+              <section class="pt-7 lg:rounded-[20px] lg:bg-white lg:p-5">
+
+                <h2 class="mb-6 text-[20px] font-semibold text-black lg:mb-5 lg:text-[17px]">Payment Summary</h2>
+
+                <div class="space-y-5">
+
+                  <div class="flex items-start justify-between gap-3">
+                    <span class="flex min-w-0 items-start gap-3 text-[15px] text-[#555555]">
+                      <svg class="h-6 w-6 shrink-0 text-[#30303C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <rect x="2" y="5" width="20" height="14" rx="2"/>
+                        <path d="M2 10h20M6 15h4"/>
+                      </svg>
+                      <span id="rentalFeeLabel"></span>
+                    </span>
+                    <span id="rentalFeeAmount" class="shrink-0 text-[15px]"></span>
+                  </div>
+
+                  <div class="flex items-center justify-between gap-3">
+                    <span class="flex items-center gap-3 text-[15px] text-[#555555]">
+                      <svg class="h-6 w-6 shrink-0 text-[#30303C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="m12 2 9 4v6c0 6-4 9-9 11-5-2-9-5-9-11V6z"/>
+                      </svg>
+                      Refundable deposit
+                    </span>
+                    <span id="depositAmount" class="shrink-0 text-[15px]"></span>
+                  </div>
+
+                </div>
+
+                <div class="mt-6 flex items-center justify-between gap-4 border-y border-[#DADADA] py-5">
+                  <span id="totalLabel" class="text-[21px] font-bold text-black lg:text-[18px]">Total</span>
+                  <span id="totalAmount" class="text-[25px] font-bold text-[#24527D] sm:text-[29px] lg:text-[20px]"></span>
+                </div>
+
+                <!-- PENDING ACTION BUTTONS -->
+                <div id="bookingActions" class="mt-9 grid grid-cols-2 gap-4 lg:mt-5 lg:gap-3">
+
+                  <button id="declineButton" type="button" class="h-[58px] rounded-full border border-[#24527D] bg-white text-[18px] font-semibold text-[#24527D] hover:bg-[#F2F7FB] lg:h-[48px] lg:text-[15px]">
+                    Decline
+                  </button>
+
+                  <button id="acceptButton" type="button" class="h-[58px] rounded-full bg-[#2B6298] text-[18px] font-semibold text-white hover:bg-[#24527D] lg:h-[48px] lg:text-[15px]">
+                    Accept
+                  </button>
+
+                </div>
+
+              </section>
+
+              <!-- HANDOVER / RETURN BUTTON -->
+              <button id="lifecycleButton" type="button" class="mt-6 hidden h-[48px] w-full rounded-full bg-[#2B6298] px-5 text-[15px] font-semibold text-white hover:bg-[#24527D]"></button>
+
+            </div>
+
+          </div>
+
+          <!-- REPORT ISSUE -->
+          <button id="reportIssueButton" type="button" class="mt-5 hidden w-full items-center gap-4 rounded-xl bg-[#FFF0C6] px-4 py-3 text-left hover:bg-[#FFE7A6]">
+
+            <svg class="h-7 w-7 shrink-0 text-[#FF453A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M10.3 3.5 1.8 18.2a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.5a2 2 0 0 0-3.4 0Z"/>
+              <path d="M12 9v5m0 4h.01"/>
+            </svg>
+
+            <span class="min-w-0 flex-1">
+              <span class="block text-[17px] font-semibold text-black">Report an issue</span>
+              <span id="issueDescription" class="block text-[14px] text-black"></span>
+            </span>
+
+            <svg class="h-6 w-6 shrink-0 text-[#30303C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 12h16m-7-7 7 7-7 7"/>
+            </svg>
+
+          </button>
+
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- REJECTION / ACCEPTANCE CONFIRMATION POPUP -->
+  <div id="confirmationModal" role="dialog" aria-modal="true" aria-labelledby="confirmationTitle" aria-describedby="confirmationText" class="fixed inset-0 z-[100] hidden items-center justify-center overflow-y-auto bg-black/35 px-4 py-6">
+
+    <div class="flex w-full max-w-[670px] flex-col items-center rounded-[36px] bg-white px-6 py-12 shadow-xl sm:min-h-[628px] sm:px-8 sm:py-16">
+
+      <svg class="mb-7 mt-6 h-[120px] w-[120px] sm:h-[175px] sm:w-[175px]" viewBox="0 0 160 160" fill="none" aria-hidden="true">
+        <path d="M70.4 19C74.7 11.5 85.3 11.5 89.6 19L155.2 132.5C159.5 140 154.1 149.5 145.5 149.5H14.5C5.9 149.5.5 140 4.8 132.5L70.4 19Z" fill="#FF9400"/>
+        <path d="M80 61V101" stroke="white" stroke-width="13" stroke-linecap="round"/>
+        <circle cx="80" cy="120" r="7" fill="white"/>
+      </svg>
+
+      <h2 id="confirmationTitle" class="sr-only">Confirm booking action</h2>
+
+      <p id="confirmationText" class="max-w-[570px] text-center text-[18px] font-bold leading-8 text-black sm:text-[22px]">
+        Are you sure you want to reject this booking?
+      </p>
+
+      <div class="flex-1"></div>
+
+      <div class="mt-12 grid w-full grid-cols-2 gap-4 sm:mt-20">
+        <button id="confirmActionButton" type="button" class="h-[62px] rounded-[19px] border border-[#24527D] bg-white text-[18px] font-semibold text-[#24527D] hover:bg-[#F2F7FB] disabled:cursor-wait disabled:opacity-60">
+          Yes
+        </button>
+
+        <button id="cancelActionButton" type="button" class="h-[62px] rounded-[19px] bg-[#24527D] text-[18px] font-semibold text-white hover:bg-[#1D4265] disabled:cursor-wait disabled:opacity-60">
+          No
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BOOKING CANCELLED POPUP -->
+  <div id="cancelledModal" role="dialog" aria-modal="true" aria-labelledby="cancelledTitle" aria-describedby="cancelledDescription" class="fixed inset-0 z-[110] hidden items-center justify-center overflow-y-auto bg-black/35 px-4 py-6">
+
+    <div class="flex w-full max-w-[670px] flex-col items-center rounded-[36px] bg-white px-6 py-12 shadow-xl sm:min-h-[628px] sm:px-8 sm:py-16">
+
+      <svg class="mb-7 mt-3 h-[130px] w-[130px] sm:h-[150px] sm:w-[150px]" viewBox="0 0 160 160" fill="none" aria-hidden="true">
+        <circle cx="80" cy="80" r="78" fill="#F83E36"/>
+        <path d="m53 53 54 54M107 53l-54 54" stroke="white" stroke-width="15" stroke-linecap="round"/>
+      </svg>
+
+      <h2 id="cancelledTitle" class="text-center text-[23px] font-bold text-black sm:text-[25px]">
+        Booking Cancelled!
+      </h2>
+
+      <p id="cancelledDescription" class="mt-3 text-center text-[16px] text-[#333333] sm:text-[17px]">
+        You rejected the equipment booking.
+      </p>
+
+      <div class="flex-1"></div>
+
+      <div class="mt-12 flex w-full flex-col gap-4 sm:mt-20">
+
+        <button id="viewEquipmentButton" type="button" class="h-[62px] w-full rounded-[19px] bg-[#24527D] text-[18px] font-semibold text-white hover:bg-[#1D4265]">
+          View Equipment Details
+        </button>
+
+        <button id="backToEquipmentButton" type="button" class="h-[62px] w-full rounded-[19px] border border-[#24527D] bg-white text-[18px] font-semibold text-[#24527D] hover:bg-[#F2F7FB]">
+          Back to Equipment
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOKING FAILED POPUP -->
+  <div id="failureModal" role="dialog" aria-modal="true" aria-labelledby="failureTitle" aria-describedby="failureDescription" class="fixed inset-0 z-[110] hidden items-center justify-center overflow-y-auto bg-black/35 px-4 py-6">
+
+    <div class="flex w-full max-w-[670px] flex-col items-center rounded-[36px] bg-white px-6 py-12 shadow-xl sm:min-h-[628px] sm:px-8 sm:py-16">
+
+      <svg class="mb-7 mt-3 h-[130px] w-[130px] sm:h-[150px] sm:w-[150px]" viewBox="0 0 160 160" fill="none" aria-hidden="true">
+        <circle cx="80" cy="80" r="78" fill="#F83E36"/>
+        <path d="m53 53 54 54M107 53l-54 54" stroke="white" stroke-width="15" stroke-linecap="round"/>
+      </svg>
+
+      <h2 id="failureTitle" class="text-center text-[23px] font-bold text-black sm:text-[25px]">
+        Booking Failed!
+      </h2>
+
+      <p id="failureDescription" class="mt-3 max-w-[500px] text-center text-[16px] leading-6 text-[#333333] sm:text-[17px]">
+        Your equipment booking failed. Check your network connection and try again.
+      </p>
+
+      <div class="flex-1"></div>
+
+      <div class="mt-12 flex w-full flex-col gap-4 sm:mt-20">
+
+        <button id="retryButton" type="button" class="h-[62px] w-full rounded-[19px] bg-[#24527D] text-[18px] font-semibold text-white hover:bg-[#1D4265] disabled:cursor-wait disabled:opacity-60">
+          Try Again
+        </button>
+
+        <button id="failureBackButton" type="button" class="h-[62px] w-full rounded-[19px] border border-[#24527D] bg-white text-[18px] font-semibold text-[#24527D] hover:bg-[#F2F7FB] disabled:cursor-wait disabled:opacity-60">
+          Back
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/booking-details.js" defer></script>
+
+</body>
+</html>

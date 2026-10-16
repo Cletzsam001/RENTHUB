@@ -1,0 +1,34 @@
+
+{
+  "accountStatus": {
+    "verificationChecklist": [
+      {
+        "id": "government-id",
+        "label": "Government ID",
+        "status": "verified"
+      },
+      {
+        "id": "selfie",
+        "label": "Selfie",
+        "status": "verified"
+      },
+      {
+        "id": "address",
+        "label": "Address",
+        "status": "verified"
+      },
+      {
+        "id": "business",
+        "label": "Business",
+        "status": "verified"
+      }
+    ],
+    "limits": {
+      "currency": "USD",
+      "dailyRentalLimit": 340,
+      "monthlyRentalLimit": 10000,
+      "activeRentals": 6,
+      "maximumActiveRentals": 10
+    }
+  }
+}

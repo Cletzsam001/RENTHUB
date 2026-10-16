@@ -1,0 +1,39 @@
+
+{
+  "booking": {
+    "id": "booking-001",
+    "status": "Pending",
+    "equipment": {
+      "id": "equipment-001",
+      "name": "Canon EOS R6",
+      "category": "Camera",
+      "dailyRate": 45000,
+      "image": "./img/canon-eos-r6.png"
+    },
+    "renter": {
+      "id": "renter-001",
+      "name": "Kehinde Ayo",
+      "phone": "+234 123 456 7890",
+      "avatar": "./img/kehinde-ayo.jpg",
+      "verified": true
+    },
+    "owner": {
+      "id": "owner-001",
+      "name": "RentHub Owner",
+      "avatar": "./img/owner-avatar.jpg"
+    },
+    "rentalPeriod": {
+      "pickup": "2025-04-26",
+      "return": "2025-04-28",
+      "durationDays": 3,
+      "location": "Mainland, Lagos"
+    },
+    "payment": {
+      "currency": "NGN",
+      "refundableDeposit": 90000
+    },
+    "handoverAt": null,
+    "returnedAt": null,
+    "daysOverdue": 0
+  }
+}

@@ -1,0 +1,65 @@
+
+{
+  "profile": {
+    "personal": {
+      "fullName": "Morgan Palmer",
+      "role": "CEO, MorganRents LTD",
+      "email": "Morgan.palmer@gmail.com",
+      "phone": "+234 901 234 5678",
+      "avatar": "https://res.cloudinary.com/fdch0ihm/image/upload/v1791543469/Frame_61_rfyg4k.png",
+      "coverImage": "https://res.cloudinary.com/fdch0ihm/image/upload/v1791543200/Frame_1000001133_havmzj.png",
+      "verified": true
+    },
+    "business": {
+      "name": "MorganRents LTD",
+      "type": "Individual owner",
+      "address": "Lekki Phase 1, Lagos, Nigeria",
+      "registrationNumber": "N/A",
+      "yearsInBusiness": 2,
+      "documents": "Business license (uploaded)"
+    },
+    "stats": {
+      "equipments": 150,
+      "listings": 430,
+      "totalBookings": 211
+    },
+    "equipment": [
+      {
+        "id": "EQ001",
+        "name": "Canon EOS R6",
+        "category": "Camera",
+        "location": "Lagos, Mainland",
+        "rating": 4.8,
+        "reviews": 21,
+        "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1790967108/Thumb_jx8nxa.png"
+      },
+      {
+        "id": "EQ002",
+        "name": "Godox SL60W Light",
+        "category": "Lighting",
+        "location": "Lagos, Island",
+        "rating": 4.7,
+        "reviews": 14,
+        "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1790967286/Thumb_fp02cm.png"
+      },
+      {
+        "id": "EQ003",
+        "name": "Canon EOS R6",
+        "category": "Camera",
+        "location": "Lagos, Mainland",
+        "rating": 4.8,
+        "reviews": 21,
+        "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1790967108/Thumb_jx8nxa.png"
+      },
+      {
+        "id": "EQ004",
+        "name": "Godox SL60W Light",
+        "category": "Lighting",
+        "location": "Lagos, Island",
+        "rating": 4.7,
+        "reviews": 14,
+        "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1790967286/Thumb_fp02cm.png"
+      }
+    ]
+  }
+}

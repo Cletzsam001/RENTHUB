@@ -1,0 +1,170 @@
+
+{
+  "finance": {
+    "summary": {
+      "completedPayments": 230000,
+      "pendingPayments": 163000,
+      "netOperatingIncome": 40023,
+      "grossRent": null,
+      "expenses": null
+    },
+    "properties": [
+      {
+        "id": "all",
+        "name": "All properties"
+      },
+      {
+        "id": "apt-4b",
+        "name": "Apartment 4B"
+      },
+      {
+        "id": "apt-2a",
+        "name": "Apartment 2A"
+      }
+    ],
+    "rentActions": [
+      {
+        "id": "rent-history",
+        "title": "Payment History",
+        "description": "Review all rent payments",
+        "propertyId": "all"
+      },
+      {
+        "id": "rent-details",
+        "title": "Payment Details",
+        "description": "View transaction details",
+        "propertyId": "all"
+      },
+      {
+        "id": "rent-refund",
+        "title": "Refund",
+        "description": "Process refund request",
+        "propertyId": "all"
+      }
+    ],
+    "depositRows": [
+      {
+        "id": "deposit-history",
+        "title": "Deposit History",
+        "description": "Track deposit activity",
+        "propertyId": "all"
+      },
+      {
+        "id": "deposit-release",
+        "title": "Deposit Release",
+        "description": "Release held funds",
+        "propertyId": "all"
+      },
+      {
+        "id": "deposit-deduction",
+        "title": "Deposit Deduction",
+        "description": "Add deduction item",
+        "propertyId": "all"
+      }
+    ],
+    "rentCollections": [
+      {
+        "id": "rent-001",
+        "date": "2026-06-25",
+        "amount": 45000,
+        "status": "Completed",
+        "propertyId": "apt-4b"
+      },
+      {
+        "id": "rent-002",
+        "date": "2026-04-05",
+        "amount": 80000,
+        "status": "Completed",
+        "propertyId": "apt-2a"
+      },
+      {
+        "id": "rent-003",
+        "date": "2026-03-15",
+        "amount": 65000,
+        "status": "Pending",
+        "propertyId": "apt-4b"
+      },
+      {
+        "id": "rent-004",
+        "date": "2026-02-18",
+        "amount": 105000,
+        "status": "Completed",
+        "propertyId": "apt-2a"
+      },
+      {
+        "id": "rent-005",
+        "date": "2026-01-23",
+        "amount": 98000,
+        "status": "Pending",
+        "propertyId": "apt-4b"
+      }
+    ],
+    "deposits": [
+      {
+        "id": "deposit-001",
+        "name": "John Doe",
+        "amount": 45000,
+        "status": "Held",
+        "propertyId": "apt-4b"
+      },
+      {
+        "id": "deposit-002",
+        "name": "Brandon T.",
+        "amount": 80000,
+        "status": "Deducted",
+        "propertyId": "apt-2a"
+      },
+      {
+        "id": "deposit-003",
+        "name": "Emily Smith",
+        "amount": 65000,
+        "status": "Released",
+        "propertyId": "apt-4b"
+      },
+      {
+        "id": "deposit-004",
+        "name": "Samuel F.",
+        "amount": 105000,
+        "status": "Released",
+        "propertyId": "apt-2a"
+      },
+      {
+        "id": "deposit-005",
+        "name": "John D.",
+        "amount": 98000,
+        "status": "Deducted",
+        "propertyId": "apt-4b"
+      }
+    ],
+    "recentActivity": [
+      {
+        "id": "activity-001",
+        "title": "Apt 4B-Rent Collection",
+        "description": "Renter: Alex Johnson • Received",
+        "icon": "avatar",
+        "propertyId": "apt-4b"
+      },
+      {
+        "id": "activity-002",
+        "title": "Payment History",
+        "description": "Review all rent payments",
+        "icon": "history",
+        "propertyId": "all"
+      },
+      {
+        "id": "activity-003",
+        "title": "Payment Details",
+        "description": "View transaction details",
+        "icon": "receipt",
+        "propertyId": "all"
+      },
+      {
+        "id": "activity-004",
+        "title": "Refund",
+        "description": "Process refund request",
+        "icon": "refund",
+        "propertyId": "all"
+      }
+    ]
+  }
+}

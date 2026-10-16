@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Owner Payouts | RentHub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/payout.js" defer></script>
+</head>
+<body class="min-h-screen bg-white font-sans text-[#303030] lg:bg-[#F2F7FB]">
+
+  <!-- FIXED DESKTOP SIDEBAR -->
+  <aside class="fixed inset-y-0 left-0 z-40 hidden w-[248px] flex-col bg-[#224F78] px-7 py-7 text-white lg:flex">
+    <a href="dashboard.html" class="flex shrink-0 items-center gap-2 text-xl font-semibold">
+      <img src="../../assets/icons/logo.svg" alt="" class="h-10 w-10 object-contain">
+      <span>RentHub</span>
+    </a>
+
+    <nav aria-label="Owner navigation" class="mt-10 flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto text-sm font-semibold">
+      <a href="dashboard.html" class="flex shrink-0 items-center gap-4 rounded-xl px-3 py-3 hover:bg-white/10">
+        <img src="../../assets/icons/ehome.svg" alt="" class="h-6 w-6 object-contain">
+        <span>Dashboard</span>
+      </a>
+      <a href="equipment.html" class="flex shrink-0 items-center gap-4 rounded-xl px-3 py-3 hover:bg-white/10">
+        <img src="../../assets/icons/equipments.svg" alt="" class="h-6 w-6 object-contain">
+        <span>Equipments</span>
+      </a>
+      <a href="#" class="flex shrink-0 items-center gap-4 rounded-xl px-3 py-3 hover:bg-white/10">
+        <img src="../../assets/icons/booking.svg" alt="" class="h-6 w-6 object-contain">
+        <span>Bookings</span>
+      </a>
+      <a href="finance.html" aria-current="page" class="flex shrink-0 items-center gap-4 rounded-xl bg-[#F2F7FB] px-3 py-3 text-[#224F78]">
+        <img src="../../assets/icons/financs.svg" alt="" class="h-6 w-6 object-contain">
+        <span>Finance</span>
+      </a>
+      <a href="finance.html#deposits" class="flex shrink-0 items-center gap-4 rounded-xl px-3 py-3 hover:bg-white/10">
+        <img src="../../assets/icons/deposite.svg" alt="" class="h-6 w-6 object-contain">
+        <span>Deposit</span>
+      </a>
+      <a href="#" class="flex shrink-0 items-center gap-4 rounded-xl px-3 py-3 hover:bg-white/10">
+        <img src="../../assets/icons/dispute.svg" alt="" class="h-6 w-6 object-contain">
+        <span>Dispute</span>
+      </a>
+      <a href="#" class="flex shrink-0 items-center gap-4 rounded-xl px-3 py-3 hover:bg-white/10">
+        <img src="../../assets/icons/review.svg" alt="" class="h-6 w-6 object-contain">
+        <span>Review</span>
+      </a>
+      <a href="#" class="flex shrink-0 items-center gap-4 rounded-xl px-3 py-3 hover:bg-white/10">
+        <img src="../../assets/icons/user.svg" alt="" class="h-6 w-6 object-contain">
+        <span>Profile</span>
+      </a>
+    </nav>
+
+    <button id="logoutButton" type="button" class="mt-4 flex shrink-0 items-center gap-4 rounded-xl px-3 py-3 text-left text-sm font-semibold hover:bg-white/10">
+      <img src="../../assets/icons/sign.svg" alt="" class="h-6 w-6 object-contain">
+      <span>Log out</span>
+    </button>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="min-h-screen min-w-0 lg:ml-[248px]">
+
+    <!-- DESKTOP TOPBAR -->
+    <header class="hidden h-[108px] items-center justify-between bg-white px-8 lg:flex">
+      <label class="flex w-full max-w-[530px] items-center gap-4 rounded-xl border border-[#E0E4E8] bg-[#F2F7FB] px-4 py-3">
+        <img src="../../assets/icons/search.svg" alt="" class="h-6 w-6 object-contain">
+        <input id="searchInput" type="search" aria-label="Search payouts" placeholder="Search for equipment, categories or location..." class="w-full bg-transparent text-sm outline-none placeholder:text-[#858585]">
+      </label>
+      <img src="../../assets/icons/profile.svg" alt="Owner profile" class="h-12 w-12 rounded-full object-cover">
+    </header>
+
+    <main class="mx-auto w-full max-w-[1440px] px-4 pb-12 pt-9 sm:px-6 lg:px-10 lg:pt-12">
+
+      <!-- PAGE HEADING AND BUTTONS -->
+      <div class="mb-8 flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <h1 class="text-[29px] font-bold leading-tight tracking-tight sm:text-[32px]">Owner Payouts</h1>
+          <p class="mt-2 text-sm text-[#777777] sm:text-base">Track your transaction history and upcoming payouts.</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-3">
+          <button id="exportButton" type="button" class="flex items-center gap-2 rounded-xl border border-[#D0D0D0] bg-white px-3 py-2 text-sm font-semibold text-[#245B90] hover:bg-[#F2F7FB]">
+            <img src="../../assets/icons/download.svg" alt="" class="h-4 w-4 object-contain">
+            <span>Export</span>
+          </button>
+          <button id="manualPayoutButton" type="button" class="rounded-xl bg-[#224F78] px-5 py-3 text-sm font-semibold text-white hover:bg-[#173B59]">Manual Payout</button>
+        </div>
+      </div>
+
+      <p id="notice" role="status" aria-live="polite" class="mb-4 hidden rounded-lg px-3 py-2 text-sm"></p>
+
+      <!-- SUMMARY CARDS -->
+      <section aria-label="Payout summary" class="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-3 lg:gap-5">
+        <article class="rounded-2xl border border-[#D1D1D1] bg-[#F7F9FC] p-5">
+          <p class="text-sm text-[#777777]">Total Payouts</p>
+          <p id="totalPayouts" class="mt-3 text-[26px] font-bold leading-tight text-[#173B59]">—</p>
+        </article>
+        <article class="rounded-2xl border border-[#D1D1D1] bg-[#F7F9FC] p-5">
+          <p class="text-sm text-[#777777]">Pending Payouts</p>
+          <p id="pendingPayouts" class="mt-3 text-[26px] font-bold leading-tight text-[#173B59]">—</p>
+        </article>
+        <article class="rounded-2xl border border-[#D1D1D1] bg-[#F7F9FC] p-5">
+          <p class="text-sm text-[#777777]">Next Payout Date</p>
+          <p id="nextPayoutDate" class="mt-3 text-[25px] font-bold leading-tight text-[#173B59]">—</p>
+        </article>
+      </section>
+
+      <!-- MAIN TWO-COLUMN LAYOUT -->
+      <div class="grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)]">
+
+        <!-- RECENT TRANSACTIONS -->
+        <section aria-labelledby="transactionsTitle" class="min-w-0">
+          <h2 id="transactionsTitle" class="mb-4 text-xl font-semibold">Recent Transactions</h2>
+          <div class="overflow-x-auto rounded-2xl border border-[#E0E3E8] bg-white">
+            <table class="w-full min-w-[440px] border-collapse text-left text-sm">
+              <thead class="bg-[#F7F9FC] text-xs text-[#667085]">
+                <tr>
+                  <th scope="col" class="px-4 py-3 font-medium">Transaction</th>
+                  <th scope="col" class="px-3 py-3 font-medium">Date</th>
+                  <th scope="col" class="px-3 py-3 text-right font-medium">Amount</th>
+                  <th scope="col" class="px-3 py-3 font-medium">Status</th>
+                </tr>
+              </thead>
+              <tbody id="transactionsBody">
+                <tr><td colspan="4" class="px-4 py-6 text-center text-gray-500">Loading transactions...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- RIGHT COLUMN -->
+        <div class="min-w-0 space-y-6">
+
+          <!-- PAYOUT SCHEDULE -->
+          <section aria-labelledby="scheduleTitle" class="rounded-2xl border border-[#E0E3E8] bg-white p-5">
+            <h2 id="scheduleTitle" class="mb-4 text-xl font-semibold">Payout Schedule</h2>
+            <dl class="space-y-3 text-sm">
+              <div class="flex items-center justify-between gap-4">
+                <dt class="text-[#667085]">Frequency</dt>
+                <dd id="scheduleFrequency" class="font-medium">—</dd>
+              </div>
+              <div class="flex items-center justify-between gap-4">
+                <dt class="text-[#667085]">Threshold</dt>
+                <dd id="scheduleThreshold" class="font-medium">—</dd>
+              </div>
+              <div class="flex items-center justify-between gap-4">
+                <dt class="text-[#667085]">Fee</dt>
+                <dd id="scheduleFee" class="font-medium">—</dd>
+              </div>
+            </dl>
+          </section>
+
+          <!-- RECENT PAYOUTS -->
+          <section aria-labelledby="recentPayoutsTitle" class="rounded-2xl bg-white p-5">
+            <div class="mb-4 flex items-center justify-between gap-3">
+              <h2 id="recentPayoutsTitle" class="text-xl font-semibold">Recent Payouts</h2>
+              <button type="button" data-view-all="recent" class="text-sm text-[#777777] hover:text-[#224F78] hover:underline">View all</button>
+            </div>
+            <div id="recentPayoutsList" class="space-y-3">
+              <p class="text-sm text-gray-500">Loading...</p>
+            </div>
+          </section>
+
+          <!-- UPCOMING PAYOUTS -->
+          <section aria-labelledby="upcomingPayoutsTitle" class="rounded-2xl bg-white p-5">
+            <div class="mb-4 flex items-center justify-between gap-3">
+              <h2 id="upcomingPayoutsTitle" class="text-xl font-semibold">Upcoming Payouts</h2>
+              <button type="button" data-view-all="upcoming" class="text-sm text-[#777777] hover:text-[#224F78] hover:underline">View all</button>
+            </div>
+            <div id="upcomingPayoutsList" class="space-y-3">
+              <p class="text-sm text-gray-500">Loading...</p>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- MANUAL PAYOUT MODAL -->
+  <div id="manualPayoutModal" role="dialog" aria-modal="true" aria-labelledby="manualPayoutTitle" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 p-4">
+    <div class="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl">
+      <div class="mb-4 flex items-center justify-between gap-4">
+        <h2 id="manualPayoutTitle" class="text-xl font-semibold">Manual Payout</h2>
+        <button id="closeManualPayout" type="button" aria-label="Close manual payout" class="rounded-lg px-2 py-1 text-2xl hover:bg-gray-100">×</button>
+      </div>
+      <p class="mb-5 text-sm text-[#667085]">Enter a payout amount to submit a request. Requests require backend processing.</p>
+      <form id="manualPayoutForm" class="space-y-4">
+        <label class="block text-sm font-medium" for="payoutAmount">Amount (NGN)</label>
+        <input id="payoutAmount" name="amount" type="number" min="1" step="1" required placeholder="Enter amount" class="w-full rounded-xl border border-[#D1D5DB] px-4 py-3 outline-none focus:border-[#224F78]">
+        <p id="manualPayoutMessage" role="status" class="hidden text-sm"></p>
+        <button id="submitManualPayout" type="submit" class="w-full rounded-xl bg-[#224F78] px-4 py-3 font-semibold text-white hover:bg-[#173B59]">Request Payout</button>
+      </form>
+    </div>
+  </div>
+  <nav aria-label="Mobile navigation" class="fixed inset-x-0 bottom-0 z-30 grid grid-cols-5 border-t border-[#D5D5D5] bg-white px-2 pb-[max(10px,env(safe-area-inset-bottom))] pt-3 lg:hidden">
+
+    <a href="dashboard.html" class="flex flex-col items-center gap-1 text-[11px] text-[#8A8A8A]">
+      <img src="../../assets/icons/m-home.svg" alt="" class="h-6 w-6 object-contain">
+      <span>Home</span>
+    </a>
+
+    <a href="equipment.html" class="flex flex-col items-center gap-1 text-[11px] text-[#8A8A8A]">
+      <img src="../../assets/icons/search.svg" alt="" class="h-6 w-6 object-contain">
+      <span>Explore</span>
+    </a>
+
+    <a href="equipment.html" class="flex flex-col items-center gap-1 text-[11px] text-[#8A8A8A]">
+      <img src="../../assets/icons/m-rental.svg" alt="" class="h-6 w-6 object-contain">
+      <span>My Rentals</span>
+    </a>
+
+    <a href="./finance.html" aria-current="page" class="flex flex-col items-center gap-1 text-[11px] font-semibold text-[#173B59]">
+      <img src="../../assets/icons/financs.svg" alt="" class="h-6 w-6 object-contain">
+      <span>Finance</span>
+    </a>
+
+    <a href="#reportDispute" class="flex flex-col items-center gap-1 text-[11px] text-[#8A8A8A]">
+      <img src="../../assets/icons/m-dispute.svg" alt="" class="h-6 w-6 object-contain">
+      <span>Dispute</span>
+    </a>
+
+  </nav>
+
+</body>
+</html>

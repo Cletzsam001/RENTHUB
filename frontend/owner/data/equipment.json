@@ -1,0 +1,21 @@
+
+{
+  "equipment": [
+    {
+      "id": 1,
+      "name": "Canon EOS R6",
+      "date": "Apr 26 – Apr 28, 2025",
+      "price": 45000,
+      "status": "Available",
+      "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1790967108/Thumb_jx8nxa.png"
+    },
+    {
+      "id": 2,
+      "name": "Godox SL60W Light",
+      "date": "May 1 – May 3, 2025",
+      "price": 18000,
+      "status": "Submitted",
+      "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1790967286/Thumb_fp02cm.png"
+    }
+  ]
+}

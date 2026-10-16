@@ -1,0 +1,15 @@
+
+{
+  "categories": [
+    {"id":1,"name":"Cameras & Photography","slug":"cameras-photography"},
+    {"id":2,"name":"Lighting Equipment","slug":"lighting-equipment"},
+    {"id":3,"name":"Audio Equipment","slug":"audio-equipment"},
+    {"id":4,"name":"Video Production","slug":"video-production"},
+    {"id":5,"name":"Event Equipment","slug":"event-equipment"},
+    {"id":6,"name":"Construction Equipment","slug":"construction-equipment"},
+    {"id":7,"name":"Power & Generators","slug":"power-generators"},
+    {"id":8,"name":"Tools & Machinery","slug":"tools-machinery"},
+    {"id":9,"name":"Computers & Electronics","slug":"computers-electronics"},
+    {"id":10,"name":"Other Equipment","slug":"other-equipment"}
+  ]
+}

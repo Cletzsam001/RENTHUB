@@ -1,0 +1,39 @@
+
+{
+  "bookings": [
+    {
+      "id": "BK001",
+      "equipmentId": "EQ001",
+      "equipmentName": "Canon EOS R6",
+      "category": "Camera",
+      "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1791470637/Thumbnail_t7uqsf.png",
+      "location": "Lagos, Mainland",
+      "startDate": "2026-10-03",
+      "endDate": "2026-10-10",
+      "amount": 45000,
+      "currency": "NGN",
+      "status": "pending",
+      "renter": {
+        "id": "REN001",
+        "name": "Alex Johnson"
+      }
+    },
+    {
+      "id": "BK002",
+      "equipmentId": "EQ002",
+      "equipmentName": "Godox SL60W Light",
+      "category": "Lighting",
+      "image": "https://res.cloudinary.com/fdch0ihm/image/upload/v1790967286/Thumb_fp02cm.png",
+      "location": "Lagos, Island",
+      "startDate": "2026-11-03",
+      "endDate": "2026-11-03",
+      "amount": 18000,
+      "currency": "NGN",
+      "status": "active",
+      "renter": {
+        "id": "REN002",
+        "name": "Morgan Rentals Client"
+      }
+    }
+]
+}

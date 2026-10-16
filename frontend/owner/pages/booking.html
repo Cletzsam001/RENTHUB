@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#224F78">
+  <title>Owner Bookings | RentHub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/booking.js" defer></script>
+</head>
+<body class="min-h-screen bg-white font-sans text-[#303030] lg:bg-[#F2F7FB]">
+
+  <!-- DESKTOP SIDEBAR -->
+  <aside class="fixed inset-y-0 left-0 z-30 hidden w-[248px] flex-col bg-[#224F78] px-7 py-8 text-white lg:flex">
+    <a href="./dashboard.html" class="mb-10 flex items-center gap-3">
+      <img src="../../assets/icons/logo.svg" alt="" class="h-10 w-10 object-contain">
+      <span class="text-[22px] font-semibold">RentHub</span>
+    </a>
+
+    <nav aria-label="Owner navigation" class="flex flex-col gap-2">
+      <a href="./dashboard.html" class="flex h-12 items-center gap-4 rounded-xl px-3 text-[15px] font-medium hover:bg-white/10">
+        <img src="../../assets/icons/ehome.svg" alt="" class="h-6 w-6 object-contain">
+        <span>Dashboard</span>
+      </a>
+      <a href="./equipment.html" class="flex h-12 items-center gap-4 rounded-xl px-3 text-[15px] font-medium hover:bg-white/10">
+        <img src="../../assets/icons/equipments.svg" alt="" class="h-6 w-6 object-contain">
+        <span>Equipments</span>
+      </a>
+      <a href="./bookings.html" aria-current="page" class="flex h-12 items-center gap-4 rounded-xl bg-[#F2F7FB] px-3 text-[15px] font-semibold text-[#224F78]">
+        <img src="../../assets/icons/booking-active.svg" alt="" class="h-6 w-6 object-contain">
+        <span>Bookings</span>
+      </a>
+      <a href="./finance.html" class="flex h-12 items-center gap-4 rounded-xl px-3 text-[15px] font-medium hover:bg-white/10">
+        <img src="../../assets/icons/finance.svg" alt="" class="h-6 w-6 object-contain">
+        <span>Finance</span>
+      </a>
+      <a href="./payout.html" class="flex h-12 items-center gap-4 rounded-xl px-3 text-[15px] font-medium hover:bg-white/10">
+        <img src="../../assets/icons/deposite.svg" alt="" class="h-6 w-6 object-contain">
+        <span>Deposit</span>
+      </a>
+      <a href="./dispute.html" class="flex h-12 items-center gap-4 rounded-xl px-3 text-[15px] font-medium hover:bg-white/10">
+        <img src="../../assets/icons/dispute.svg" alt="" class="h-6 w-6 object-contain">
+        <span>Dispute</span>
+      </a>
+      <a href="./review.html" class="flex h-12 items-center gap-4 rounded-xl px-3 text-[15px] font-medium hover:bg-white/10">
+        <img src="../../assets/icons/review.svg" alt="" class="h-6 w-6 object-contain">
+        <span>Review</span>
+      </a>
+      <a href="./profile.html" class="flex h-12 items-center gap-4 rounded-xl px-3 text-[15px] font-medium hover:bg-white/10">
+        <img src="../../assets/icons/user.svg" alt="" class="h-6 w-6 object-contain">
+        <span>Profile</span>
+      </a>
+    </nav>
+
+    <button id="desktopLogout" type="button" class="mt-auto flex h-12 items-center gap-4 rounded-xl px-3 text-left text-[15px] font-medium hover:bg-white/10">
+      <img src="../../assets/icons/sign.svg" alt="" class="h-6 w-6 object-contain">
+      <span>Log out</span>
+    </button>
+  </aside>
+
+  <div class="min-h-screen lg:ml-[248px]">
+
+    <!-- DESKTOP HEADER -->
+    <header class="hidden h-[108px] items-center justify-between bg-white px-8 lg:flex">
+      <label class="flex h-[50px] w-full max-w-[530px] items-center gap-4 rounded-xl border border-[#E1E5EA] bg-[#F2F7FB] px-4">
+        <img src="../../assets/icons/search.svg" alt="" class="h-6 w-6 object-contain">
+        <input id="desktopSearch" type="search" placeholder="Search for equipment, categories or location..." aria-label="Search bookings" class="min-w-0 flex-1 bg-transparent text-sm outline-none placeholder:text-[#888888]">
+      </label>
+      <a href="./profile.html" aria-label="Open owner profile" class="ml-5 shrink-0">
+        <img id="topbarAvatar" src="../../assets/icons/profile.svg" alt="Owner profile" class="h-12 w-12 rounded-full object-cover">
+      </a>
+    </header>
+
+    <main class="mx-auto w-full max-w-[1500px] px-4 pb-12 pt-5 sm:px-6 lg:px-8 lg:pt-7">
+
+      <!-- MOBILE HEADER -->
+      <div class="mb-9 flex items-center justify-between lg:hidden">
+        <a href="./dashboard.html" aria-label="Back to dashboard" class="flex h-11 w-11 items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/><path d="M9 12h12"/></svg>
+        </a>
+        <h1 class="text-[25px] font-semibold text-[#224F78]">Bookings</h1>
+        <div class="w-11"></div>
+      </div>
+
+      <!-- PAGE TITLE -->
+      <h1 class="mb-4 hidden text-[30px] font-semibold leading-tight lg:block">Bookings</h1>
+
+      <!-- MOBILE SEARCH -->
+      <label class="mb-6 flex h-[58px] items-center gap-4 rounded-2xl border border-[#C9C2D5] bg-white px-5 lg:hidden">
+        <img src="../../assets/icons/search.svg" alt="" class="h-7 w-7 object-contain">
+        <input id="mobileSearch" type="search" placeholder="Search your equipment" aria-label="Search your equipment" class="min-w-0 flex-1 bg-transparent text-[16px] outline-none placeholder:text-[#999999]">
+      </label>
+
+      <!-- BOOKING FILTERS -->
+      <div id="bookingTabs" role="tablist" aria-label="Filter bookings" class="mb-5 flex w-full gap-3 overflow-x-auto pb-1 lg:gap-4">
+        <button type="button" role="tab" data-filter="all" aria-selected="true" class="booking-tab shrink-0 rounded-xl bg-[#285F92] px-5 py-3 text-[15px] font-semibold text-white lg:min-w-0 lg:flex-1 lg:rounded-lg lg:py-2">All (0)</button>
+        <button type="button" role="tab" data-filter="requests" aria-selected="false" class="booking-tab shrink-0 rounded-xl bg-[#F2F5F8] px-5 py-3 text-[15px] font-semibold text-[#285F92] lg:min-w-0 lg:flex-1 lg:rounded-lg lg:bg-white lg:py-2">Requests (0)</button>
+        <button type="button" role="tab" data-filter="active" aria-selected="false" class="booking-tab shrink-0 rounded-xl bg-[#F2F5F8] px-5 py-3 text-[15px] font-semibold text-[#285F92] lg:min-w-0 lg:flex-1 lg:rounded-lg lg:bg-white lg:py-2">Active (0)</button>
+        <button type="button" role="tab" data-filter="upcoming" aria-selected="false" class="booking-tab shrink-0 rounded-xl bg-[#F2F5F8] px-5 py-3 text-[15px] font-semibold text-[#285F92] lg:min-w-0 lg:flex-1 lg:rounded-lg lg:bg-white lg:py-2">Upcoming (0)</button>
+        <button type="button" role="tab" data-filter="completed" aria-selected="false" class="booking-tab shrink-0 rounded-xl bg-[#F2F5F8] px-5 py-3 text-[15px] font-semibold text-[#285F92] lg:min-w-0 lg:flex-1 lg:rounded-lg lg:bg-white lg:py-2">Completed (0)</button>
+      </div>
+
+      <!-- FEEDBACK -->
+      <div id="bookingNotice" role="status" aria-live="polite" class="mb-4 hidden rounded-xl px-4 py-3 text-sm"></div>
+
+      <!-- LOADING -->
+      <div id="loadingState" role="status" class="rounded-2xl bg-white p-8 text-center text-sm text-gray-500">Loading bookings...</div>
+
+      <!-- BOOKINGS -->
+      <section id="bookingsPanel" aria-label="Booking results" class="hidden rounded-2xl bg-white lg:p-5">
+        <div id="bookingsList" class="flex flex-col gap-4 lg:gap-3"></div>
+      </section>
+
+      <!-- EMPTY STATE -->
+      <div id="emptyState" class="hidden rounded-2xl border border-[#E6E6E6] bg-white px-5 py-12 text-center">
+        <p class="text-lg font-semibold text-[#224F78]">No bookings found</p>
+        <p class="mt-2 text-sm text-gray-500">Try another filter or search term.</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- CONFIRMATION MODAL -->
+  <div id="confirmationModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 p-4">
+    <div class="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl">
+      <h2 id="modalTitle" class="text-xl font-semibold text-[#224F78]">Confirm action</h2>
+      <p id="modalDescription" class="mt-3 text-sm leading-6 text-gray-600"></p>
+      <div class="mt-7 flex justify-end gap-3">
+        <button id="cancelAction" type="button" class="rounded-xl border border-[#C7D4E0] px-5 py-2.5 text-sm font-medium text-[#224F78]">Cancel</button>
+        <button id="confirmAction" type="button" class="rounded-xl bg-[#285F92] px-5 py-2.5 text-sm font-medium text-white">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

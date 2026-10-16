@@ -1,0 +1,15 @@
+
+{
+  "locations": [
+    {"id":1,"name":"Ibadan, Oyo State"},
+    {"id":2,"name":"Ogbomoso, Oyo State"},
+    {"id":3,"name":"Lagos, Lagos State"},
+    {"id":4,"name":"Osogbo, Osun State"},
+    {"id":5,"name":"Ede, Osun State"},
+    {"id":6,"name":"Abuja, FCT"},
+    {"id":7,"name":"Ilorin, Kwara State"},
+    {"id":8,"name":"Abeokuta, Ogun State"},
+    {"id":9,"name":"Akure, Ondo State"},
+    {"id":10,"name":"Benin City, Edo State"}
+  ]
+}
